@@ -13,6 +13,9 @@
     "start": "node index.js",
     "test": "jest --runInBand"
   },
+  "prisma": {
+    "seed": "node db/seed.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

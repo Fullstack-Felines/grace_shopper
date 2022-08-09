@@ -1,13 +1,3 @@
-/*
- id SERIAL PRIMARY KEY,
-  name VARCHAR (255) NOT NULL,
-  breed VARCHAR(255) NOT NULL,
-  description varchar (255) NOT NULL,
-  price INTEGER NOT NULL,
-  img_url VARCHAR(255) NOT NULL,
-  available BOOLEAN DEFAULT true
-*/
-
 const kittens = [
   {
     name: "Henry",
@@ -35,20 +25,11 @@ const kittens = [
   },
 ];
 
-/*
-    name VARCHAR (255) NOT NULL,
-    address VARCHAR (255) NOT NULL,
-    phoneNumber VARCHAR(255) NOT NULL,
-    username VARCHAR(255) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR (255) UNIQUE NOT NULL
-*/
-
 const customers = [
   {
     name: "Charles the Super Cool",
     address: "123 this street",
-    phone: "123456778",
+    phonenumber: "123456778",
     username: "CoolCharles",
     password: "test",
     email: "CharlesCool@email.com",
@@ -56,7 +37,7 @@ const customers = [
   {
     name: "Arnold Grant",
     address: "123 that street",
-    phone: "123456779",
+    phonenumber: "123456779",
     username: "ArntOld",
     password: "test",
     email: "HeyArnold@email.com",
@@ -64,7 +45,7 @@ const customers = [
   {
     name: "Priscilla Humboldt",
     address: "123 There street",
-    phone: "123456708",
+    phonenumber: "123456708",
     username: "PrisciHumdinger",
     password: "test",
     email: "Prispriskittykiss@email.com",

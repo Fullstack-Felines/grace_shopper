@@ -9,3 +9,23 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model customers {
+  id            Int         @id @default(autoincrement())
+  name          String      @db.VarChar(255)
+  address       String      @db.VarChar(255)
+  phonenumber   String      @db.VarChar(255)
+  username      String      @unique @db.VarChar(255)
+  password      String      @db.VarChar(255)
+  email         String      @unique @db.VarChar(255)
+}
+
+model kittens {
+  id              Int              @id @default(autoincrement())
+  name            String           @db.VarChar(255)
+  breed           String           @db.VarChar(255)
+  description     String           @db.VarChar(255)
+  price           Int?
+  img_url         String           @db.VarChar(255)
+  available       Boolean?         @default(true)
+}

@@ -2,17 +2,20 @@ const prisma = require("./prisma");
 const { kittens, customers } = require("./seedData.js");
 
 const dropTables = async () => {
+  console.log("Dropping tables!!!!");
   await prisma.$executeRaw`DROP TABLE IF EXISTS kittens;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS customers;`;
+  console.log("Tables Dropped!!!!");
 };
 
 const createTables = async () => {
+  console.log("Creating tables!!!!");
   await prisma.$executeRaw`
   CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255) NOT NULL,
     address VARCHAR (255) NOT NULL,
-    phoneNumber VARCHAR(255) NOT NULL,
+    phonenumber VARCHAR(255) NOT NULL,
     username VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR (255) UNIQUE NOT NULL
@@ -29,6 +32,7 @@ CREATE TABLE kittens (
   available BOOLEAN DEFAULT true
   
 );`;
+  console.log("Created Tables!!!!");
 };
 
 const seedDb = async () => {
@@ -38,10 +42,10 @@ const seedDb = async () => {
     console.log(createdCustomer);
   }
 
-  console.log("creating pups...");
+  console.log("creating kittens...");
   for (const kitten of kittens) {
-    const kitter = await prisma.kittens.create({ data: kitten });
-    console.log(kitter);
+    const createdKitten = await prisma.kittens.create({ data: kitten });
+    console.log(createdKitten);
   }
 };
 
