@@ -14,7 +14,15 @@ const getCustomers = async () => {
   return customers;
 };
 
+const getSingleCustomer = async (customerId) => {
+  const singleCustomer = await prisma.customers.findUnique({
+    where: { id: customerId },
+  });
+  return singleCustomer;
+};
+
 module.exports = {
   createCustomer,
   getCustomers,
+  getSingleCustomer,
 };
