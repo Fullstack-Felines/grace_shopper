@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 const kittens = [
   {
     name: "Henry",
@@ -25,6 +27,19 @@ const kittens = [
   },
 ];
 
+// const SALT_ROUNDS = 10;
+// const password = () => await bcrypt.hash("test", SALT_ROUNDS);
+
+// const createPassword = async () => {
+//   const SALT_ROUNDS = 10;
+//   const password = await bcrypt.hash("test", SALT_ROUNDS);
+
+//   return password;
+// };
+
+// const password = createPassword();
+// console.log("PAASSSWOWOOORRDD:", password);
+
 const customers = [
   {
     name: "Charles the Super Cool",
@@ -50,6 +65,13 @@ const customers = [
     password: "test",
     email: "Prispriskittykiss@email.com",
   },
+  {
+    name: "Margery Stuart Baxter",
+    address: "123 Primrose Street",
+    phonenumber: "123456738",
+    username: "Marbax",
+    password: "test",
+    email: "MarBax@email.com",
+  },
 ];
-
 module.exports = { kittens, customers };
