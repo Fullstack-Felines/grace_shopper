@@ -73,7 +73,7 @@ export const updateKitten = async ({
   img_url,
   available,
 }) => {
-  const response = await fetch(`api/kittens${kittenId}`, {
+  const response = await fetch(`api/kittens/${kittenId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

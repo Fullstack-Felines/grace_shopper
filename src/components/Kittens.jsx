@@ -13,8 +13,8 @@ export default function Kittens() {
           <p>{kittens.description}</p>
           <p>{kittens.price}</p>
         </div>
-        <div>{kittensToRender} </div>;
       </div>
     );
   });
+  return <div>{kittensToRender}</div>;
 }
