@@ -4,18 +4,17 @@ import useKittens from "../Hooks/useKittens";
 export default function Kittens() {
   const { kittens } = useKittens();
 
-  const displayedKittens = kittens.map((kittens) => {
+  const kittensToRender = kittens.map((kitten, index) => {
     return (
-      <div>
+      <div key={`Key: ${index}`} kitten={kitten}>
         <div>
-          <h1>{kittens.image_url}</h1>
           <p>{kittens.name}</p>
           <p>{kittens.breed}</p>
           <p>{kittens.description}</p>
           <p>{kittens.price}</p>
         </div>
+        <div>{kittensToRender} </div>;
       </div>
     );
   });
-  return <div>{displayedKittens} </div>;
 }
