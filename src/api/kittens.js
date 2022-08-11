@@ -77,7 +77,6 @@ export const updateKitten = async ({
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       name: name,

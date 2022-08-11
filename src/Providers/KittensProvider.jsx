@@ -6,8 +6,8 @@ export default function KittensProvider({ children }) {
   const [kittens, setKittens] = useState([]);
   useEffect(() => {
     const getKittens = async () => {
-      const kittens = await fetchAllKittens();
-      setKittens(kittens);
+      const kittensProvided = await fetchAllKittens(kittens);
+      setKittens(kittensProvided);
     };
     getKittens();
   }, []);
