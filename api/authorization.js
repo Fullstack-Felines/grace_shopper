@@ -1,9 +1,9 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authRouter = require("express").Router();
-//const { customer } = require("../db/models");
 const prisma = require("../db/prisma");
 const { JWT_SECRET } = require("../secrets");
+const { authRequired } = require("./utils");
 const SALT_ROUNDS = 10;
 
 authRouter.post("/register", async (req, res, next) => {
@@ -69,6 +69,15 @@ authRouter.post("/logout", async (req, res, next) => {
       loggedIn: false,
       message: "Logged Out",
     });
+  } catch (error) {
+    next(error);
+  }
+});
+
+authRouter.get("/me", authRequired, async (req, res, next) => {
+  try {
+    const user = req.user;
+    res.send(user);
   } catch (error) {
     next(error);
   }
