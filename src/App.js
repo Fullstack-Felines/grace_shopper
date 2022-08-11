@@ -16,7 +16,7 @@ import {
   NavBar,
   Register,
   SingleKitten,
-} from "./Components";
+} from "./components";
 import { Route, Routes } from "react-router-dom";
 
 // import "../style/App.css";
