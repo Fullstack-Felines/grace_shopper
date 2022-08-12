@@ -3,19 +3,12 @@ import useKittens from "../Hooks/useKittens";
 
 export default function Kittens() {
   const { kittens, setKittens } = useKittens();
+  console.log("the kittens provider has rendered", { kittens });
 
-  useEffect(() => {
-    const getAllTheKittens = async () => {
-      const result = await fetchAllKittens();
-      setKittens(result);
-    };
-    getAllTheKittens();
-  }, []);
-
-  const kittensToRender = kittens.map((kitten, index) => {
+  const kittensToRender = kittens.map((kittens, index) => {
     return (
-      <div>
-        <p>{kittens.name}</p>
+      <div key={`Key: ${index}`} kittens={kittens}>
+        <h3>{kittens.name}</h3>
         <p>{kittens.breed}</p>
         <p>{kittens.description}</p>
         <p>{kittens.price}</p>
