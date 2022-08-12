@@ -26,22 +26,15 @@ export default function Register() {
             address,
             phonenumber
           );
-
-          console.log("result", result);
           // if (result.user) {
           //   setErrorMessage("You are now registered.");
-          //   localStorage
-
           // }
         }}
       >
         <input
           value={name}
           placeholder="name"
-          onChange={(e) => {
-            setName(e.target.value);
-            console.log(name);
-          }}
+          onChange={(e) => setName(e.target.value)}
         />
 
         <input
