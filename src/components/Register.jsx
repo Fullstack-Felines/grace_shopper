@@ -38,7 +38,10 @@ export default function Register() {
         <input
           value={name}
           placeholder="name"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            setName(e.target.value);
+            console.log(name);
+          }}
         />
 
         <input

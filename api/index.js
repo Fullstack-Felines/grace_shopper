@@ -20,6 +20,6 @@ apiRouter.use("/kittens", kittensRouter);
 
 // ROUTER: /api/auth
 const authRouter = require("./authorization");
-apiRouter.use("/auth", authRouter);
+apiRouter.use("/authorization", authRouter);
 
 module.exports = apiRouter;
