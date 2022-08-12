@@ -58,6 +58,7 @@ const App = () => {
         <Route path="/SingleKitten" element={<SingleKitten />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

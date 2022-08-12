@@ -13,6 +13,8 @@ export default function KittensProvider({ children }) {
     getKittens();
   }, []);
 
+  console.log("the kittens provider has rendered", { kittens });
+
   return (
     <KittensContext.Provider value={{ kittens, setKittens }}>
       {children}
