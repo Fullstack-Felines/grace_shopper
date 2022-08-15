@@ -18,7 +18,7 @@ export default function AboutUs() {
         Our store has a wide variety of kittens, anything your looking for you
         can find here! If you have any special requests please contact us!
       </p>
-      <h3>Team</h3>
+      <h3>Our Team</h3>
       <ul>
         <li>Stephan</li>
         <li>Chani</li>
