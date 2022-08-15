@@ -1,5 +1,5 @@
 export const fetchAllKittens = async () => {
-  const response = await fetch(`api/kittens`);
+  const response = await fetch(`/api/kittens`);
   const result = await response.json();
   return result;
 };

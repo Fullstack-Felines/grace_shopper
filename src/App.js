@@ -16,6 +16,9 @@ import {
   NavBar,
   Register,
   SingleKitten,
+  SearchBar,
+  KittensCard,
+  KittensList,
 } from "./components";
 import { Route, Routes } from "react-router-dom";
 
@@ -57,7 +60,11 @@ const App = () => {
         <Route path="/Register" element={<Register />} />
         <Route path="/SingleKitten" element={<SingleKitten />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/SearchBar" element={<SearchBar />} />
+        <Route path="/KittensCard" element={<KittensCard />} />
+        <Route path="/KittensList" element={<KittensList />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
