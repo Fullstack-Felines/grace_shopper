@@ -3,7 +3,7 @@ const { kittens, customers } = require("./seedData.js");
 
 const dropTables = async () => {
   console.log("Dropping tables!!!!");
-  await prisma.$executeRaw`DROP TABLE IF EXISTS order;`;
+  await prisma.$executeRaw`DROP TABLE IF EXISTS orders;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS cart;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS kittens;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS customers;`;
@@ -25,14 +25,14 @@ const createTables = async () => {
   );`;
 
   await prisma.$executeRaw`
-CREATE TABLE kittens (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR (255) NOT NULL,
-  breed VARCHAR(255) NOT NULL,
-  description varchar (255) NOT NULL,
-  price INTEGER NOT NULL,
-  img_url VARCHAR(255) NOT NULL,
-  available BOOLEAN DEFAULT true
+  CREATE TABLE kittens (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    breed VARCHAR(255) NOT NULL,
+    description varchar (255) NOT NULL,
+    price INTEGER NOT NULL,
+    img_url VARCHAR(255) NOT NULL,
+    available BOOLEAN DEFAULT true
   
 );`;
 
@@ -46,13 +46,11 @@ CREATE TABLE kittens (
   );`;
 
   await prisma.$executeRaw`
-CREATE TABLE order (
-  id SERIAL PRIMARY KEY,
-  cart_id INTEGER REFERENCES cart(id),
-  kitten_id INTEGER REFERENCES kittens(id),
-  UNIQUE(cart_id, kitten_id)
-);
-`;
+    CREATE TABLE orders (
+      id SERIAL PRIMARY KEY,
+      cart_id INTEGER REFERENCES cart(id),
+      kitten_id INTEGER REFERENCES kittens(id)
+  );`;
   console.log("Created Tables!!!!");
 };
 
