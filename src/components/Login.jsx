@@ -1,13 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../api/authorization";
+import useAuth from "../Hooks/useAuth";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const { user, setUser } = useAuth();
+
   return (
     <div>
       <h2>LOGIN HERE</h2>
-      <form>
+      <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const result = await loginUser(username, password);
+          if (result.user) {
+            alert("You are now logged in!");
+            setUser(result.user);
+
+            navigate("/");
+            window.location.reload();
+          } else {
+            setErrorMessage("Incorrect Login");
+            alert(errorMessage);
+          }
+        }}
+      >
         <input
           className="userinput"
           value={username}

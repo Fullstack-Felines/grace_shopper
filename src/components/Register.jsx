@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../api/authorization";
-// import { useAuth } from "../Hooks";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -9,9 +10,9 @@ export default function Register() {
   const [name, setName] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [address, setAddress] = useState("");
-  // const [errorMessage, setErrorMessage] = useState("");
-  // const { setToken, user } = useAuth();
-
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const { user, setUser } = useAuth();
   return (
     <div>
       <h3>REGISTER HERE:</h3>
@@ -26,13 +27,15 @@ export default function Register() {
             address,
             phonenumber
           );
-
-          console.log("result", result);
-          // if (result.user) {
-          //   setErrorMessage("You are now registered.");
-          //   localStorage
-
-          // }
+          if (result.user) {
+            alert("You are registered!");
+            setUser(result.user);
+            navigate("/");
+            window.location.reload();
+          } else {
+            setErrorMessage("Username already taken");
+            alert(errorMessage);
+          }
         }}
       >
         <input
@@ -70,6 +73,10 @@ export default function Register() {
           onChange={(e) => setAddress(e.target.value)}
         />
         <button type="submit">Sign Up</button>
+
+        <Link id="loginClick" to="/Login">
+          Already have an account?
+        </Link>
       </form>
     </div>
   );

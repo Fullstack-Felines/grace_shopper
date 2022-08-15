@@ -21,6 +21,8 @@ export const registerUser = async (
     }),
   });
   const result = await response.json();
+  console.log("response from src", response);
+  console.log("result from src", result);
   return result;
 };
 
@@ -40,14 +42,16 @@ export const loginUser = async (username, password) => {
   return result;
 };
 
-// export const fetchMe = async (token) => {
-//   const response = await fetch(`/api/authorization/me`, {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
-//   const result = await response.json();
-//   return result;
-// };
+export const logoutUser = async () => {
+  const response = await fetch(`/api/authorization/logout`, {
+    method: "POST",
+  });
+  const result = await response.json();
+  return result;
+};
+
+export const fetchMe = async () => {
+  const response = await fetch(`/api/authorization/me`);
+  const result = await response.json();
+  return result;
+};
