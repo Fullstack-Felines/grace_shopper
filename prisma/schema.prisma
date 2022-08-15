@@ -30,13 +30,12 @@ model kittens {
   available       Boolean?         @default(true)
 }
 
-model cart {
-  id                 Int             @id @default(autoincrement())
-  customer_id        Int?
-  
-  customers        customers?      @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  total_amount       Int?
-  is_active          Boolean?        @default(true)
-  shipping_address   String          @db.VarChar(255)
+// model cart {
+//   id                 Int             @id @default(autoincrement())
+//   customer_id        Int?
+//   customers        customers?      @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+//   total_amount       Int?
+//   is_active          Boolean?        @default(true)
+//   shipping_address   String          @db.VarChar(255)
 
-}
+// }
