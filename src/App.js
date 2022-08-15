@@ -25,7 +25,7 @@ import { Route, Routes } from "react-router-dom";
 // import "../style/App.css";
 
 const App = () => {
-  const [APIHealth, setAPIHealth] = useState("");
+  // const [APIHealth, setAPIHealth] = useState("");
 
   // useEffect(() => {
   //   // follow this pattern inside your useEffect calls:
@@ -61,8 +61,7 @@ const App = () => {
         <Route path="/SingleKitten" element={<SingleKitten />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/SearchBar" element={<SearchBar />} />
-        <Route path="/KittensCard" element={<KittensCard />} />
-        <Route path="/KittensList" element={<KittensList />} />
+        <Route path="/Kittens" element={<KittensList setKittensList= />} />
       </Routes>
       <Footer />
     </div>
