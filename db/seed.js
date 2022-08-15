@@ -5,6 +5,8 @@ const dropTables = async () => {
   console.log("Dropping tables!!!!");
   await prisma.$executeRaw`DROP TABLE IF EXISTS kittens;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS customers;`;
+  await prisma.$executeRaw`DROP TABLE IF EXISTS order;`;
+  await prisma.$executeRaw`DROP TABLE IF EXISTS cart;`;
   console.log("Tables Dropped!!!!");
 };
 
@@ -33,6 +35,21 @@ CREATE TABLE kittens (
   
 );`;
   console.log("Created Tables!!!!");
+  await prisma.$executeRaw`
+  CREATE TABLE cart (
+    id SERIAL PRIMARY KEY,
+    'customerId' FOREIGN KEY,
+    'totalAmount' INTEGER NOT NULL,
+    'isActive' BOOLEAN DEFAULT true,
+    'shippingAddress' VARCHAR(255) NOT NULL
+  )`;
+
+  await prisma.$executeRaw`
+  CREATE TABLE order (
+  id SERIAL PRIMARY KEY,
+  'cartId' FOREIGN KEY,
+  'kittenId' FOREIGN KEY
+)`;
 };
 
 const seedDb = async () => {
