@@ -1,5 +1,5 @@
 const prisma = require("./prisma");
-const { kittens, customers } = require("./seedData.js");
+const { kittens, customers, cart, orders } = require("./seedData.js");
 
 const dropTables = async () => {
   console.log("Dropping tables!!!!");
@@ -66,6 +66,18 @@ const seedDb = async () => {
   for (const kitten of kittens) {
     const createdKitten = await prisma.kittens.create({ data: kitten });
     console.log(createdKitten);
+  }
+
+  console.log("creating cart...");
+  for (const cartItems of cart) {
+    const createdCart = await prisma.cart.create({ data: cartItems });
+    console.log(createdCart);
+  }
+
+  console.log("creating orders...");
+  for (const order of orders) {
+    const createdOrder = await prisma.orders.create({ data: order });
+    console.log(createdOrder);
   }
 };
 

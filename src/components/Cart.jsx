@@ -1,5 +1,10 @@
 import React from "react";
 
 export default function Cart() {
-  return <div>Cart</div>;
+  return (
+    <div>
+      <h1>Cart</h1>
+      <div className="orderSummary"></div>
+    </div>
+  );
 }

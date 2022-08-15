@@ -27,19 +27,6 @@ const kittens = [
   },
 ];
 
-// const SALT_ROUNDS = 10;
-// const password = () => await bcrypt.hash("test", SALT_ROUNDS);
-
-// const createPassword = async () => {
-//   const SALT_ROUNDS = 10;
-//   const password = await bcrypt.hash("test", SALT_ROUNDS);
-
-//   return password;
-// };
-
-// const password = createPassword();
-// console.log("PAASSSWOWOOORRDD:", password);
-
 const customers = [
   {
     name: "Charles the Super Cool",
@@ -74,4 +61,34 @@ const customers = [
     email: "MarBax@email.com",
   },
 ];
-module.exports = { kittens, customers };
+
+/*
+customer_id INTEGER REFERENCES customers(id),
+    total_amount INTEGER NOT NULL,
+    is_active BOOLEAN DEFAULT true,
+    shipping_address VARCHAR(255) NOT NULL
+  );`;
+*/
+const cart = [
+  {
+    total_amount: 30,
+    is_active: true,
+    shipping_address: "test",
+  },
+];
+
+/*
+      id SERIAL PRIMARY KEY,
+      cart_id INTEGER REFERENCES cart(id),
+      kitten_id INTEGER REFERENCES kittens(id)
+*/
+
+const orders = [
+  {
+    cart_id: 1,
+    kitten_id: 1,
+  },
+
+  { cart_id: 1, kitten_id: 2 },
+];
+module.exports = { kittens, customers, cart, orders };
