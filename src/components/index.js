@@ -10,3 +10,6 @@ export { default as Login } from "./Login";
 export { default as NavBar } from "./NavBar";
 export { default as Register } from "./Register";
 export { default as SingleKitten } from "./SingleKitten";
+export { default as SearchBar } from "./Search/SearchBar";
+export { default as KittensCard } from "./KittensCard";
+export { default as KittensList } from "./KittensList";

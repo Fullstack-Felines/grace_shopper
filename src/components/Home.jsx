@@ -1,14 +1,34 @@
 import React from "react";
 import useAuth from "../Hooks/useAuth";
-// import homekitten from "https://wallpapercrafter.com/th800/180037-photo-beautiful-cat-animal-pet-feline-photography-wide-screen-kitten.jpg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { user } = useAuth();
   console.log("user", user);
   return (
     <div>
-      <h1>Home</h1>
-      {/* <img src={homekitten} alt="this is car image" /> */}
+      <h1>Welcome to Fullstack Felines</h1>
+      <Link to="/Kittens">
+        <img
+          src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660336580/oscar-marie-_SeJeTqSbLw-unsplash_qkcvn7.jpg"
+          onClick
+        />
+      </Link>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quasi
+        non, sint perferendis ab in facilis deleniti, at, natus cupiditate
+        possimus quia minima aliquid dolor vero adipisci! Magni, sit!
+        Consequatur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Sunt quasi non, sint perferendis ab in facilis deleniti, at, natus
+        cupiditate possimus quia minima aliquid dolor vero adipisci! Magni, sit!
+        Consequatur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Sunt quasi non, sint perferendis ab in facilis deleniti, at, natus
+        cupiditate possimus quia minima aliquid dolor vero adipisci! Magni, sit!
+        Consequatur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Sunt quasi non, sint perferendis ab in facilis deleniti, at, natus
+        cupiditate possimus quia minima aliquid dolor vero adipisci! Magni, sit!
+        Consequatur?
+      </p>
     </div>
   );
 }
