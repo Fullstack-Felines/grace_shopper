@@ -1,7 +1,10 @@
 import React from "react";
+import useAuth from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const { user } = useAuth();
+  console.log("user", user);
   return (
     <div>
       <h1>Welcome to Fullstack Felines</h1>

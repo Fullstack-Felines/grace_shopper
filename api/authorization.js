@@ -10,6 +10,14 @@ authRouter.post("/register", async (req, res, next) => {
   try {
     let { username, password, name, address, phonenumber, email } = req.body;
     password = await bcrypt.hash(password, SALT_ROUNDS);
+
+    const checkUser = await prisma.customers.findUnique({
+      where: { username },
+    });
+    if (checkUser) {
+      res.send({ message: "User already exists!", error: "Invalid username!" });
+    }
+
     const user = await prisma.customers.create({
       data: { username, password, name, address, phonenumber, email },
     });
@@ -38,8 +46,14 @@ authRouter.post("/login", async (req, res, next) => {
         username: username,
       },
     });
-    const validPassword = await bcrypt.compare(password, user.password);
+    if (!user) {
+      res.send({
+        message: "No user by that name exists!",
+        error: "Invalid username!",
+      });
+    }
 
+    const validPassword = await bcrypt.compare(password, user.password);
     if (validPassword) {
       const token = jwt.sign(user, JWT_SECRET);
 
