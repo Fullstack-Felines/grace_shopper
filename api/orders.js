@@ -28,7 +28,7 @@ ordersRouter.post("/", async (req, res, next) => {
   }
 });
 
-//update cart
+//update order
 ordersRouter.patch("/:id", async (req, res, next) => {
   try {
     const orderId = +req.params.id;

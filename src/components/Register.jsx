@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { registerUser } from "../api/authorization";
-import { Link } from "react-router-dom";
-// import { useAuth } from "../Hooks";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -10,8 +9,8 @@ export default function Register() {
   const [name, setName] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [address, setAddress] = useState("");
-  // const [errorMessage, setErrorMessage] = useState("");
-  // const { setToken, user } = useAuth();
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -27,9 +26,13 @@ export default function Register() {
             address,
             phonenumber
           );
-          // if (result.user) {
-          //   setErrorMessage("You are now registered.");
-          // }
+          if (result.user) {
+            alert("You are registered!");
+            navigate("/");
+          } else {
+            setErrorMessage("Username already taken");
+            alert(errorMessage);
+          }
         }}
       >
         <input
