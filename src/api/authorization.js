@@ -42,6 +42,14 @@ export const loginUser = async (username, password) => {
   return result;
 };
 
+export const logoutUser = async () => {
+  const response = await fetch(`/api/authorization/logout`, {
+    method: "POST",
+  });
+  const result = await response.json();
+  return result;
+};
+
 export const fetchMe = async () => {
   const response = await fetch(`/api/authorization/me`);
   const result = await response.json();

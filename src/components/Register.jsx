@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { registerUser } from "../api/authorization";
+import { Link } from "react-router-dom";
 // import { useAuth } from "../Hooks";
 
 export default function Register() {
@@ -66,6 +67,10 @@ export default function Register() {
           onChange={(e) => setAddress(e.target.value)}
         />
         <button type="submit">Sign Up</button>
+
+        <Link id="loginClick" to="/Login">
+          Already have an account?
+        </Link>
       </form>
     </div>
   );
