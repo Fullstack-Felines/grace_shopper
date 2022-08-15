@@ -1,5 +1,16 @@
-export const fetchCartById = async (id) => {
-  const response = await fetch(`api/cart/${id}`, {
+export const fetchCartById = async (cartid) => {
+  const response = await fetch(`api/cart/${cartid}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
+};
+
+export const fetchCartByUserId = async (userid) => {
+  const response = await fetch(`api/cart/${userid}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/authorization";
+import { fetchCartByUserId } from "../api/cart";
+import { useCart } from "../Hooks";
 import useAuth from "../Hooks/useAuth";
 
 export default function Login() {
@@ -9,6 +11,7 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const { user, setUser } = useAuth();
+  const { cart, setCart } = useCart();
 
   return (
     <div>
@@ -17,10 +20,12 @@ export default function Login() {
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await loginUser(username, password);
+
           if (result.user) {
             alert("You are now logged in!");
             setUser(result.user);
-
+            const userCart = await fetchCartByUserId(user.id);
+            setCart(userCart);
             navigate("/");
             window.location.reload();
           } else {
