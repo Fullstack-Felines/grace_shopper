@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/authorization";
+import useAuth from "../Hooks/useAuth";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const { user, setUser } = useAuth();
 
   return (
     <div>
@@ -17,7 +19,10 @@ export default function Login() {
           const result = await loginUser(username, password);
           if (result.user) {
             alert("You are now logged in!");
+            setUser(result.user);
+
             navigate("/");
+            window.location.reload();
           } else {
             setErrorMessage("Incorrect Login");
             alert(errorMessage);

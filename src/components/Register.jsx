@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../api/authorization";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ export default function Register() {
   const [address, setAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-
+  const { user, setUser } = useAuth();
   return (
     <div>
       <h3>REGISTER HERE:</h3>
@@ -28,7 +29,9 @@ export default function Register() {
           );
           if (result.user) {
             alert("You are registered!");
+            setUser(result.user);
             navigate("/");
+            window.location.reload();
           } else {
             setErrorMessage("Username already taken");
             alert(errorMessage);
