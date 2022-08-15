@@ -3,8 +3,11 @@ const { kittens, customers } = require("./seedData.js");
 
 const dropTables = async () => {
   console.log("Dropping tables!!!!");
+  await prisma.$executeRaw`DROP TABLE IF EXISTS order;`;
+  await prisma.$executeRaw`DROP TABLE IF EXISTS cart;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS kittens;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS customers;`;
+
   console.log("Tables Dropped!!!!");
 };
 
@@ -32,6 +35,24 @@ CREATE TABLE kittens (
   available BOOLEAN DEFAULT true
   
 );`;
+
+  await prisma.$executeRaw`
+  CREATE TABLE cart (
+    id SERIAL PRIMARY KEY,
+    customer_id INTEGER REFERENCES customers(id),
+    total_amount INTEGER NOT NULL,
+    is_active BOOLEAN DEFAULT true,
+    shipping_address VARCHAR(255) NOT NULL
+  );`;
+
+  await prisma.$executeRaw`
+CREATE TABLE order (
+  id SERIAL PRIMARY KEY,
+  cart_id INTEGER REFERENCES cart(id),
+  kitten_id INTEGER REFERENCES kittens(id),
+  UNIQUE(cart_id, kitten_id)
+);
+`;
   console.log("Created Tables!!!!");
 };
 
