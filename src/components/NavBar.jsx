@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { logoutUser } from "../api/authorization";
-import { useCart } from "../Hooks";
+// import { useCart } from "../Hooks";
 
 export default function NavBar() {
   const { user, setUser } = useAuth();
-  const { cart, setCart } = useCart();
+  // const { cart, setCart } = useCart();
   return (
     <div>
       <nav>
@@ -14,7 +14,6 @@ export default function NavBar() {
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660334879/My_project_ddlcsz.png"
             width="150px"
-            onClick
           />
         </Link>
         <Link to="/">Home</Link>
@@ -28,7 +27,7 @@ export default function NavBar() {
             onClick={async () => {
               const result = await logoutUser();
               setUser({});
-              setCart({});
+              // setCart({});
               console.log("User state after logout:", user);
             }}
           >
