@@ -3,7 +3,7 @@ import useKittens from "../Hooks/useKittens";
 
 export default function Kittens() {
   const { kittens, setKittens } = useKittens();
-  console.log("the kittens provider has rendered", { kittens });
+  // console.log("the kittens provider has rendered", ({kittens})
 
   const kittensToRender = kittens.map((kittens, index) => {
     return (
