@@ -4,11 +4,15 @@ import useKittens from "../Hooks/useKittens";
 
 export default function KittensCard() {
   const { kittens } = useKittens();
+  const navigate = useNavigate();
+
   return (
-    <div className="kitten-card">
-      <figure className="kitten-img">
-        <img src="" alt="" />
-      </figure>
+    <div
+      className="kitten-card"
+      onClick={() => {
+        navigate(`${kittens.id}`);
+      }}
+    >
       <h3>{kittens.name}</h3>
       <p>{kittens.breed}</p>
       <p>{kittens.description}</p>

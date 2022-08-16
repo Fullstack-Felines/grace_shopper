@@ -20,12 +20,14 @@ import {
   KittensCard,
   KittensList,
 } from "./components";
+import useKittens from "./Hooks/useKittens";
 import { Route, Routes } from "react-router-dom";
 
 // import "../style/App.css";
 
 const App = () => {
-  const [APIHealth, setAPIHealth] = useState("");
+  const { kittens, setKittens } = useKittens();
+  // const [APIHealth, setAPIHealth] = useState("");
 
   // useEffect(() => {
   //   // follow this pattern inside your useEffect calls:
@@ -58,11 +60,13 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/NavBar" element={<NavBar />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/SingleKitten" element={<SingleKitten />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/SearchBar" element={<SearchBar />} />
-        <Route path="/KittensCard" element={<KittensCard />} />
-        <Route path="/KittensList" element={<KittensList />} />
+        <Route path="/" element={<SearchBar />} />
+        <Route
+          path="/SingleKitten/:name"
+          element={<SingleKitten kittens={kittens} setKittens={setKittens} />}
+        />
       </Routes>
       <Footer />
     </div>
