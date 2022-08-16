@@ -4,6 +4,17 @@ export const fetchAllOrders = async () => {
   return result;
 };
 
+export const fetchOrdersByCart = async (id) => {
+  const response = await fetch(`api/orders/cartOrder/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
+};
+
 export const fetchOrderById = async (id) => {
   const response = await fetch(`api/orders/${id}`, {
     method: "GET",

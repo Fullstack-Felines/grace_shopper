@@ -25,7 +25,7 @@ cartRouter.get("/:id", async (req, res, next) => {
 });
 
 //get a cart by customer id
-cartRouter.get("/:userid", async (req, res, next) => {
+cartRouter.get("/userCart/:userid", async (req, res, next) => {
   try {
     const singleCart = await prisma.cart.findUnique({
       where: {

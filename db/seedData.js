@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 
 const kittens = [
   {
@@ -94,4 +94,5 @@ const orders = [
 
   { cart_id: 1, kitten_id: 2 },
 ];
+
 module.exports = { kittens, customers, cart, orders };

@@ -27,6 +27,12 @@ import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const { kittens, setKittens } = useKittens();
+
+  // useEffect(() => {
+  //   getCart();
+  //   fetchCartById();
+  // });
+
   // const [APIHealth, setAPIHealth] = useState("");
 
   // useEffect(() => {

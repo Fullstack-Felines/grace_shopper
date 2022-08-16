@@ -10,7 +10,7 @@ export const fetchCartById = async (cartid) => {
 };
 
 export const fetchCartByUserId = async (userid) => {
-  const response = await fetch(`api/cart/${userid}`, {
+  const response = await fetch(`api/cart/userCart/${userid}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
