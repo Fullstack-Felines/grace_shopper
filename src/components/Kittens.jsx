@@ -1,10 +1,14 @@
 import React, { useEffect, useContext, useState } from "react";
 import useKittens from "../Hooks/useKittens";
 import KittensCard from "./KittensCard";
+// import useKittens from "../Hooks/useKittens";
 
 export default function Kittens() {
   const { kittens, setKittens } = useKittens();
   const [searchText, setSearchText] = useState("");
+  const [price, setPrice] = useState({});
+  const [sortState, setSortState] = useState("");
+  const sort = kittens.sort;
 
   function searchMatches(kitten, text) {
     text = text.toLowerCase();
@@ -23,6 +27,13 @@ export default function Kittens() {
 
   const kittensToDisplay = searchText.length ? filteredKittens : kittens;
 
+  const sortMethods = {
+    none: { method: (a, b) => null },
+    ascending: { method: undefined },
+    descending: { method: (a, b) => (a > b ? -1 : 1) },
+  };
+  console.log(sortMethods);
+
   return (
     <div>
       <div>
@@ -31,6 +42,21 @@ export default function Kittens() {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
+        <select
+          defaultValue={"Default"}
+          onChange={(e) => setSortState(e.target.value)}
+        >
+          <option value="DEFAULT" disabled>
+            None
+          </option>
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+        {/* <ul>
+          {kittens.sort(sortMethods[sortState].method).map((kitten, index) => (
+            <li key={index}>{kitten}</li>
+          ))}
+        </ul> */}
       </div>
       {kittensToDisplay.map((kitten, index) => {
         return <KittensCard key={`${kitten.id}`} kitten={kitten} />;
