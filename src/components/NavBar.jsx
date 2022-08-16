@@ -7,7 +7,7 @@ import { useCart } from "../Hooks";
 export default function NavBar() {
   const { user, setUser } = useAuth();
   const { setCart, makeGuestCart } = useCart();
-  const guestCart = makeGuestCart();
+  // const guestCart = makeGuestCart();
 
   return (
     <div>
@@ -29,7 +29,7 @@ export default function NavBar() {
             onClick={async () => {
               const result = await logoutUser();
               setUser({});
-              setCart(guestCart);
+              // setCart(guestCart);
               console.log("User state after logout:", user);
             }}
           >

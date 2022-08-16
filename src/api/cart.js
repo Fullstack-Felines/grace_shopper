@@ -26,7 +26,7 @@ export const createCart = async ({
   is_active,
   shipping_address,
 }) => {
-  const response = await fetch(`api/cart/`, {
+  const response = await fetch(`api/cart`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -24,7 +24,7 @@ export default function Login() {
           if (result.user) {
             alert("You are now logged in!");
             setUser(result.user);
-            const userCart = await fetchCartByUserId(user.id);
+            const userCart = await fetchCartByUserId(result.user.id);
             setCart(userCart);
             navigate("/");
             window.location.reload();

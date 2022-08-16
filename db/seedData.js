@@ -74,7 +74,8 @@ customer_id INTEGER REFERENCES customers(id),
 */
 const cart = [
   {
-    total_amount: 30,
+    customer_id: 1,
+    total_amount: 0,
     is_active: true,
     shipping_address: "test",
   },
