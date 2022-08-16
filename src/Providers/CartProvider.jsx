@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { fetchCartById } from "../api/cart";
-import Cart from "../Context/CartContext";
+import { createCart } from "../api/cart";
 
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState({});
 
   useEffect(() => {
-    const getCart = async (id) => {
-      const result = await fetchCartById(id);
-      setCart(result);
+    const getCart = async () => {
+      const guestCart = await createCart(10000000, 0, true, "");
+      setCart(guestCart);
     };
     getCart(); //NEEDS CART ID
   }, []);
