@@ -3,7 +3,7 @@ import { fetchCartById } from "../api/cart";
 import Cart from "../Context/CartContext";
 
 export default function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({});
 
   useEffect(() => {
     const getCart = async (id) => {
