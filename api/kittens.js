@@ -30,7 +30,7 @@ kittenRouter.get("/:breed", async (req, res, next) => {
   try {
     const kittensOfBreed = await prisma.kittens.findUnique({
       where: {
-        breed: +req.params.breed,
+        breed: req.params.breed,
       },
     });
     res.send(kittensOfBreed);

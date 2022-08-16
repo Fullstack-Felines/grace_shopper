@@ -1,43 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useKittens from "../Hooks/useKittens";
+import KittensCard from "./KittensCard";
+import { fetchKittenById } from "../api/kittens";
+import { useParams } from "react-router-dom";
 
 export default function SingleKitten() {
-  const { kittens, setKittens } = useKittens();
-  const [search, setSearch] = useState("");
+  const [kitten, setKitten] = useState({});
+  const params = useParams();
 
-  const searchMatches = (kitten) => {
-    return (
-      <div>
-        `${kitten.name} ${kitten.breed}` .toLowerCase()
-        .includes(search.toLowerCase())
-      </div>
-    );
-  };
+  useEffect(() => {
+    const getKittenById = async (kittenId) => {
+      const result = await fetchKittenById(kittenId);
+      setKitten(result);
+    };
+    getKittenById(params.id);
+  }, []);
 
   return (
     <div>
-      <h1>Kitten</h1>
-      <input
-        onChange={(e) => setSearch(e.target.value)}
-        type="text"
-        name="search"
-        placeholder="search"
-      />
-      <div>
-        {kittens
-          .filter((kitten) => {
-            return searchMatches(kitten);
-          })
-          .map((kitten) => {
-            return (
-              <div>
-                <p>{kitten.breed}</p>
-                <p>{kitten.description}</p>
-                <p>{kitten.price}</p>
-              </div>
-            );
-          })}
-      </div>
+      <KittensCard key={`${params.id}`} kitten={kitten} />
     </div>
   );
 }

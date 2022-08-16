@@ -10,7 +10,7 @@ export default function Kittens() {
     text = text.toLowerCase();
     if (
       kitten.name.toLowerCase().includes(text) ||
-      kitten.breed.includes(text)
+      kitten.breed.toLowerCase().includes(text)
     ) {
       return true;
     }

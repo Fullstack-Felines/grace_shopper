@@ -5,12 +5,16 @@ export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="kitten-card"
-      onClick={() => {
-        navigate(`${kitten.id}`);
-      }}
-    >
+    <div>
+      <div
+        className="kitten-card"
+        onClick={() => {
+          navigate(`/Kittens/${kitten.id}`);
+        }}
+      >
+        <img src={kitten.img_url} />
+      </div>
+
       <h3>{kitten.name}</h3>
       <p>{kitten.breed}</p>
       <p>{kitten.description}</p>

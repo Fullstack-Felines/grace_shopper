@@ -61,10 +61,7 @@ const App = () => {
         <Route path="/NavBar" element={<NavBar />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route
-          path="/SingleKitten/:id"
-          element={<SingleKitten kittens={kittens} setKittens={setKittens} />}
-        />
+        <Route path="/Kittens/:id" element={<SingleKitten />} />
       </Routes>
       <Footer />
     </div>

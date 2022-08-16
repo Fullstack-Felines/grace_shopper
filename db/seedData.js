@@ -6,23 +6,26 @@ const kittens = [
     breed: "short hair",
     description: "Sweetest boi",
     price: 4000,
-    img_url: "http.cat",
+    img_url:
+      "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672899/pexels-alex-bargain-1472999_dvhhtl.jpg",
     available: true,
   },
   {
     name: "Garfield",
-    breed: "Orange Tabby",
+    breed: "Tabby",
     description: "Looooves lasagna",
     price: 20,
-    img_url: "http.cat",
+    img_url:
+      "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672812/My_project_1_aq61ly.jpg",
     available: true,
   },
   {
-    name: "Carl Amelia",
+    name: "Carl",
     breed: "Calico",
     description: "Real cool calico cat",
     price: 20000,
-    img_url: "http.cat",
+    img_url:
+      "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672999/pexels-mihai-bent%CC%A6a-9796799_1_tpn4o3.jpg",
     available: false,
   },
 ];
