@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useKittens from "../Hooks/useKittens";
 
-export default function KittensCard() {
-  const { kittens } = useKittens();
+export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
 
   return (
     <div
       className="kitten-card"
       onClick={() => {
-        navigate(`${kittens.id}`);
+        navigate(`${kitten.id}`);
       }}
     >
-      <h3>{kittens.name}</h3>
-      <p>{kittens.breed}</p>
-      <p>{kittens.description}</p>
-      <p>{kittens.price}</p>
+      <h3>{kitten.name}</h3>
+      <p>{kitten.breed}</p>
+      <p>{kitten.description}</p>
+      <p>{kitten.price}</p>
     </div>
   );
 }
