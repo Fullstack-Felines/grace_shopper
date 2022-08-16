@@ -24,6 +24,20 @@ cartRouter.get("/:id", async (req, res, next) => {
   }
 });
 
+//get a cart by customer id
+cartRouter.get("/:userid", async (req, res, next) => {
+  try {
+    const singleCart = await prisma.cart.findUnique({
+      where: {
+        customer_id: +req.params.userid,
+      },
+    });
+    res.send(singleCart);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //create a new cart
 cartRouter.post("/", async (req, res, next) => {
   try {

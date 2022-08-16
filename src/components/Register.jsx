@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { registerUser } from "../api/authorization";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import useCart from "../Hooks/useCart";
+import { createCart } from "../api/cart";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -13,6 +15,7 @@ export default function Register() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const { user, setUser } = useAuth();
+  const { cart, setCart } = useCart();
   return (
     <div>
       <h3>REGISTER HERE:</h3>
@@ -30,6 +33,9 @@ export default function Register() {
           if (result.user) {
             alert("You are registered!");
             setUser(result.user);
+
+            const newCart = await createCart(user.id, 0, true, user.address);
+            setCart(newCart);
             navigate("/");
             window.location.reload();
           } else {
