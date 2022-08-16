@@ -1,6 +1,20 @@
 const ordersRouter = require("express").Router();
 const prisma = require("../db/prisma");
 
+//get all orders by cart id
+ordersRouter.get("/cartOrder/:id", async (req, res, next) => {
+  try {
+    const orders = await prisma.orders.findMany({
+      where: {
+        cart_id: +req.params.id,
+      },
+    });
+    res.send(orders);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //get order by id
 ordersRouter.get("/:id", async (req, res, next) => {
   try {
