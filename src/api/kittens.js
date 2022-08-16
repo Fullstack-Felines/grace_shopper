@@ -5,7 +5,7 @@ export const fetchAllKittens = async () => {
 };
 
 export const fetchKittenById = async (id) => {
-  const response = await fetch(`api/kittens/${id}`, {
+  const response = await fetch(`/api/kittens/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
