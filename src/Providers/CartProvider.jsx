@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { createCart } from "../api/cart";
 import CartContext from "../Context/CartContext";
+import useAuth from "../Hooks";
 
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState({});
+  const { user } = useAuth();
 
   useEffect(() => {
-    const getCart = async () => {
-      // const guestCart = await createCart(10000000, 0, true, "");
-      // setCart(guestCart);
-      console.log("Cart Provide needs work");
-    };
-    getCart(); //NEEDS CART ID
-  }, []);
+    if (user.id) {
+      //check local storage
+      if (localStorage.getItem("cart")) {
+        const cart = localStorage.getItem("cart");
+      } else {
+        //if it doesn't exist yet, we'll create a cart
+      }
+
+      //if is in local storage, set user's cart to local storage cart
+    }
+  }, [user]);
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>

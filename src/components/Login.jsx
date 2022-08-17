@@ -11,7 +11,6 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const { user, setUser } = useAuth();
-  const { cart, setCart } = useCart();
 
   return (
     <div>
@@ -24,8 +23,6 @@ export default function Login() {
           if (result.user) {
             alert("You are now logged in!");
             setUser(result.user);
-            const userCart = await fetchCartByUserId(result.user.id);
-            setCart(userCart);
             navigate("/");
             window.location.reload();
           } else {
