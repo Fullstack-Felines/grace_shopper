@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authRouter = require("express").Router();
 const prisma = require("../db/prisma");
-const { JWT_SECRET } = require("../secrets");
+const { JWT_SECRET } = process.env;
 const { authRequired } = require("./utils");
 const SALT_ROUNDS = 10;
 
