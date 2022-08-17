@@ -2,7 +2,7 @@
 const express = require("express");
 const server = express();
 const cookieParser = require("cookie-parser");
-const { COOKIE_SECRET } = require("./secrets");
+const { COOKIE_SECRET } = process.env;
 
 const { authRequired } = require("./api/utils");
 

@@ -22,10 +22,10 @@ apiRouter.use("/kittens", kittensRouter);
 const authRouter = require("./authorization");
 apiRouter.use("/authorization", authRouter);
 
-const cartRouter = require("./cart");
-apiRouter.use("/cart", cartRouter);
-
 const ordersRouter = require("./orders");
 apiRouter.use("/orders", ordersRouter);
+
+const orders_kittenRouter = require("./orders_kitten");
+apiRouter.use("/orders_kitten", orders_kittenRouter);
 
 module.exports = apiRouter;

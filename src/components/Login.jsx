@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/authorization";
-import { fetchCartByUserId } from "../api/cart";
+import { fetchCartByUserId } from "../api/orders";
 import { useCart } from "../Hooks";
 import useAuth from "../Hooks/useAuth";
 

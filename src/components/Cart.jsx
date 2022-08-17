@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCart } from "../Hooks";
-import { fetchOrdersByCart } from "../api/orders";
+import { fetchOrdersByCart } from "../api/orders_kitten";
 
 export default function Cart() {
   const { cart } = useCart();
