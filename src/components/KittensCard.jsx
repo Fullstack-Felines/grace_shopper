@@ -17,13 +17,12 @@ export default function KittensCard({ kitten }) {
       >
         <img src={kitten.img_url} />
       </div>
-
       <h3>{kitten.name}</h3>
       <p>{kitten.breed}</p>
       <p>{kitten.description}</p>
-      <p>{kitten.price}</p>
+      <p>${kitten.price}</p>
       <button
-        onCLick={() => {
+        onClick={() => {
           const order = createOrder(kitten.id, cart.id);
         }}
       >
