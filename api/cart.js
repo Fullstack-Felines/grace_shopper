@@ -1,6 +1,7 @@
 const cartRouter = require("express").Router();
 const prisma = require("../db/prisma");
 
+// gets all carts
 cartRouter.get("/", async (req, res, next) => {
   try {
     const cart = await prisma.cart.findMany();
@@ -10,12 +11,21 @@ cartRouter.get("/", async (req, res, next) => {
   }
 });
 
-//get a cart by id
+// get a cart by id
+// where isActive === true
+// include the kittens
 cartRouter.get("/:id", async (req, res, next) => {
   try {
     const singleCart = await prisma.cart.findUnique({
       where: {
         id: +req.params.id,
+      },
+      include: {
+        orders: {
+          include: {
+            kittens: true,
+          },
+        },
       },
     });
     res.send(singleCart);
@@ -53,6 +63,9 @@ cartRouter.post("/", async (req, res, next) => {
 });
 
 //update cart
+// purchase a cart
+// use authRequired middleware func
+// deconstruct params off the req.body before sending to prisma
 cartRouter.patch("/:id", async (req, res, next) => {
   try {
     const cartId = +req.params.id;

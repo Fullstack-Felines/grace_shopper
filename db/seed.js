@@ -11,6 +11,7 @@ const dropTables = async () => {
   console.log("Tables Dropped!!!!");
 };
 
+// Reference the correct changed table names here
 const createTables = async () => {
   console.log("Creating tables!!!!");
   await prisma.$executeRaw`

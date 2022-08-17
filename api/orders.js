@@ -6,7 +6,7 @@ ordersRouter.get("/cartOrder/:id", async (req, res, next) => {
   try {
     const orders = await prisma.orders.findMany({
       where: {
-        cart_id: +req.params.id,
+        id: +req.params.id,
       },
     });
     res.send(orders);
@@ -29,7 +29,7 @@ ordersRouter.get("/:id", async (req, res, next) => {
   }
 });
 
-//create a new order
+// adding a kitten to the cart
 ordersRouter.post("/", async (req, res, next) => {
   try {
     const { kitten_id, cart_id } = req.body;
