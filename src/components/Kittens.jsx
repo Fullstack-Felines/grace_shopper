@@ -8,7 +8,6 @@ export default function Kittens() {
   const [searchText, setSearchText] = useState("");
   const [price, setPrice] = useState({});
   const [sortState, setSortState] = useState("");
-  const sort = kittens.sort;
 
   function searchMatches(kitten, text) {
     text = text.toLowerCase();
@@ -39,12 +38,31 @@ export default function Kittens() {
   const priceDescending = [...kittens].sort((a, b) => b.price - a.price);
   console.log("PRICE DESCENDING", priceDescending);
 
+  // const sortKittens = (selectEvent) => {
+  //   const options = {
+  //     ascending: [...kittens].sort((a, b) => a.price - b.price),
+  //     descending: [...kittens].sort((a, b) => b.price - a.price),
+  //   };
+  //   setKittens(options[selectEvent.target.value]);
+  // };
+
   // return (
   //   <div>
-  //     {priceAscending.map((employee) => {
+  //     <select onChange={sortKittens}>
+  //       <option value="ascending">Ascending</option>
+  //       <option value="descending">Descending</option>
+  //     </select>
+
+  //     {kittens.map((kitten, index) => (
+  //       <div key={index}>{kitten}</div>
+  //     ))}
+
+  //     {kittens.map((kitten, index) => {
+  //       const kittenNum = `${kitten}${index}`;
   //       return (
-  //         <div key={kittens.price}>
-  //           <KittensCard />
+  //         <div key={index}>
+  //           {kitten}
+  //           {kittenNum}
   //         </div>
   //       );
   //     })}
@@ -59,17 +77,6 @@ export default function Kittens() {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
-
-        <select
-          defaultValue={"Default"}
-          onChange={(e) => setSortState(e.target.value)}
-        >
-          <option value="DEFAULT" disabled>
-            None
-          </option>
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
-        </select>
       </div>
       {kittensToDisplay.map((kitten, index) => {
         return <KittensCard key={`${kitten.id}`} kitten={kitten} />;
