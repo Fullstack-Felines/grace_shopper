@@ -1,4 +1,5 @@
 import React from "react";
+import AdoptedKittens from "./AdoptedKittens";
 
 export default function AboutUs() {
   return (
@@ -25,6 +26,7 @@ export default function AboutUs() {
         <li>Nico</li>
         <li>Jayden</li>
       </ul>
+      <AdoptedKittens />
     </div>
   );
 }
