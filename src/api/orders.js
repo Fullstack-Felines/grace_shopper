@@ -1,23 +1,5 @@
-export const fetchAllOrders = async () => {
-  const response = await fetch(`/api/orders`);
-  const result = await response.json();
-  return result;
-};
-
-export const fetchOrdersByCart = async (id) => {
-  const response = await fetch(`/api/orders/cartOrder/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const result = await response.json();
-  console.log("Result from fetchOrdersByCart frontend API", result);
-  return result;
-};
-
-export const fetchOrderById = async (id) => {
-  const response = await fetch(`api/orders/${id}`, {
+export const fetchCartById = async (cartid) => {
+  const response = await fetch(`api/orders/${cartid}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -27,44 +9,54 @@ export const fetchOrderById = async (id) => {
   return result;
 };
 
-export const createOrder = async ({ kitten_id, cart_id }) => {
-  const response = await fetch(`/api/orders/`, {
+export const fetchCartByUserId = async (userid) => {
+  const response = await fetch(`api/orders/userCart/${userid}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
+};
+
+export const createCart = async ({
+  customer_id,
+  total_amount,
+  is_active,
+  shipping_address,
+}) => {
+  const response = await fetch(`api/orders`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      kitten_id,
-      cart_id,
+      customer_id,
+      total_amount,
+      is_active,
+      shipping_address,
     }),
   });
   const result = await response.json();
   return result;
 };
 
-// addingToCart
-export const updateOrders = async (orderId, { kitten_id, cart_id }) => {
-  const response = await fetch(`/api/orders/${orderId}`, {
+export const updateCart = async (
+  cartId,
+  { customer_id, total_amount, is_active, shipping_address }
+) => {
+  const response = await fetch(`api/orders/${cartId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      kitten_id,
-      cart_id,
+      customer_id,
+      total_amount,
+      is_active,
+      shipping_address,
     }),
-  });
-  const result = await response.json();
-  return result;
-};
-
-// removingFromCart
-export const deleteOrders = async (orderId) => {
-  const response = await fetch(`/api/orders/${orderId}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
   });
   const result = await response.json();
   return result;

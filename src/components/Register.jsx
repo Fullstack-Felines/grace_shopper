@@ -3,7 +3,7 @@ import { registerUser } from "../api/authorization";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useCart from "../Hooks/useCart";
-import { createCart } from "../api/cart";
+import { createCart } from "../api/orders";
 
 export default function Register() {
   const [username, setUsername] = useState("");
