@@ -23,15 +23,16 @@ export default function KittensCard({ kitten }) {
       <p>{kitten.description}</p>
       <p>${kitten.price}</p>
 
-      <button
-        disabled={!kitten.available}
-        onClick={() => {
-          // const order = createOrder(kitten.id, cart.id);
-          // addToCart function from useCart
-        }}
-      >
-        Add to Cart
-      </button>
+      {kitten.available ? (
+        <button
+          onClick={() => {
+            // const order = createOrder(kitten.id, cart.id);
+            // addToCart function from useCart
+          }}
+        >
+          Add to Cart
+        </button>
+      ) : null}
     </div>
   );
 }
