@@ -2,6 +2,7 @@
 const express = require("express");
 const server = express();
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
 const { COOKIE_SECRET } = process.env;
 
 const { authRequired } = require("./api/utils");
