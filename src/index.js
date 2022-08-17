@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 // import "./style/index.css";
 import KittensProvider from "./Providers/KittensProvider";
 import AuthProvider from "./Providers/AuthProvider";
+import CartProvider from "./Providers/CartProvider";
 
 // ReactDOM.render(<App />, document.getElementById("root"));
 
@@ -15,11 +16,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <KittensProvider>
-          <App />
-        </KittensProvider>
-      </AuthProvider>
+      <CartProvider>
+        <AuthProvider>
+          <KittensProvider>
+            <App />
+          </KittensProvider>
+        </AuthProvider>
+      </CartProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

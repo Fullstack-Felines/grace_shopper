@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { logoutUser } from "../api/authorization";
-// import { useCart } from "../Hooks";
+import { useCart } from "../Hooks";
 
 export default function NavBar() {
   const { user, setUser } = useAuth();
-  // const { cart, setCart } = useCart();
+  const { setCart, makeGuestCart } = useCart();
+  // const guestCart = makeGuestCart();
+
   return (
     <div>
       <nav>
@@ -27,7 +29,7 @@ export default function NavBar() {
             onClick={async () => {
               const result = await logoutUser();
               setUser({});
-              // setCart({});
+              // setCart(guestCart);
               console.log("User state after logout:", user);
             }}
           >

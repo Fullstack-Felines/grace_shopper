@@ -25,7 +25,7 @@ cartRouter.get("/:id", async (req, res, next) => {
 });
 
 //get a cart by customer id
-cartRouter.get("/:userid", async (req, res, next) => {
+cartRouter.get("/userCart/:userid", async (req, res, next) => {
   try {
     const singleCart = await prisma.cart.findUnique({
       where: {
@@ -41,6 +41,7 @@ cartRouter.get("/:userid", async (req, res, next) => {
 //create a new cart
 cartRouter.post("/", async (req, res, next) => {
   try {
+    console.log("Backend creatingcart body:", req.body);
     const { customer_id, total_amount, is_active, shipping_address } = req.body;
     const createdCart = await prisma.cart.create({
       data: { customer_id, total_amount, is_active, shipping_address },
