@@ -1,5 +1,3 @@
-// const bcrypt = require("bcrypt");
-
 const kittens = [
   {
     name: "Henry",
@@ -27,6 +25,33 @@ const kittens = [
     img_url:
       "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672999/pexels-mihai-bent%CC%A6a-9796799_1_tpn4o3.jpg",
     available: false,
+  },
+  {
+    name: "Toby",
+    breed: "Tabby",
+    description: "Super chill tabby named Toby",
+    price: 800,
+    img_url:
+      "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672999/pexels-mihai-bent%CC%A6a-9796799_1_tpn4o3.jpg",
+    available: true,
+  },
+  {
+    name: "Mello",
+    breed: "Siamese",
+    description: "Sweet lil kitty",
+    price: 9000,
+    img_url:
+      "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672999/pexels-mihai-bent%CC%A6a-9796799_1_tpn4o3.jpg",
+    available: true,
+  },
+  {
+    name: "Sobu",
+    breed: "Maine Coon",
+    description: "Super hairy boy",
+    price: 30000,
+    img_url:
+      "https://res.cloudinary.com/dkmoq49jf/image/upload/v1660672999/pexels-mihai-bent%CC%A6a-9796799_1_tpn4o3.jpg",
+    available: true,
   },
 ];
 
@@ -65,14 +90,7 @@ const customers = [
   },
 ];
 
-/*
-customer_id INTEGER REFERENCES customers(id),
-    total_amount INTEGER NOT NULL,
-    is_active BOOLEAN DEFAULT true,
-    shipping_address VARCHAR(255) NOT NULL
-  );`;
-*/
-const cart = [
+const orders = [
   {
     customer_id: 1,
     total_amount: 0,
@@ -81,19 +99,13 @@ const cart = [
   },
 ];
 
-/*
-      id SERIAL PRIMARY KEY,
-      cart_id INTEGER REFERENCES cart(id),
-      kitten_id INTEGER REFERENCES kittens(id)
-*/
-
-const orders = [
+const orders_kitten = [
   {
-    cart_id: 1,
+    order_id: 1,
     kitten_id: 1,
   },
 
-  { cart_id: 1, kitten_id: 2 },
+  { order_id: 1, kitten_id: 2 },
 ];
 
-module.exports = { kittens, customers, cart, orders };
+module.exports = { kittens, customers, orders, orders_kitten };

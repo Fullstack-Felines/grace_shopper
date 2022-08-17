@@ -11,43 +11,43 @@ datasource db {
 }
 
 model customers {
-  id          Int    @id @default(autoincrement())
-  name        String @db.VarChar(255)
-  address     String @db.VarChar(255)
-  phonenumber String @db.VarChar(255)
-  username    String @unique @db.VarChar(255)
-  password    String @db.VarChar(255)
-  email       String @unique @db.VarChar(255)
-  cart        cart[]
+  id          Int           @id @default(autoincrement())
+  name        String        @db.VarChar(255)
+  address     String        @db.VarChar(255)
+  phonenumber String        @db.VarChar(255)
+  username    String        @unique @db.VarChar(255)
+  password    String        @db.VarChar(255)
+  email       String         @unique @db.VarChar(255)
+  orders      orders[]
 }
 
 model kittens {
-  id          Int      @id @default(autoincrement())
-  name        String   @db.VarChar(255)
-  breed       String   @db.VarChar(255)
-  description String   @db.VarChar(255)
-  price       Int?
-  img_url     String   @db.VarChar(255)
-  available   Boolean? @default(true)
-  orders      orders[]
+  id                  Int                 @id @default(autoincrement())
+  name                String              @db.VarChar(255)
+  breed               String              @db.VarChar(255)
+  description         String              @db.VarChar(255)
+  price               Int
+  img_url             String              @db.VarChar(255)
+  available           Boolean?            @default(true)
+  orders_kitten       orders_kitten[]
 }
 // change to be called orders (a cart is an order that isActive === true)
-model cart {
-  id               Int        @id @default(autoincrement())
-  customer_id      Int?
-  customers        customers? @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  total_amount     Int?
-  is_active        Boolean?   @default(true)
-  shipping_address String     @db.VarChar(255)
-  orders           orders[]
+model orders {
+  id                      Int                   @id @default(autoincrement())
+  customer_id             Int
+  customers               customers?            @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  total_amount            Int
+  is_active               Boolean?              @default(true)
+  shipping_address        String                @db.VarChar(255)
+  orders_kitten           orders_kitten[]
 }
 
 // change to be called orders_kitten
-model orders {
-  id        Int      @id @default(autoincrement())
-  kitten_id Int?
-  cart_id   Int?
-  kittens   kittens? @relation(fields: [kitten_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  cart      cart? @relation(fields: [cart_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+model orders_kitten {
+  id              Int             @id @default(autoincrement())
+  kitten_id       Int
+  order_id        Int
+  kittens         kittens?        @relation(fields: [kitten_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  orders          orders?         @relation(fields: [order_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
