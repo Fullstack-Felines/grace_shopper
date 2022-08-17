@@ -18,4 +18,6 @@ const authRequired = (req, res, next) => {
   next();
 };
 
+// isAdmin
+
 module.exports = { authRequired };

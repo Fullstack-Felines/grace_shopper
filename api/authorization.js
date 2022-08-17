@@ -15,6 +15,7 @@ authRouter.post("/register", async (req, res, next) => {
       where: { username },
     });
     if (checkUser) {
+      // Send and error status?
       res.send({ message: "User already exists!", error: "Invalid username!" });
     }
 
@@ -47,6 +48,7 @@ authRouter.post("/login", async (req, res, next) => {
       },
     });
     if (!user) {
+      // Send error status
       res.send({
         message: "No user by that name exists!",
         error: "Invalid username!",

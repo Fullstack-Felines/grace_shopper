@@ -5,7 +5,7 @@ import { createOrder } from "../api/orders";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const cart = useCart();
+  const { cart } = useCart();
 
   return (
     <div>
@@ -23,7 +23,8 @@ export default function KittensCard({ kitten }) {
       <p>${kitten.price}</p>
       <button
         onClick={() => {
-          const order = createOrder(kitten.id, cart.id);
+          // const order = createOrder(kitten.id, cart.id);
+          // addToCart function from useCart
         }}
       >
         Add to Cart

@@ -29,6 +29,7 @@ export default function NavBar() {
             onClick={async () => {
               const result = await logoutUser();
               setUser({});
+
               // setCart(guestCart);
               console.log("User state after logout:", user);
             }}
