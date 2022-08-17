@@ -27,12 +27,29 @@ export default function Kittens() {
 
   const kittensToDisplay = searchText.length ? filteredKittens : kittens;
 
-  const sortMethods = {
-    none: { method: (a, b) => null },
-    ascending: { method: undefined },
-    descending: { method: (a, b) => (a > b ? -1 : 1) },
-  };
-  console.log(sortMethods);
+  // const priceFilter = () => {
+  //   const ordered = kittens.sort((a, b) => (a.price > b.price ? 1 : -1));
+  //   const lastElement = ordered.pop();
+  //   return ordered.unshift(lastElement);
+  // };
+
+  const priceAscending = [...kittens].sort((a, b) => a.price - b.price);
+  console.log("PRICE ASCENDING", priceAscending);
+
+  const priceDescending = [...kittens].sort((a, b) => b.price - a.price);
+  console.log("PRICE DESCENDING", priceDescending);
+
+  // return (
+  //   <div>
+  //     {priceAscending.map((employee) => {
+  //       return (
+  //         <div key={kittens.price}>
+  //           <KittensCard />
+  //         </div>
+  //       );
+  //     })}
+  //   </div>
+  // );
 
   return (
     <div>
@@ -42,6 +59,7 @@ export default function Kittens() {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
+
         <select
           defaultValue={"Default"}
           onChange={(e) => setSortState(e.target.value)}
@@ -52,11 +70,6 @@ export default function Kittens() {
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
         </select>
-        {/* <ul>
-          {kittens.sort(sortMethods[sortState].method).map((kitten, index) => (
-            <li key={index}>{kitten}</li>
-          ))}
-        </ul> */}
       </div>
       {kittensToDisplay.map((kitten, index) => {
         return <KittensCard key={`${kitten.id}`} kitten={kitten} />;
