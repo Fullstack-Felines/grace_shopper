@@ -31,6 +31,7 @@ export default function Kittens() {
 
   const sortKittens = (selectEvent) => {
     const options = {
+      none: [...kittens],
       ascending: [...kittens].sort((a, b) => a.price - b.price),
       descending: [...kittens].sort((a, b) => b.price - a.price),
     };
@@ -41,6 +42,9 @@ export default function Kittens() {
     <div>
       <label>Sort By Price:</label>
       <select onChange={sortKittens}>
+        <option value="none" selected="selected">
+          None
+        </option>
         <option value="ascending">Ascending</option>
         <option value="descending">Descending</option>
       </select>
