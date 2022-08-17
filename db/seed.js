@@ -1,10 +1,10 @@
 const prisma = require("./prisma");
-const { kittens, customers, cart, orders } = require("./seedData.js");
+const { kittens, customers, orders, orders_kitten } = require("./seedData.js");
 
 const dropTables = async () => {
   console.log("Dropping tables!!!!");
+  await prisma.$executeRaw`DROP TABLE IF EXISTS orders_kitten;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS orders;`;
-  await prisma.$executeRaw`DROP TABLE IF EXISTS cart;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS kittens;`;
   await prisma.$executeRaw`DROP TABLE IF EXISTS customers;`;
 
@@ -38,7 +38,7 @@ const createTables = async () => {
 );`;
 
   await prisma.$executeRaw`
-  CREATE TABLE cart (
+  CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     customer_id INTEGER REFERENCES customers(id),
     total_amount INTEGER NOT NULL,
@@ -47,9 +47,9 @@ const createTables = async () => {
   );`;
 
   await prisma.$executeRaw`
-    CREATE TABLE orders (
+    CREATE TABLE orders_kitten (
       id SERIAL PRIMARY KEY,
-      cart_id INTEGER REFERENCES cart(id),
+      order_id INTEGER REFERENCES orders(id),
       kitten_id INTEGER REFERENCES kittens(id)
   );`;
 
@@ -69,15 +69,17 @@ const seedDb = async () => {
     console.log(createdKitten);
   }
 
-  console.log("creating cart...");
-  for (const cartItems of cart) {
-    const createdCart = await prisma.cart.create({ data: cartItems });
-    console.log(createdCart);
+  //formerly cart
+  console.log("creating orders...");
+  for (const orderItems of orders) {
+    const createdOrder = await prisma.orders.create({ data: orderItems });
+    console.log(createdOrder);
   }
 
-  console.log("creating orders...");
-  for (const order of orders) {
-    const createdOrder = await prisma.orders.create({ data: order });
+  //formerly orders
+  console.log("creating orders_kitten...");
+  for (const order of orders_kitten) {
+    const createdOrder = await prisma.orders_kitten.create({ data: order });
     console.log(createdOrder);
   }
 };
@@ -87,7 +89,6 @@ const initDb = async () => {
     await dropTables();
     await createTables();
     await seedDb();
-    // await alterTables()
   } catch (error) {
     console.error(error);
   } finally {
