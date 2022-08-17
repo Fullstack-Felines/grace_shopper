@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Hooks";
 import { createOrder } from "../api/orders";
+import Kittens from "./Kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
@@ -21,7 +22,9 @@ export default function KittensCard({ kitten }) {
       <p>{kitten.breed}</p>
       <p>{kitten.description}</p>
       <p>${kitten.price}</p>
+
       <button
+        disabled={!kitten.available}
         onClick={() => {
           // const order = createOrder(kitten.id, cart.id);
           // addToCart function from useCart
