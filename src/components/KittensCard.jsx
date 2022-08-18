@@ -10,28 +10,30 @@ export default function KittensCard({ kitten }) {
 
   return (
     <div>
-      <div
-        className="kitten-card"
-        onClick={() => {
-          navigate(`/Kittens/${kitten.id}`);
-        }}
-      >
-        <img src={kitten.img_url} />
-      </div>
-      <h3>{kitten.name}</h3>
-      <p>{kitten.breed}</p>
-      <p>{kitten.description}</p>
-      <p>${kitten.price}.00</p>
-
       {kitten.available ? (
-        <button
-          onClick={() => {
-            // const order = createOrder(kitten.id, cart.id);
-            // addToCart function from useCart
-          }}
-        >
-          Add to Cart
-        </button>
+        <div>
+          <div
+            className="kitten-card"
+            onClick={() => {
+              navigate(`/Kittens/${kitten.id}`);
+            }}
+          >
+            <img src={kitten.img_url} />
+          </div>
+          <h3>{kitten.name}</h3>
+          <p>{kitten.breed}</p>
+          <p>{kitten.description}</p>
+          <p>${kitten.price}.00</p>
+
+          <button
+            onClick={() => {
+              // const order = createOrder(kitten.id, cart.id);
+              // addToCart function from useCart
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       ) : null}
     </div>
   );
