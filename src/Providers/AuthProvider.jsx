@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { fetchMe } from "../api/authorization";
 
 export default function AuthProvider({ children }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ loggedIn: false });
 
   useEffect(() => {
     async function getMe() {
