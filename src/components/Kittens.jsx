@@ -45,8 +45,8 @@ export default function Kittens() {
         <option value="none" selected="selected">
           None
         </option>
-        <option value="ascending">Ascending</option>
-        <option value="descending">Descending</option>
+        <option value="ascending">Low to high</option>
+        <option value="descending">High to low</option>
       </select>
       <div>
         <input
