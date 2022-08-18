@@ -23,12 +23,6 @@ export default function Kittens() {
 
   const kittensToDisplay = searchText.length ? filteredKittens : kittens;
 
-  const priceAscending = [...kittens].sort((a, b) => a.price - b.price);
-  console.log("PRICE ASCENDING", priceAscending);
-
-  const priceDescending = [...kittens].sort((a, b) => b.price - a.price);
-  console.log("PRICE DESCENDING", priceDescending);
-
   const sortKittens = (selectEvent) => {
     const options = {
       none: [...kittens],
