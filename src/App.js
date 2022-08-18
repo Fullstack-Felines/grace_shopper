@@ -23,7 +23,7 @@ import {
 import useKittens from "./Hooks/useKittens";
 import { Route, Routes } from "react-router-dom";
 
-// import "../style/App.css";
+import "./style/index.css";
 
 const App = () => {
   const { kittens, setKittens } = useKittens();
