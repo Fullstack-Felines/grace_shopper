@@ -21,7 +21,7 @@ export default function KittensCard({ kitten }) {
       <h3>{kitten.name}</h3>
       <p>{kitten.breed}</p>
       <p>{kitten.description}</p>
-      <p>${kitten.price}</p>
+      <p>${kitten.price}.00</p>
 
       {kitten.available ? (
         <button
