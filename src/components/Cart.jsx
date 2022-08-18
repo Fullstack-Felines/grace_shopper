@@ -10,19 +10,22 @@ export default function Cart() {
 
   useEffect(() => {
     async function getOrders_kitten(orderId) {
-      const orders = await fetchOrdersByCart(orderId);
-      if (orders.id) {
+      const fetchedOrders = await fetchOrdersByCart(orderId);
+      console.log("fetchedorders", fetchedOrders);
+      //figuring out this fetchedOrders stuff!!!
+
+      if (fetchedOrders.length) {
         console.log("setting orders");
-        setOrders(orders);
+        setOrders(fetchedOrders);
       }
       console.log("orders from cart", orders);
     }
     getOrders_kitten(cart.id);
   }, []);
 
-  useEffect(() => {
-    async function getSubTotal(orders) {}
-  });
+  // useEffect(() => {
+  //   async function getSubTotal(fetchedOrders) {}
+  // });
 
   return (
     <div>
