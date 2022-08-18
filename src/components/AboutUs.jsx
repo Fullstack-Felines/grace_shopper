@@ -43,8 +43,9 @@ export default function AboutUs() {
         when adopting your new lifelong pet.
       </p>
       <h3>Our Team</h3>
-      <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
-        <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0 src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660850269/blank-profile-picture-973460_1280_rexiwo.webp"
+      <div>
+        {/* class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
+        <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0 src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660850269/blank-profile-picture-973460_1280_rexiwo.webp" */}
       </div>
       <AdoptedKittens />
     </div>

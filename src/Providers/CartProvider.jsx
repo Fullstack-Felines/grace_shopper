@@ -50,14 +50,13 @@ export default function CartProvider({ children }) {
         } else {
           // if no cart, make a new cart, insert into local storage, make a cart in db for user
 
-          setCart({
+          const newCart = await createCart({
             customer_id: userID,
             total_amount: 0,
             is_active: true,
             shipping_address: user.address,
           });
-
-          const newCart = await createCart(cart);
+          setCart(newCart);
         }
       };
       checkCart(user.id);

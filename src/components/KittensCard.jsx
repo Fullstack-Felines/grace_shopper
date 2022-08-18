@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Hooks";
-import { createOrder } from "../api/orders";
-import Kittens from "./Kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const { cart } = useCart();
+  const { cart, addKittenToCart } = useCart();
   return (
     <div>
       {kitten.available ? (
@@ -25,8 +23,8 @@ export default function KittensCard({ kitten }) {
           <p>${kitten.price}.00</p>
           <button
             onClick={() => {
-              // const order = createOrder(kitten.id, cart.id);
-              // addToCart function from useCart
+              console.log("cartId in kittensCard", cart.id);
+              addKittenToCart({ cart_id: cart.id, kitten_id: kitten.id });
             }}
           >
             Add to Cart

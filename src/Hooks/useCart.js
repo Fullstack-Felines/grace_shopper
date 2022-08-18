@@ -17,11 +17,11 @@ const useCart = () => {
 
   // removeItemFrom cart
 
-  const addKittenToCart = async (orderID, kittenID) => {
-    console.log("Creating order item:");
-    const orderItem = await createOrder(orderID, kittenID);
-
-    console.log("orderItem from useCart hook", orderItem);
+  const addKittenToCart = async ({ kitten_id }) => {
+    console.log("things from input at kittenToCart", cart.id, kitten_id);
+    console.log("cart from usecart", cart);
+    const orderItem = await createOrder({ order_id: cart.id, kitten_id });
+    console.log(orderItem);
     return orderItem;
   };
 

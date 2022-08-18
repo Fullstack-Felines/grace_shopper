@@ -30,7 +30,7 @@ ordersRouter.get("/:id", async (req, res, next) => {
       },
     });
     if (singleCart) {
-      res.send(singleCart);
+      res.send({ id: singleCart.id, ...singleCart });
     } else {
       res.status(404);
       next({
@@ -54,7 +54,8 @@ ordersRouter.get("/userCart/:userid", async (req, res, next) => {
     });
 
     if (singleCart) {
-      res.send(singleCart);
+      console.log("order id from orders.js backend:", singleCart.id);
+      res.send({ id: singleCart.id, ...singleCart });
     } else {
       res.status(404);
       next({
@@ -76,7 +77,7 @@ ordersRouter.post("/", async (req, res, next) => {
     const createdCart = await prisma.orders.create({
       data: { customer_id, total_amount, is_active, shipping_address },
     });
-    res.send(createdCart);
+    res.send({ id: createdCart.id, ...createdCart });
   } catch (error) {
     next(error);
   }
@@ -95,7 +96,7 @@ ordersRouter.patch("/:id", authRequired, async (req, res, next) => {
       },
       data: { customer_id, total_amount, is_active, shipping_address },
     });
-    res.send(updatedCart);
+    res.send({ id: updatedCart.id, updatedCart });
   } catch (error) {
     next(error);
   }
