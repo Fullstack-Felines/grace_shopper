@@ -43,12 +43,7 @@ export default function AboutUs() {
         when adopting your new lifelong pet.
       </p>
       <h3>Our Team</h3>
-      <ul>
-        <li>Stephan</li>
-        <li>Chani</li>
-        <li>Nico</li>
-        <li>Jayden</li>
-      </ul>
+      <div style="background-color:rgba(0,0,0,0)"></div>
       <AdoptedKittens />
     </div>
   );
