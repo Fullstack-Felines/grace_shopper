@@ -26,7 +26,7 @@ export default function KittensCard({ kitten }) {
       {kitten.available ? (
         <button
           onClick={() => {
-            addKittenToCart(cart.id, kitten.id);
+            // addKittenToCart(cart.id, kitten.id);
           }}
         >
           Add to Cart
