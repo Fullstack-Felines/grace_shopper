@@ -54,7 +54,10 @@ ordersRouter.get("/userCart/:userid", async (req, res, next) => {
     });
 
     if (singleCart) {
-      console.log("order id from orders.js backend:", singleCart.id);
+      console.log(
+        "order id from orders.js backend in FetchCart:",
+        singleCart.id
+      );
       res.send({ id: singleCart.id, ...singleCart });
     } else {
       res.status(404);

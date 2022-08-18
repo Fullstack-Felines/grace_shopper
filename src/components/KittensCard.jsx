@@ -4,7 +4,7 @@ import { useCart } from "../Hooks";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const { cart, addKittenToCart } = useCart();
+  const { addKittenToCart } = useCart();
   return (
     <div>
       {kitten.available ? (
@@ -23,8 +23,7 @@ export default function KittensCard({ kitten }) {
           <p>${kitten.price}.00</p>
           <button
             onClick={() => {
-              console.log("cartId in kittensCard", cart.id);
-              addKittenToCart({ cart_id: cart.id, kitten_id: kitten.id });
+              addKittenToCart({ kitten_id: kitten.id });
             }}
           >
             Add to Cart
