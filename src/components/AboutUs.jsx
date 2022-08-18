@@ -31,16 +31,21 @@ export default function AboutUs() {
       </p>
       <h3>What We Offer</h3>
       <p>
-        Our store has a wide variety of kittens, anything your looking for you
-        can find here! If you have any special requests please contact us!
+        When you adopt an animal from Fullstack Felines, you save a life and a
+        space opens up which will welcome another great dog or cat and save its
+        life. In addition, besides the obvious advantage of saving a life you
+        also get a chance to find a companion who is a good match for your
+        personality and lifestyle. You will work with trained and experienced
+        adoption counselors who are familiar with the animals and will help you
+        to choose the best pet for your particular situation. We get a
+        tremendous variety of animals: purebreds, mixed breeds, all ages, sizes,
+        colors, and personalities. This will allow you to have the most options
+        when adopting your new lifelong pet.
       </p>
       <h3>Our Team</h3>
-      <ul>
-        <li>Stephan</li>
-        <li>Chani</li>
-        <li>Nico</li>
-        <li>Jayden</li>
-      </ul>
+      <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
+        <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0 src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660850269/blank-profile-picture-973460_1280_rexiwo.webp"
+      </div>
       <AdoptedKittens />
     </div>
   );

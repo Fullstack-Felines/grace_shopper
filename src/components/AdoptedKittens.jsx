@@ -23,8 +23,25 @@ export default function AdoptedKittens() {
     <div>
       <h2>Recent Adoptions</h2>
       {AdoptedKittensToDisplay.map((kittens) => {
-        return <KittensCard key={`${kittens.id}`} kitten={kittens} />;
+        return (
+          <div>
+            <div
+              className="kitten-card"
+              onClick={() => {
+                navigate(`/Kittens/${kittens.id}`);
+              }}
+            >
+              <img src={kittens.img_url} />
+            </div>
+            <h3>{kittens.name}</h3>
+            <p>{kittens.breed}</p>
+            <p>{kittens.description}</p>
+            <p>${kittens.price}.00</p>
+          </div>
+        );
       })}
     </div>
   );
 }
+
+// return <KittensCard key={`${kittens.id}`} kitten={kittens} />;
