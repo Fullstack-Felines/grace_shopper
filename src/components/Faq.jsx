@@ -49,37 +49,6 @@ export default function Faq() {
         going well, we love getting calls just to know how our “alumni” are
         doing.
       </p>
-      <h5>DO YOU SHIP OVERSEAS?</h5>
-      <p>
-        Pet Travel Store ships all over the world. We will recommend the best
-        service to provide the quickest and safest delivery to you.
-      </p>
-      <h5>CAN I SHIP TO A DIFFERENT LOCATION?</h5>
-      <p>
-        We will ship your purchase to any location you specify. Follow the
-        instructions when you CHECK OUT.
-      </p>
-      <h5>HOW CAN I CHECK ON MY ORDER?</h5>
-      <p>
-        You can check on your order status simply by sending an inquiry to
-        custsvc@pettravelstore.com. We will respond promptly with complete
-        information on the status of your shipment. Additionally, you can log
-        into your account and find tracking information for your order. You can
-        also go to www.FedEx.com and track your order with the tracking number.
-      </p>
-      <h5>HOW CAN I CANCEL AN ORDER?</h5>
-      <p>
-        Orders for items that have not shipped can be cancelled by sending a
-        notice to custsvc@pettravelstore.com. If the item is already in the
-        mail, you will need to follow our return policy.
-      </p>
-      <h5>WHAT IF I NEED TO RETURN AN ITEM?</h5>
-      <p>
-        Pet Travel Store wants you to be satisfied with your order. If you
-        receive an item that is broken, does not meet your expectations, or is
-        the wrong size, contact custsvc@pettravelstore.com. Please read our our
-        return policy.
-      </p>
     </div>
   );
 }

@@ -11,20 +11,11 @@ export default function Home() {
       <Link to="/Kittens">
         <img src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660336580/oscar-marie-_SeJeTqSbLw-unsplash_qkcvn7.jpg" />
       </Link>
+
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quasi
-        non, sint perferendis ab in facilis deleniti, at, natus cupiditate
-        possimus quia minima aliquid dolor vero adipisci! Magni, sit!
-        Consequatur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Sunt quasi non, sint perferendis ab in facilis deleniti, at, natus
-        cupiditate possimus quia minima aliquid dolor vero adipisci! Magni, sit!
-        Consequatur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Sunt quasi non, sint perferendis ab in facilis deleniti, at, natus
-        cupiditate possimus quia minima aliquid dolor vero adipisci! Magni, sit!
-        Consequatur? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Sunt quasi non, sint perferendis ab in facilis deleniti, at, natus
-        cupiditate possimus quia minima aliquid dolor vero adipisci! Magni, sit!
-        Consequatur?
+        “Every day with every connection, Fullstack Feline’s passionate
+        associates help bring pet parents closer to their pets so they can live
+        more fulfilled lives.”
       </p>
     </div>
   );
