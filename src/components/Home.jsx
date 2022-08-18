@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const { user } = useAuth();
-  console.log("user", user);
+  console.log("user from home", user);
   return (
     <div>
       <h1>Welcome to Fullstack Felines</h1>

@@ -22,7 +22,7 @@ ordersRouter.get("/:id", async (req, res, next) => {
         id: +req.params.id,
       },
       include: {
-        orders: {
+        orders_kitten: {
           include: {
             kittens: true,
           },
@@ -43,7 +43,17 @@ ordersRouter.get("/userCart/:userid", async (req, res, next) => {
         customer_id: +req.params.userid,
       },
     });
-    res.send(singleCart);
+
+    if (singleCart) {
+      res.send(singleCart);
+    } else {
+      res.status(404);
+      next({
+        error: "not found",
+        message: "This cart does not exist",
+        name: "There is no cart for our kittens",
+      });
+    }
   } catch (error) {
     next(error);
   }

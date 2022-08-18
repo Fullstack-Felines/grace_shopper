@@ -56,5 +56,16 @@ const handle = server.listen(PORT, async () => {
   }
 });
 
+server.use((error, req, res, next) => {
+  if (error.status) {
+    res.status(error.status);
+  }
+  res.send({
+    error: error.error,
+    name: error.name,
+    message: error.message,
+  });
+});
+
 // export server and handle for routes/*.test.js
 module.exports = { server, handle };
