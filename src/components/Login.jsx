@@ -22,7 +22,7 @@ export default function Login() {
 
           if (result.user) {
             alert("You are now logged in!");
-            setUser(result.user);
+            setUser({ loggedIn: true, ...result.user });
             navigate("/");
             window.location.reload();
           } else {

@@ -6,16 +6,15 @@ export default function Cart() {
   const { cart } = useCart();
   const [orders, setOrders] = useState([]);
   const [subTotal, setSubTotal] = useState([]);
-
-  console.log("CartID from cart component:", cart.id);
+  console.log("cart from cart", cart);
 
   useEffect(() => {
-    async function getOrders(cartId) {
-      const orders = await fetchOrdersByCart(cartId);
+    async function getOrders_kitten(orderId) {
+      const orders = await fetchOrdersByCart(orderId);
       setOrders(orders);
-      console.log("ORDERS", orders);
+      console.log("orders from cart", orders);
     }
-    getOrders(cart.id);
+    getOrders_kitten(cart.id);
   }, []);
 
   useEffect(() => {
@@ -26,9 +25,10 @@ export default function Cart() {
     <div>
       <h1>Cart</h1>
       <div className="orderSummary">
-        {orders.map((order, index) => {
+        {orders}
+        {/* {orders.map((order, index) => {
           return <OrderCard key={`${order.id}`} order={order} />;
-        })}
+        })} */}
       </div>
 
       <div>

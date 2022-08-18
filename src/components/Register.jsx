@@ -31,7 +31,7 @@ export default function Register() {
           );
           if (result.user) {
             alert("You are registered!");
-            setUser(result.user);
+            setUser({ loggedIn: true, ...result.user });
             navigate("/");
             window.location.reload();
           } else {

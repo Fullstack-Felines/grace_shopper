@@ -1,23 +1,22 @@
 export const fetchAllOrders = async () => {
-  const response = await fetch(`/api/orders`);
+  const response = await fetch(`/api/orders_kitten`);
   const result = await response.json();
   return result;
 };
 
 export const fetchOrdersByCart = async (id) => {
-  const response = await fetch(`/api/orders/cartOrder/${id}`, {
+  const response = await fetch(`/api/orders_kitten/cartOrder/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
   const result = await response.json();
-  console.log("Result from fetchOrdersByCart frontend API", result);
   return result;
 };
 
 export const fetchOrderById = async (id) => {
-  const response = await fetch(`api/orders/${id}`, {
+  const response = await fetch(`api/orders_kitten/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -28,7 +27,7 @@ export const fetchOrderById = async (id) => {
 };
 
 export const createOrder = async ({ kitten_id, cart_id }) => {
-  const response = await fetch(`/api/orders/`, {
+  const response = await fetch(`/api/orders_kitten/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +43,7 @@ export const createOrder = async ({ kitten_id, cart_id }) => {
 
 // addingToCart
 export const updateOrders = async (orderId, { kitten_id, cart_id }) => {
-  const response = await fetch(`/api/orders/${orderId}`, {
+  const response = await fetch(`/api/orders_kitten/${orderId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -60,7 +59,7 @@ export const updateOrders = async (orderId, { kitten_id, cart_id }) => {
 
 // removingFromCart
 export const deleteOrders = async (orderId) => {
-  const response = await fetch(`/api/orders/${orderId}`, {
+  const response = await fetch(`/api/orders_kitten/${orderId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
