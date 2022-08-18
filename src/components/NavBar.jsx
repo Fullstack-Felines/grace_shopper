@@ -28,7 +28,7 @@ export default function NavBar() {
           <button
             onClick={async () => {
               const result = await logoutUser();
-              setUser({});
+              setUser({ loggedIn: false });
 
               // setCart(guestCart);
               console.log("User state after logout:", user);
