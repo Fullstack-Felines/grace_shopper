@@ -29,7 +29,16 @@ ordersRouter.get("/:id", async (req, res, next) => {
         },
       },
     });
-    res.send(singleCart);
+    if (singleCart) {
+      res.send(singleCart);
+    } else {
+      res.status(404);
+      next({
+        error: "not found",
+        message: "This cart does not exist",
+        name: "There is no kitten for our cart",
+      });
+    }
   } catch (error) {
     next(error);
   }

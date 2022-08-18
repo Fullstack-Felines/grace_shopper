@@ -5,12 +5,15 @@ import useAuth from "../Hooks/useAuth";
 import { fetchCartByUserId } from "../api/orders";
 
 export default function CartProvider({ children }) {
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState({
+    customer_id: 0,
+    total_amount: 0,
+    is_active: true,
+    shipping_address: "No Address",
+  });
   const { user } = useAuth();
-  console.log("1st print user from cartProvider", user);
 
   useEffect(() => {
-    console.log("user from cartProvider", user);
     if (!user) {
       //if is in local storage, set user's cart to local storage cart
       if (localStorage.getItem("cart")) {
@@ -18,7 +21,15 @@ export default function CartProvider({ children }) {
         setCart(guestcart);
       } else {
         //if it doesn't exist yet, we'll create a cart
-        localStorage.setItem("cart", JSON.stringify({}));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify({
+            customer_id: 0,
+            total_amount: 0,
+            is_active: true,
+            shipping_address: "No Address",
+          })
+        );
 
         setCart({
           customer_id: 0,
@@ -33,7 +44,7 @@ export default function CartProvider({ children }) {
       const checkCart = async (userID) => {
         const usercart = await fetchCartByUserId(userID);
         //check to see if we got an actual result
-        console.log("usercart from cartProvider", usercart);
+
         if (usercart.customer_id) {
           setCart(usercart);
         } else {

@@ -32,9 +32,9 @@ orders_kittenRouter.get("/:id", async (req, res, next) => {
 // adding a kitten to the cart
 orders_kittenRouter.post("/", async (req, res, next) => {
   try {
-    const { kitten_id, cart_id } = req.body;
+    const { kitten_id, order_id } = req.body;
     const createdOrder = await prisma.orders_kitten.create({
-      data: { kitten_id, cart_id },
+      data: { kitten_id, order_id },
     });
     res.send(createdOrder);
   } catch (error) {
