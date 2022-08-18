@@ -6,8 +6,7 @@ import Kittens from "./Kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const { cart, addKittenToCart } = useCart();
-
+  const { cart } = useCart();
   return (
     <div>
       {kitten.available ? (
@@ -24,15 +23,15 @@ export default function KittensCard({ kitten }) {
           <p>{kitten.breed}</p>
           <p>{kitten.description}</p>
           <p>${kitten.price}.00</p>
-
-      {kitten.available ? (
-        <button
-          onClick={() => {
-            // addKittenToCart(cart.id, kitten.id);
-          }}
-        >
-          Add to Cart
-        </button>
+          <button
+            onClick={() => {
+              // const order = createOrder(kitten.id, cart.id);
+              // addToCart function from useCart
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       ) : null}
     </div>
   );
