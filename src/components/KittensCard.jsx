@@ -6,7 +6,7 @@ import Kittens from "./Kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const { cart } = useCart();
+  const { cart, addKittenToCart } = useCart();
 
   return (
     <div>
@@ -26,8 +26,7 @@ export default function KittensCard({ kitten }) {
       {kitten.available ? (
         <button
           onClick={() => {
-            // const order = createOrder(kitten.id, cart.id);
-            // addToCart function from useCart
+            addKittenToCart(cart.id, kitten.id);
           }}
         >
           Add to Cart

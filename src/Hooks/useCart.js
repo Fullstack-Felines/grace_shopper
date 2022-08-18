@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CartContext from "../Context/CartContext";
-import { createCart } from "../api/orders";
+import { createOrder } from "../api/orders_kitten";
 
 const useCart = () => {
   // bring in authContext
@@ -17,7 +17,15 @@ const useCart = () => {
 
   // removeItemFrom cart
 
-  return { cart, setCart };
+  const addKittenToCart = async (orderID, kittenID) => {
+    console.log("Creating order item:");
+    const orderItem = await createOrder(orderID, kittenID);
+
+    console.log("orderItem from useCart hook", orderItem);
+    return orderItem;
+  };
+
+  return { cart, setCart, addKittenToCart };
 };
 
 export default useCart;

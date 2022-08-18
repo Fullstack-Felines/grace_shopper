@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import fetchKittenById from "../api/kittens";
 
-const OrderCard = ({ order }) => {
+const OrderCard = ({ orders_kitten }) => {
   const [kitten, setKitten] = useState({});
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const OrderCard = ({ order }) => {
       const kitten = await fetchKittenById(kittenId);
       setKitten(kitten);
     }
-    getKitten(order.kitten_id);
+    getKitten(orders_kitten.kitten_id);
   }, []);
 
   return <div>getting things done still</div>;

@@ -11,7 +11,10 @@ export default function Cart() {
   useEffect(() => {
     async function getOrders_kitten(orderId) {
       const orders = await fetchOrdersByCart(orderId);
-      setOrders(orders);
+      if (orders.id) {
+        console.log("setting orders");
+        setOrders(orders);
+      }
       console.log("orders from cart", orders);
     }
     getOrders_kitten(cart.id);
