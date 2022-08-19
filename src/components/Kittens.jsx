@@ -51,7 +51,9 @@ export default function Kittens() {
         {kittensToDisplay.map((kitten, index) => {
           return (
             <div>
-              <KittensCard key={`${kitten.id}`} kitten={kitten} />{" "}
+              {kitten.available ? (
+                <KittensCard key={`${kitten.id}`} kitten={kitten} />
+              ) : null}
             </div>
           );
         })}
