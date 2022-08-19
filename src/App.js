@@ -53,7 +53,7 @@ const App = () => {
   // <p>API Status: {APIHealth}</p> */}
 
   return (
-    <div className="app-container">
+    <div class="bg-pink">
       <NavBar />
       <Routes>
         <Route path="/AboutUs" element={<AboutUs />} />
