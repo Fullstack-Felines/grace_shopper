@@ -13,11 +13,11 @@ export default function Login() {
   const { user, setUser } = useAuth();
 
   return (
-    <div class="flex flex-wrap min-h-screen w-full content-center justify-center py-10">
+    <div class="flex flex-wrap min-h-screen content-center justify-center py-10">
       <div class="flex shadow-md">
-        <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white">
+        <div class="pt-16 pr-8 pb-16 pl-8 flex flex-wrap content-center justify-center rounded-l-md bg-white">
           <div class="w-72">
-            <h2 class="text-xl font-semibold text-brass">LOGIN HERE</h2>
+            <h2 class="text-xl font-semibold text-brass">Welcome back</h2>
             <small class="text-brown">
               Welcome back! Please enter your details
             </small>
@@ -76,9 +76,9 @@ export default function Login() {
             </form>
           </div>
         </div>
-        <div class="flex flex-wrap content-center justify-center rounded-r-md">
+        <div class="flex flex-wrap justify-center rounded-r-md">
           <img
-            class="w-64 bg-center bg-no-repeat bg-cover rounded-r-md"
+            class="w-80 bg-center bg-no-repeat bg-cover rounded-r-md opacity-90"
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660944160/IMG_20180202_165400_965_u9nrgy.jpg"
           />
         </div>
