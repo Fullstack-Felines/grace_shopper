@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <h1>Welcome to Fullstack Felines</h1>
       <Link to="/Kittens">
-        <img src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660336580/oscar-marie-_SeJeTqSbLw-unsplash_qkcvn7.jpg" />
+        <img src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660859246/1095136_fcxhhr.jpg" />
       </Link>
 
       <p>
