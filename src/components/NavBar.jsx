@@ -11,7 +11,7 @@ export default function NavBar() {
 
   return (
     <div>
-      <nav>
+      <nav class="bg-red flex justify-evenly px-6 content-center">
         <Link to="/">
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660334879/My_project_ddlcsz.png"
@@ -20,7 +20,6 @@ export default function NavBar() {
         </Link>
         <Link to="/">Home</Link>
         <Link to="/AboutUs">About</Link>
-
         <Link to="/Kittens">Kittens</Link>
         <Link to="/Cart">Cart</Link>
 
