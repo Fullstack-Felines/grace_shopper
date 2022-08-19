@@ -11,28 +11,41 @@ export default function KittensCard({ kitten }) {
   return (
     <div>
       {kitten.available ? (
-        <div>
+        <div class="bg-blue max-w-xs rounded-md overflow-hidden shadow-lg hover:scale-105 transition duration-1000 cursor-pointer">
           <div
-            className="kitten-card"
             onClick={() => {
               navigate(`/Kittens/${kitten.id}`);
             }}
           >
-            <img src={kitten.img_url} />
+            <img src={kitten.img_url} alt="picture of kitten" />
           </div>
-          <h3>{kitten.name}</h3>
-          <p>{kitten.breed}</p>
-          <p>{kitten.description}</p>
-          <p>${kitten.price}.00</p>
+          <div class="py-4 px-4 bg-pink">
+            <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
+              {kitten.name}
+            </h3>
+            <p class="text-xl text-red flex justify-center m-2">
+              {kitten.breed}
+            </p>
+            <p class="text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
+              {kitten.description}
+            </p>
+            <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">
+              ${kitten.price}.00
+            </p>
 
-          <button
-            onClick={() => {
-              // const order = createOrder(kitten.id, cart.id);
-              // addToCart function from useCart
-            }}
-          >
-            Add to Cart
-          </button>
+            <span class="flex items-center justify-center mt-4 w-full bg-pink hover:bg-red py-1 rounded">
+              {" "}
+              <button
+                class="font-semibold text-brown"
+                onClick={() => {
+                  // const order = createOrder(kitten.id, cart.id);
+                  // addToCart function from useCart
+                }}
+              >
+                Add to Cart
+              </button>
+            </span>
+          </div>
         </div>
       ) : null}
     </div>
