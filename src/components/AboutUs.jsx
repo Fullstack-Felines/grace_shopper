@@ -51,13 +51,13 @@ export default function AboutUs() {
         <div class="mb-4 py-8 px-8 max-w-sm mx-auto bg-stone-100 rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
           <img
             class="block mx-auto h-24 w-24 rounded-full sm:mx-0 sm:shrink-0"
-            src="https://res.cloudinary.com/dg5jk9pui/image/upload/v1656364165/IMG_2256_dfapat.jpg"
+            src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660855641/42664665_iel3nq.jpg"
             alt="default-profile-photo"
           />
           <div class="text-center space-y-2 sm:text-left">
             <div class="space-y-0.5">
               <p class="text-lg text-black font-semibold px-2 mx-0.5">
-                Jayden Lundahl
+                Stephan Manley
               </p>
               <p class="text-slate-500 font-medium px-2 mx-0.5">
                 Web developer
@@ -75,13 +75,13 @@ export default function AboutUs() {
         <div class="mb-4 py-8 px-8 max-w-sm mx-auto bg-stone-100 rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
           <img
             class="block mx-auto h-24 w-24 rounded-full sm:mx-0 sm:shrink-0"
-            src="https://res.cloudinary.com/dg5jk9pui/image/upload/v1656364165/IMG_2256_dfapat.jpg"
+            src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660850334/blank-profile-picture-973460_1280_gwn20m.webp"
             alt="default-profile-photo"
           />
           <div class="text-center space-y-2 sm:text-left">
             <div class="space-y-0.5">
               <p class="text-lg text-black font-semibold px-2 mx-0.5">
-                Jayden Lundahl
+                Chani Ngan
               </p>
               <p class="text-slate-500 font-medium px-2 mx-0.5">
                 Web developer
@@ -98,13 +98,13 @@ export default function AboutUs() {
         <div class="mb-4 py-8 px-8 max-w-sm mx-auto bg-stone-100 rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
           <img
             class="block mx-auto h-24 w-24 rounded-full sm:mx-0 sm:shrink-0"
-            src="https://res.cloudinary.com/dg5jk9pui/image/upload/v1656364165/IMG_2256_dfapat.jpg"
+            src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660882850/linkedinprofilepic_yfubxx.jpg"
             alt="default-profile-photo"
           />
           <div class="text-center space-y-2 sm:text-left">
             <div class="space-y-0.5">
               <p class="text-lg text-black font-semibold px-2 mx-0.5">
-                Jayden Lundahl
+                Nico Francis
               </p>
               <p class="text-slate-500 font-medium px-2 mx-0.5">
                 Web developer
