@@ -10,7 +10,7 @@ export default function KittensCard({ kitten }) {
 
   return (
     <div>
-      <div class="bg-blue max-w-xs rounded-md overflow-hidden shadow-lg hover:scale-105 transition duration-1000 cursor-pointer">
+      <div class="bg-blue max-w-xs rounded-md shadow-lg hover:scale-105 transition duration-1000 cursor-pointer">
         <div
           onClick={() => {
             navigate(`/Kittens/${kitten.id}`);
@@ -18,12 +18,12 @@ export default function KittensCard({ kitten }) {
         >
           <img src={kitten.img_url} alt="picture of kitten" />
         </div>
-        <div class="py-4 px-4 bg-pink">
+        <div class="py-4 px-4 bg-pink ">
           <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
             {kitten.name}
           </h3>
           <p class="text-xl text-red flex justify-center m-2">{kitten.breed}</p>
-          <p class="text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
+          <p class=" text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
             {kitten.description}
           </p>
           <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">

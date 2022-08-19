@@ -47,13 +47,14 @@ export default function Kittens() {
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
       </div>
-      <div class=" px-10 py-20 bg-tan  grid gap-10 lg:grid-cols-3 xl:grid-cols-4 sm:grid-cols-2">
-        {kittensToDisplay.map((kitten, index) => {
+
+      <div class=" px-10 py-20 bg-tan grid gap-10 lg:grid-cols-3 xl:grid-cols-4 sm:grid-cols-2">
+        {kittensToDisplay.map((kitten) => {
           return (
             <div>
-              {kitten.available ? (
-                <KittensCard key={`${kitten.id}`} kitten={kitten} />
-              ) : null}
+              {/* {kitten.available ? ( */}
+              <KittensCard key={`${kitten.id}`} kitten={kitten} />
+              {/* ) : null} */}
             </div>
           );
         })}
