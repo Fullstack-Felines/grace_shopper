@@ -3,7 +3,7 @@ import React from "react";
 export default function Faq() {
   return (
     <div class="wrapper border-b-2 mt-9 bg-tan overflow-hidden mx-auto max-w-md rounded shadow-lg">
-      Frequently Asked Questions (FAQ)
+      <h1>Frequently Asked Questions (FAQ)</h1>
       <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
         <div class="w-full px-4 py-2">
           <details class="mb-4 w-auto">
