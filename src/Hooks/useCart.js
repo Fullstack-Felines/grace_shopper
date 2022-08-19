@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import CartContext from "../Context/CartContext";
-import { createOrder } from "../api/orders_kitten";
+import { createOrderItem } from "../api/orders_kitten";
+import { fetchCartByUserId } from "../api/orders";
+import useAuth from "./useAuth";
 
 const useCart = () => {
   // bring in authContext
   const { cart, setCart } = useContext(CartContext);
+  const { user } = useAuth();
 
   // const makeGuestCart = async () => {
   //   const guestCart = await createCart(10000000, 0, true, "");
@@ -18,10 +21,11 @@ const useCart = () => {
   // removeItemFrom cart
 
   const addKittenToCart = async ({ kitten_id }) => {
-    console.log("things from input at kittenToCart", cart.id, kitten_id);
-    console.log("cart from usecart", cart);
-    const orderItem = await createOrder({ order_id: cart.id, kitten_id });
-    console.log(orderItem);
+    console.log("Cart ID", cart.id);
+    const orderItem = await createOrderItem({ order_id: cart.id, kitten_id });
+    console.log("AFTER PUSHING BUTTON", orderItem);
+    const newCart = await fetchCartByUserId(user.id);
+    setCart(newCart);
     return orderItem;
   };
 

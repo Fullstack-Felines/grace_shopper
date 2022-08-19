@@ -27,7 +27,7 @@ export const fetchOrderById = async (id) => {
 };
 
 // addingToCart
-export const createOrder = async ({ order_id, kitten_id }) => {
+export const createOrderItem = async ({ order_id, kitten_id }) => {
   const response = await fetch(`/api/orders_kitten/`, {
     method: "POST",
     headers: {

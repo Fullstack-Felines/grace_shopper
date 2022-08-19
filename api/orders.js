@@ -47,26 +47,36 @@ ordersRouter.get("/:id", async (req, res, next) => {
 //get a cart by customer id
 ordersRouter.get("/userCart/:userid", async (req, res, next) => {
   try {
-    const singleCart = await prisma.orders.findUnique({
+    const singleCart = await prisma.orders.findFirst({
       where: {
         customer_id: +req.params.userid,
+        is_active: true,
+      },
+      include: {
+        orders_kitten: {
+          include: {
+            kittens: true,
+          },
+        },
       },
     });
 
-    if (singleCart) {
-      console.log(
-        "order id from orders.js backend in FetchCart:",
-        singleCart.id
-      );
-      res.send({ id: singleCart.id, ...singleCart });
-    } else {
-      res.status(404);
-      next({
-        error: "not found",
-        message: "This cart does not exist",
-        name: "There is no cart for our kittens",
-      });
-    }
+    // if (singleCart) {
+    //   console.log(
+    //     "order id from orders.js backend in FetchCart:",
+    //     singleCart.id
+    //   );
+    //   res.send({ id: singleCart.id, ...singleCart });
+    // } else {
+    //   res.status(404);
+    //   next({
+    //     error: "not found",
+    //     message: "This cart does not exist",
+    //     name: "There is no cart for our kittens",
+    //   });
+    // }
+
+    res.send(singleCart);
   } catch (error) {
     next(error);
   }
