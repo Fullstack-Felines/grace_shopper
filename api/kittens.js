@@ -12,18 +12,18 @@ kittenRouter.get("/", async (req, res, next) => {
 });
 
 //get a kitten by id
-kittenRouter.get("/:id", async (req, res, next) => {
-  try {
-    const singleKitten = await prisma.kittens.findUnique({
-      where: {
-        id: +req.params.id,
-      },
-    });
-    res.send(singleKitten);
-  } catch (error) {
-    next(error);
-  }
-});
+// kittenRouter.get("/:id", async (req, res, next) => {
+//   try {
+//     const singleKitten = await prisma.kittens.findFirst({
+//       where: {
+//         id: +req.params.id,
+//       },
+//     });
+//     res.send(singleKitten);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 //get available kittens
 kittenRouter.get("/available", async (req, res, next) => {
