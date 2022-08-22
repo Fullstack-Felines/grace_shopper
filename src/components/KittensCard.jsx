@@ -26,21 +26,23 @@ export default function KittensCard({ kitten }) {
           <p class=" text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
             {kitten.description}
           </p>
-          <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">
-            ${kitten.price}.00
-          </p>
-
+          {kitten.available ? (
+            <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">
+              ${kitten.price}.00
+            </p>
+          ) : null}
           <span class="flex items-center justify-center mt-4 w-full bg-pink hover:bg-red py-1 rounded">
-            {" "}
-            <button
-              class="font-semibold text-brown"
-              onClick={() => {
-                // const order = createOrder(kitten.id, cart.id);
-                // addToCart function from useCart
-              }}
-            >
-              Add to Cart
-            </button>
+            {kitten.available ? (
+              <button
+                class="font-semibold text-brown"
+                onClick={() => {
+                  // const order = createOrder(kitten.id, cart.id);
+                  // addToCart function from useCart
+                }}
+              >
+                Add to Cart
+              </button>
+            ) : null}
           </span>
         </div>
       </div>

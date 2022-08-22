@@ -21,9 +21,7 @@ export default function AdoptedKittens() {
 
   return (
     <div>
-      <h2 class="m-3 font-medium leading-tight text-3xl mt-0 mb-2 text-brass ">
-        Recent Adoptions
-      </h2>
+      <h2 class="">Recent Adoptions</h2>
       {unavailableKittens.map((kitten) => {
         return (
           <div>
