@@ -65,7 +65,6 @@ export const createKitten = async ({
 
 export const updateKitten = async ({
   kittenId,
-  token,
   name,
   breed,
   description,

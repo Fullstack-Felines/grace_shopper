@@ -60,22 +60,6 @@ ordersRouter.get("/userCart/:userid", async (req, res, next) => {
         },
       },
     });
-
-    // if (singleCart) {
-    //   console.log(
-    //     "order id from orders.js backend in FetchCart:",
-    //     singleCart.id
-    //   );
-    //   res.send({ id: singleCart.id, ...singleCart });
-    // } else {
-    //   res.status(404);
-    //   next({
-    //     error: "not found",
-    //     message: "This cart does not exist",
-    //     name: "There is no cart for our kittens",
-    //   });
-    // }
-
     res.send(singleCart);
   } catch (error) {
     next(error);

@@ -4,9 +4,12 @@ import { fetchOrdersByCart, fetchOrderById } from "../api/orders_kitten";
 import { fetchKittenById } from "../api/kittens";
 import OrderCard from "./OrderCard";
 import { updateCart } from "../api/orders";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
+  const navigate = useNavigate();
+
   // const [orders, setOrders] = useState([]);
   // const [subTotal, setSubTotal] = useState(cart.total_amount);
 
@@ -50,6 +53,13 @@ export default function Cart() {
     cart.orders_kitten.forEach((order_kitten) => {
       total += order_kitten.kittens.price;
     });
+    // const updatedCart = await updateCart(cart.id, {
+    //   customer_id: cart.customer_id,
+    //   total_amount: total,
+    //   is_active: true,
+    //   shipping_address: cart.shipping_address,
+    // });
+    // setCart(updatedCart);
     return total;
   }
 
@@ -59,17 +69,28 @@ export default function Cart() {
   return (
     <div>
       <h1>Cart</h1>
-      <div className="orderSummary">
-        {cart.orders_kitten.map((order) => {
-          return <OrderCard key={`Key:${order.id}`} order={order} />;
-        })}
-      </div>
+      {cart.orders_kitten ? (
+        <div>
+          <div className="orderSummary">
+            {cart.orders_kitten.map((order) => {
+              return <OrderCard key={`Key:${order.id}`} order={order} />;
+            })}
+          </div>
 
-      <div>
-        <p> Subtotal: {calcCartTotal(cart)}.00</p>
-        <p>Tax:</p>
-        <p>Total:</p>
-      </div>
+          <div>
+            <p> Subtotal: ${calcCartTotal(cart)}.00</p>
+            <p>Tax: ${calcCartTotal(cart) * 0.07}</p>
+            <p>Total: </p>
+            <button
+              onClick={() => {
+                navigate("/Payment");
+              }}
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
