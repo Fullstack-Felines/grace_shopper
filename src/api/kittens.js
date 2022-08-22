@@ -15,6 +15,28 @@ export const fetchKittenById = async (id) => {
   return result;
 };
 
+export const fetchAvailableKittens = async () => {
+  const response = await fetch(`/api/kittens/available`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
+};
+
+export const fetchUnavailableKittens = async () => {
+  const response = await fetch(`/api/kittens/unavailable`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
+};
+
 export const fetchKittensByBreed = async (breed) => {
   const response = await fetch(`api/kittens/${breed}`, {
     method: "GET",

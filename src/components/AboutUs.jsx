@@ -118,7 +118,7 @@ export default function AboutUs() {
             </button>
           </div>
         </div>
-        <div class="py-8 px-8 max-w-sm mx-auto bg-stone-100 rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
+        <div class="mb-4 py-8 px-8 max-w-sm mx-auto bg-stone-100 rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm-space-x-6">
           <img
             class="block mx-auto h-24 w-24 rounded-full sm:mx-0 sm:shrink-0"
             src="https://res.cloudinary.com/dg5jk9pui/image/upload/v1656364165/IMG_2256_dfapat.jpg"

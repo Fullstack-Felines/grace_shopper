@@ -25,6 +25,34 @@ kittenRouter.get("/:id", async (req, res, next) => {
   }
 });
 
+//get available kittens
+kittenRouter.get("/available", async (req, res, next) => {
+  try {
+    const availableKittens = await prisma.kittens.findMany({
+      where: {
+        available: true,
+      },
+    });
+    res.send(availableKittens);
+  } catch (error) {
+    next(error);
+  }
+});
+
+//get unavailable kittens
+kittenRouter.get("/unavailable", async (req, res, next) => {
+  try {
+    const unavailableKittens = await prisma.kittens.findMany({
+      where: {
+        available: false,
+      },
+    });
+    res.send(unavailableKittens);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //get a lot of kittens by breed
 kittenRouter.get("/:breed", async (req, res, next) => {
   try {

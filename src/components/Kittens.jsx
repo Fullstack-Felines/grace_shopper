@@ -3,7 +3,8 @@ import useKittens from "../Hooks/useKittens";
 import KittensCard from "./KittensCard";
 
 export default function Kittens() {
-  const { kittens, setKittens } = useKittens();
+  const { allKittens, setAllKittens, availableKittens, setAvailableKittens } =
+    useKittens();
   const [searchText, setSearchText] = useState("");
 
   function searchMatches(kitten, text) {
@@ -17,19 +18,24 @@ export default function Kittens() {
     return false;
   }
 
-  const filteredKittens = kittens.filter((kitten) =>
-    searchMatches(kitten, searchText)
-  );
+  let filteredKittens;
+  if (availableKittens.length) {
+    filteredKittens = availableKittens.filter((kitten) =>
+      searchMatches(kitten, searchText)
+    );
+  }
 
-  const kittensToDisplay = searchText.length ? filteredKittens : kittens;
+  const kittensToDisplay = searchText.length
+    ? filteredKittens
+    : availableKittens;
 
   const sortKittens = (selectEvent) => {
     const options = {
-      none: [...kittens].sort((a, b) => (a.name > b.name ? 1 : -1)),
-      ascending: [...kittens].sort((a, b) => a.price - b.price),
-      descending: [...kittens].sort((a, b) => b.price - a.price),
+      none: [...availableKittens].sort((a, b) => (a.name > b.name ? 1 : -1)),
+      ascending: [...availableKittens].sort((a, b) => a.price - b.price),
+      descending: [...availableKittens].sort((a, b) => b.price - a.price),
     };
-    setKittens(options[selectEvent.target.value]);
+    setAvailableKittens(options[selectEvent.target.value]);
   };
 
   return (
@@ -52,9 +58,9 @@ export default function Kittens() {
         {kittensToDisplay.map((kitten) => {
           return (
             <div>
-              {/* {kitten.available ? ( */}
-              <KittensCard key={`${kitten.id}`} kitten={kitten} />
-              {/* ) : null} */}
+              {kitten.available ? (
+                <KittensCard key={`${kitten.id}`} kitten={kitten} />
+              ) : null}
             </div>
           );
         })}
