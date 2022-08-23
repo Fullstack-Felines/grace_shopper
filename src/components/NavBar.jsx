@@ -10,18 +10,33 @@ export default function NavBar() {
   // const guestCart = makeGuestCart();
 
   return (
-    <div>
-      <nav class="bg-red flex justify-evenly px-6 content-center">
-        <Link to="/">
+    <div class="bg-red border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 ">
+      <nav class="container flex flex-wrap justify-evenly items-center mx-auto">
+        <Link to="/" class="flex items-center">
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660334879/My_project_ddlcsz.png"
+            class="mr-w h-7 sm:h-9"
             width="150px"
           />
         </Link>
-        <Link to="/">Home</Link>
-        <Link to="/AboutUs">About</Link>
-        <Link to="/Kittens">Kittens</Link>
-        <Link to="/Cart">Cart</Link>
+        <Link to="/" class="text-brown  text-xl font-bold  hover:underline">
+          Home
+        </Link>
+        <Link
+          to="/AboutUs"
+          class="text-brown text-xl font-bold  hover:underline"
+        >
+          About
+        </Link>
+        <Link
+          to="/Kittens"
+          class="text-brown text-xl font-bold  hover:underline"
+        >
+          Kittens
+        </Link>
+        <Link to="/Cart" class="text-brown text-xl font-bold  hover:underline">
+          Cart
+        </Link>
 
         {user.username ? (
           <button
@@ -36,7 +51,12 @@ export default function NavBar() {
             Logout
           </button>
         ) : (
-          <Link to="/Login">Login</Link>
+          <Link
+            to="/Login"
+            class="text-brown text-xl font-bold  hover:underline"
+          >
+            Login
+          </Link>
         )}
       </nav>
     </div>
