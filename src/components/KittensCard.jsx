@@ -9,16 +9,20 @@ export default function KittensCard({ kitten }) {
   const { cart } = useCart();
 
   return (
-    <div>
-      <div class="bg-blue max-w-xs rounded-md shadow-lg hover:scale-105 transition duration-1000 cursor-pointer">
+    <div class="max-w-xs w-full rounded shadow-lg overflow-hidden h-full">
+      <div>
         <div
           onClick={() => {
             navigate(`/Kittens/${kitten.id}`);
           }}
         >
-          <img src={kitten.img_url} alt="picture of kitten" />
+          <img
+            class="w-full cursor-pointer"
+            src={kitten.img_url}
+            alt="picture of kitten"
+          />
         </div>
-        <div class="py-4 px-4 bg-pink ">
+        <div class="py-4 px-6 bg-pink">
           <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
             {kitten.name}
           </h3>
@@ -31,7 +35,7 @@ export default function KittensCard({ kitten }) {
               ${kitten.price}.00
             </p>
           ) : null}
-          <span class="flex items-center justify-center mt-4 w-full bg-pink hover:bg-red py-1 rounded">
+          <span class="flex justify-center mt-4 bg-azure w-1/2 hover:bg-red py-1 rounded">
             {kitten.available ? (
               <button
                 class="font-semibold text-brown"
