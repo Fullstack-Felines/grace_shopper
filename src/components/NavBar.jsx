@@ -11,7 +11,7 @@ export default function NavBar() {
 
   return (
     <div class="bg-red border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 ">
-      <nav class="container flex flex-wrap justify-between items-center mx-auto">
+      <nav class="container flex flex-wrap justify-evenly items-center mx-auto">
         <Link to="/" class="flex items-center">
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660334879/My_project_ddlcsz.png"
@@ -19,28 +19,22 @@ export default function NavBar() {
             width="150px"
           />
         </Link>
-        <Link
-          to="/"
-          class="text-black  text-xl font-bold dark:text-white hover:underline"
-        >
+        <Link to="/" class="text-brown  text-xl font-bold  hover:underline">
           Home
         </Link>
         <Link
           to="/AboutUs"
-          class="text-black text-xl font-bold dark:text-white hover:underline"
+          class="text-brown text-xl font-bold  hover:underline"
         >
           About
         </Link>
         <Link
           to="/Kittens"
-          class="text-black text-xl font-bold dark:text-white hover:underline"
+          class="text-brown text-xl font-bold  hover:underline"
         >
           Kittens
         </Link>
-        <Link
-          to="/Cart"
-          class="text-black text-xl font-bold dark:text-white hover:underline"
-        >
+        <Link to="/Cart" class="text-brown text-xl font-bold  hover:underline">
           Cart
         </Link>
 
@@ -59,7 +53,7 @@ export default function NavBar() {
         ) : (
           <Link
             to="/Login"
-            class="text-black text-xl font-bold dark:text-white hover:underline"
+            class="text-brown text-xl font-bold  hover:underline"
           >
             Login
           </Link>
