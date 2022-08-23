@@ -10,7 +10,7 @@ export default function NavBar() {
   // const guestCart = makeGuestCart();
 
   return (
-    <div class="bg-pink border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
+    <div class="bg-pink  px-2 sm:px-4 py-2.5 rounded min-h-80">
       <nav class="container flex flex-wrap justify-evenly items-center mx-auto">
         <Link to="/" class="flex items-center">
           <img
