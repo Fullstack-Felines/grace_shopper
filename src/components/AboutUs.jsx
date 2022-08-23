@@ -3,29 +3,31 @@ import AdoptedKittens from "./AdoptedKittens";
 
 export default function AboutUs() {
   return (
-    <div class=" flex justify-center content-center  ">
-      <div class="m-3 bg-brass flex flex-wrap  content-center justify-center w-5/6 md:w-4/5 lg:w-2/3">
-        <h3 class="flex items-center place-content-center font-medium leading-tight text-6xl mb-2 text-cafe bg-red w-full h-28">
-          About Us
-        </h3>
+    <div class=" flex justify-center content-center">
+      <div class="m-3 flex flex-wrap content-center justify-center w-5/6 md:w-4/5 lg:w-2/3">
         <div class="">
-          <div class="bg-red m-6 p-5 flex flex-col text-center">
-            <p class="mb-3">
-              Fullstack Felines is a volunteer run animal adoption center and
-              community focused rescue.
-            </p>
-            <p>
-              Our adoption center is friendly, welcoming and open to the public.
-              People often say when they visit us, “the animals all seem so
-              healthy, calm and happy.” That’s because they are! Our team of
-              caring volunteers works with the animals 7 days a week and unlike
-              most shelters, they are free to roam and play all day. This
-              nurturing approach to socialization directly translates into
-              healthy and well-adjusted animals, who make a great companions. We
-              understand, however, that just as in the human world, not everyone
-              is right for each other, which is why we take a personalized
-              approach to the adoption process.
-            </p>
+          <div class="bg-cardpaper flex flex-col text-center rounded-lg shadow-lg mb-10 mt-10">
+            <h3 class="flex rounded-t-lg place-content-center font-medium text-3xl text-white bg-coral opacity-80 p-2">
+              About Us
+            </h3>
+            <div class="p-5 m:p-8 lg:p-10  text-black opacity-80">
+              <p class=" mb-3">
+                Fullstack Felines is a volunteer run animal adoption center and
+                community focused rescue.
+              </p>
+              <p>
+                Our adoption center is friendly, welcoming and open to the
+                public. People often say when they visit us, “the animals all
+                seem so healthy, calm and happy.” That’s because they are! Our
+                team of caring volunteers works with the animals 7 days a week
+                and unlike most shelters, they are free to roam and play all
+                day. This nurturing approach to socialization directly
+                translates into healthy and well-adjusted animals, who make a
+                great companions. We understand, however, that just as in the
+                human world, not everyone is right for each other, which is why
+                we take a personalized approach to the adoption process.
+              </p>
+            </div>
           </div>
           <h3 class="flex items-center place-content-center font-medium text-4xl mb-2 text-cafe bg-red w-full h-20">
             Mission Statement

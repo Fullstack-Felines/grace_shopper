@@ -19,7 +19,7 @@ export default function KittensCard({ kitten }) {
             alt="picture of kitten"
           />
         </div>
-        <div class="py-4 px-6 bg-pink">
+        <div class="py-4 px-6 bg-cardpaper">
           <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
             {kitten.name}
           </h3>
@@ -28,7 +28,7 @@ export default function KittensCard({ kitten }) {
             {kitten.description}
           </p>
           {kitten.available ? (
-            <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">
+            <p class="mt-4 text-lg text-brown flex justify-center m-2 opacity-80">
               ${kitten.price}.00
             </p>
           ) : null}
