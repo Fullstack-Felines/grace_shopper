@@ -7,13 +7,13 @@ export default function Footer() {
       <footer class="container mx-auto">
         <Link
           to="/faq"
-          class="text-brown  text-xl font-bold transform  w-1/5 hover:text-white transition duration-500 hover:scale-125 "
+          class="text-brown  text-xl font-bold transform  p-3 hover:text-white transition duration-500 hover:scale-125 "
         >
           FAQ
         </Link>
         <Link
           to="/Contact"
-          class="text-brown  text-xl font-bold transform  w-1/5 hover:text-white transition duration-500 hover:scale-125 "
+          class="text-brown  text-xl font-bold transform   hover:text-white transition duration-500 hover:scale-125 "
         >
           Contact Us!
         </Link>
