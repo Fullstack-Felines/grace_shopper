@@ -32,18 +32,18 @@ export default function Payment() {
             shipping_address: shippingAddress,
           });
 
-          //update kittens to be unavailable
-          cart.orders_kitten.forEach(async (order) => {
-            await updateKitten({
-              kittenId: order.kittens.id,
-              name: order.kittens.name,
-              breed: order.kittens.breed,
-              description: order.kittens.description,
-              price: order.kittens.price,
-              img_url: order.kittens.img_url,
-              available: false,
-            });
-          });
+          // update kittens to be unavailable
+          // cart.orders_kitten.forEach(async (order) => {
+          //   await updateKitten({
+          //     kittenId: order.kittens.id,
+          //     name: order.kittens.name,
+          //     breed: order.kittens.breed,
+          //     description: order.kittens.description,
+          //     price: order.kittens.price,
+          //     img_url: order.kittens.img_url,
+          //     available: false,
+          //   });
+          // });
           // START HERE TOMORROW (Hitting everything except the two things below);
           alert("Thank you for your purchase!");
           //navigate to home page

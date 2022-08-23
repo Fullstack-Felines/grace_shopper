@@ -62,6 +62,9 @@ export default function Cart() {
     // setCart(updatedCart);
     return total;
   }
+  const tax = Math.round(0.07 * calcCartTotal(cart)) / 100;
+
+  console.log("Tax", tax);
 
   console.log("Cart:", cart);
   console.log("cart orders_kitten", cart.orders_kitten);
@@ -79,8 +82,15 @@ export default function Cart() {
 
           <div>
             <p> Subtotal: ${calcCartTotal(cart)}.00</p>
-            <p>Tax: ${calcCartTotal(cart) * 0.07}</p>
-            <p>Total: </p>
+
+            <p>
+              Tax: ${(calcCartTotal(cart) * Math.round(0.07 * 1000)) / 1000}
+            </p>
+            <p>
+              Total: $
+              {calcCartTotal(cart) +
+                (calcCartTotal(cart) * Math.round(0.07 * 1000)) / 1000}
+            </p>
             <button
               onClick={() => {
                 navigate("/Payment");

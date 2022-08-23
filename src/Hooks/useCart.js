@@ -22,6 +22,7 @@ const useCart = () => {
     const orderItem = await createOrderItem({ order_id: cart.id, kitten_id });
     const newCart = await fetchCartByUserId(user.id);
     setCart(newCart);
+    alert("Kitten added to cart!");
     return orderItem;
   };
 

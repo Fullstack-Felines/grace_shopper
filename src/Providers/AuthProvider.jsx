@@ -4,17 +4,32 @@ import { fetchMe } from "../api/authorization";
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState({ loggedIn: false });
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  //CHANGED FROM THIS CODE BELOW
+  // useEffect(() => {
+  //   async function getMe() {
+  //     const me = await fetchMe();
+  //     setUser(me);
+  //   }
+  //   getMe();
+  // }, []);
 
   useEffect(() => {
-    async function getMe() {
+    const getMe = async () => {
       const me = await fetchMe();
-      setUser(me);
-    }
+      if (me.loggedIn === false) {
+        setUser({ username: "guest user" });
+      } else {
+        setUser(me);
+        setLoggedIn(true);
+      }
+    };
     getMe();
-  }, []);
+  }, [loggedIn]);
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, setUser, loggedIn, setLoggedIn }}>
       {children}
     </AuthContext.Provider>
   );
