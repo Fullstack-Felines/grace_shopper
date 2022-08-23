@@ -6,17 +6,16 @@ export default function Home() {
   const { user } = useAuth();
 
   return (
-    <div>
-      <h1>Welcome to Fullstack Felines</h1>
-      <Link to="/Kittens">
-        <img src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660859246/1095136_fcxhhr.jpg" />
-      </Link>
-
-      <p>
-        “Every day with every connection, Fullstack Feline’s passionate
-        associates help bring pet parents closer to their pets so they can live
-        more fulfilled lives.”
-      </p>
+    <div class="bg-home-pattern flex-grow bg-cover bg-no-repeat">
+      {/* <div class="fixed bottom-1 flex justify-center w-full text-2xl opacity-70">
+        <h1>FILLER TEXTTTTTTTTTTTTT</h1>
+      </div> */}
+      {/* <Link to="/Kittens">
+        <img
+          class="w-full"
+          src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661285874/169071-pic-domestic-kitten-free-download-png-hq_gw2ase.png"
+        />
+      </Link> */}
     </div>
   );
 }

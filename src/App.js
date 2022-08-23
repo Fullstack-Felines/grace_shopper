@@ -24,7 +24,7 @@ import "./style/index.css";
 
 const App = () => {
   return (
-    <div class="bg-pink">
+    <div class="min-h-screen flex flex-col">
       <NavBar />
       <Routes>
         <Route path="/AboutUs" element={<AboutUs />} />
