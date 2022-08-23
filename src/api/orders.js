@@ -39,6 +39,7 @@ export const createCart = async ({
     }),
   });
   const result = await response.json();
+  console.log("result from orders api frontend:", result);
   return result;
 };
 

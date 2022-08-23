@@ -111,3 +111,14 @@ export const updateKitten = async ({
   const result = await response.json();
   return result;
 };
+
+export const deleteKitten = async (kittenId) => {
+  const response = await fetch(`/api/kittens/${kittenId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
+};

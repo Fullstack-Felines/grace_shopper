@@ -10,64 +10,14 @@ export default function Cart() {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
 
-  // const [orders, setOrders] = useState([]);
-  // const [subTotal, setSubTotal] = useState(cart.total_amount);
-
-  useEffect(() => {
-    // async function getOrders_kitten(orderId) {
-    //   const fetchedOrders = await fetchOrdersByCart(orderId);
-    //   if (fetchedOrders) {
-    //     setOrders(fetchedOrders);
-    //   }
-    // }
-    // getOrders_kitten(cart.id);
-  }, []);
-
-  // useEffect(() => {
-  //   async function getSubTotal(fetchedOrders) {
-  //     // setSubTotal(0);
-  //     // let priceArray = [];
-  //     // console.log("subtotal1", subTotal);
-  //     fetchedOrders.forEach(async (order) => {
-  //       const kitten = await fetchKittenById(order.kitten_id);
-  //       console.log("kitten in foreach", kitten);
-
-  //       cart.total_amount += kitten.price;
-  //       console.log("cart total amount", cart.total_amount);
-  //       //await updateCart(cart);
-  //       // console.log("newsub", newSubtotal);
-
-  //       // priceArray.push(kitten.price);
-  //       // console.log("subtotal", subTotal);
-  //       // return priceArray;
-  //       // setSubTotal(newSubtotal);
-  //     });
-  //   }
-  //   getSubTotal(orders);
-  //   // console.log("subtatol array", subTotalArray);
-  // }, []);
-  // console.log("final subtotal", subTotal);
-
   function calcCartTotal(cart) {
     let total = 0;
     cart.orders_kitten.forEach((order_kitten) => {
       total += order_kitten.kittens.price;
     });
-    // const updatedCart = await updateCart(cart.id, {
-    //   customer_id: cart.customer_id,
-    //   total_amount: total,
-    //   is_active: true,
-    //   shipping_address: cart.shipping_address,
-    // });
-    // setCart(updatedCart);
+
     return total;
   }
-  const tax = Math.round(0.07 * calcCartTotal(cart)) / 100;
-
-  console.log("Tax", tax);
-
-  console.log("Cart:", cart);
-  console.log("cart orders_kitten", cart.orders_kitten);
 
   return (
     <div>

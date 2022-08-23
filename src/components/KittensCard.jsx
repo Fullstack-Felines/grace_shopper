@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../Hooks";
+import { useCart, useAuth } from "../Hooks";
+import { updateKitten } from "../api/kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
   const { addKittenToCart } = useCart();
+  const [isEditing, setIsEditing] = useState(false);
+  const { user } = useAuth();
+
+  //use state for updating kittens
+  const [kittenToEdit, setKittenToEdit] = useState({});
+  const [kittenName, setKittenName] = useState(kitten.name);
+  const [breed, setBreed] = useState(kitten.breed);
+  const [description, setDescription] = useState(kitten.description);
+  const [price, setPrice] = useState(kitten.price);
+  const [imgUrl, setImgUrl] = useState(kitten.img_url);
+
   return (
-    <div>
-      <div class="bg-blue max-w-xs rounded-md shadow-lg hover:scale-105 transition duration-1000 cursor-pointer">
+    <div class="max-w-xs rounded shadow-lg overflow-hidden">
+      <div>
         <div
           onClick={() => {
             navigate(`/Kittens/${kitten.id}`);
           }}
         >
-          <img src={kitten.img_url} alt="picture of kitten" />
+          <img
+            class="w-full cursor-pointer"
+            src={kitten.img_url}
+            alt="picture of kitten"
+          />
         </div>
-        <div class="py-4 px-4 bg-pink ">
+        <div class="py-4 px-6 bg-cardpaper">
           <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
             {kitten.name}
           </h3>
@@ -24,21 +40,78 @@ export default function KittensCard({ kitten }) {
             {kitten.description}
           </p>
           {kitten.available ? (
-            <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">
+            <p class="mt-4 text-lg text-brown flex justify-center m-2 opacity-80">
               ${kitten.price}.00
             </p>
           ) : null}
-          <span class="flex items-center justify-center mt-4 w-full bg-pink hover:bg-red py-1 rounded">
+          <span class="flex justify-center mt-4 bg-azure w-1/2 hover:bg-red py-1 rounded">
             {kitten.available ? (
               <button
                 class="font-semibold text-brown"
                 onClick={() => {
-                  // const order = createOrder(kitten.id, cart.id);
-                  // addToCart function from useCart
+                  addKittenToCart({ kitten_id: kitten.id });
                 }}
               >
                 Add to Cart
               </button>
+            ) : null}
+
+            {user.is_admin ? (
+              <button
+                onClick={() => {
+                  setIsEditing(true);
+                }}
+              >
+                Edit Kitten
+              </button>
+            ) : null}
+
+            {user.is_admin ? (
+              isEditing ? (
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setKittenToEdit({
+                      name: kittenName,
+                      breed,
+                      description,
+                      price,
+                      img_url: imgUrl,
+                      available: true,
+                    });
+                    const editedKitten = await updateKitten(kitten);
+                    setIsEditing(false);
+                  }}
+                >
+                  create a new kitten!
+                  <input
+                    value={kittenName}
+                    placeholder="Name of kitten"
+                    onChange={(e) => setKittenName(e.target.value)}
+                  />
+                  <input
+                    value={breed}
+                    placeholder="Breed"
+                    onChange={(e) => setBreed(e.target.value)}
+                  />
+                  <input
+                    value={description}
+                    placeholder="Description"
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
+                  <input
+                    value={price}
+                    placeholder="price"
+                    onChange={(e) => setPrice(e.target.value)}
+                  />
+                  <input
+                    value={imgUrl}
+                    placeholder="imgUrl"
+                    onChange={(e) => setImgUrl(e.target.value)}
+                  />
+                  <button type="submit">Update kitten!</button>
+                </form>
+              ) : null
             ) : null}
           </span>
         </div>

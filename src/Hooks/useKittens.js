@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Kittens from "../components/Kittens";
 import KittensContext from "../Context/KittensContext";
 
 const useKittens = () => {

@@ -14,19 +14,20 @@ const OrderCard = (order) => {
       setKitten(fetchedKitten);
     }
     getKitten(kitten_id);
+    // console.log("kitten from ordercard", order.order.kittens);
   }, []);
 
   return (
     <div>
-      <img src={kitten.img_url} />
-      <p>{kitten.name}</p>
-      <p>{kitten.description}</p>
-      <p>${kitten.price}.00</p>
+      <img src={order.order.kittens.img_url} />
+      <p>{order.order.kittens.name}</p>
+      <p>{order.order.kittens.description}</p>
+      <p>${order.order.kittens.price}.00</p>
       <button
         onClick={() => {
           removeKittenFromCart(order.order.id);
-          console.log("order from ordercard", order);
-          console.log("orderid", order.order.id);
+          // console.log("order from ordercard", order);
+          // console.log("orderid", order.order.id);
         }}
       >
         Remove

@@ -13,8 +13,8 @@ export default function CartProvider({ children }) {
   });
   const { user } = useAuth();
 
-  console.log("USER IN CART PROV", user);
-  console.log("Cart in cart provider", cart);
+  // console.log("USER IN CART PROV", user);
+  // console.log("Cart in cart provider", cart);
 
   useEffect(() => {
     async function getCart() {

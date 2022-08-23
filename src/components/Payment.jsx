@@ -12,19 +12,11 @@ export default function Payment() {
   return (
     <div>
       <form
-        onSubmit={async () => {
+        onSubmit={async (event) => {
           //update cart to be inactive and update shipping address
-
-          const newCart = await createCart({
-            customer_id: cart.customer_id,
-            total_amount: 0,
-            is_active: true,
-            shipping_address: shippingAddress,
-          });
+          event.preventDefault();
 
           const oldCart = cart;
-          setCart(newCart);
-
           await updateCart(oldCart.id, {
             customer_id: oldCart.customer_id,
             total_amount: oldCart.total_amount,
@@ -33,17 +25,29 @@ export default function Payment() {
           });
 
           // update kittens to be unavailable
-          // cart.orders_kitten.forEach(async (order) => {
-          //   await updateKitten({
-          //     kittenId: order.kittens.id,
-          //     name: order.kittens.name,
-          //     breed: order.kittens.breed,
-          //     description: order.kittens.description,
-          //     price: order.kittens.price,
-          //     img_url: order.kittens.img_url,
-          //     available: false,
-          //   });
-          // });
+          await Promise.all(
+            cart.orders_kitten.map((order) => {
+              return updateKitten({
+                kittenId: order.kittens.id,
+                name: order.kittens.name,
+                breed: order.kittens.breed,
+                description: order.kittens.description,
+                price: order.kittens.price,
+                img_url: order.kittens.img_url,
+                available: false,
+              });
+            })
+          );
+
+          const newCart = await createCart({
+            customer_id: cart.customer_id,
+            total_amount: 0,
+            is_active: true,
+            shipping_address: shippingAddress,
+          });
+
+          setCart(newCart);
+
           // START HERE TOMORROW (Hitting everything except the two things below);
           alert("Thank you for your purchase!");
           //navigate to home page

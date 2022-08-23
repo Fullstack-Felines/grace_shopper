@@ -13,7 +13,7 @@ export default function Login() {
   const { user, setUser } = useAuth();
 
   return (
-    <div class="flex flex-wrap min-h-screen content-center justify-center py-10">
+    <div class="flex flex-wrap min-h-screen content-center justify-center py-10  bg-gradient-to-b from-pink to-cultured">
       <div class="flex shadow-md">
         <div class="pt-16 pr-8 pb-16 pl-8 flex flex-wrap content-center justify-center rounded-l-md bg-white">
           <div class="w-72">
