@@ -20,6 +20,8 @@ import {
   KittensList,
 } from "./components";
 
+import "./style/index.css";
+
 const App = () => {
   return (
     <div class="bg-pink">
