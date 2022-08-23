@@ -15,22 +15,22 @@ export default function Payment() {
         onSubmit={async () => {
           //update cart to be inactive and update shipping address
 
-          const newCart = await createCart({
-            customer_id: cart.customer_id,
-            total_amount: 0,
-            is_active: true,
-            shipping_address: shippingAddress,
-          });
+          // const newCart = await createCart({
+          //   customer_id: cart.customer_id,
+          //   total_amount: 0,
+          //   is_active: true,
+          //   shipping_address: shippingAddress,
+          // });
 
           const oldCart = cart;
           setCart(newCart);
 
-          await updateCart(oldCart.id, {
-            customer_id: oldCart.customer_id,
-            total_amount: oldCart.total_amount,
-            is_active: false,
-            shipping_address: shippingAddress,
-          });
+          // await updateCart(oldCart.id, {
+          //   customer_id: oldCart.customer_id,
+          //   total_amount: oldCart.total_amount,
+          //   is_active: false,
+          //   shipping_address: shippingAddress,
+          // });
 
           // update kittens to be unavailable
           // cart.orders_kitten.forEach(async (order) => {

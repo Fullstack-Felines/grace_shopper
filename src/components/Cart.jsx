@@ -62,9 +62,9 @@ export default function Cart() {
     // setCart(updatedCart);
     return total;
   }
-  const tax = Math.round(0.07 * calcCartTotal(cart)) / 100;
+  // const tax = Math.round(0.07 * calcCartTotal(cart)) / 100;
 
-  console.log("Tax", tax);
+  // console.log("Tax", tax);
 
   console.log("Cart:", cart);
   console.log("cart orders_kitten", cart.orders_kitten);
