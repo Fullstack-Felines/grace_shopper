@@ -14,9 +14,8 @@ export default function NavBar() {
       <nav class="container flex flex-wrap justify-evenly items-center mx-auto">
         <Link to="/" class="flex items-center">
           <img
-            src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660334879/My_project_ddlcsz.png"
-            class="mr-w h-7 sm:h-9"
-            width="150px"
+            src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661282043/Fullstack_Felines_1_o93p2j.png"
+            class="object-contain h-14"
           />
         </Link>
         <Link
