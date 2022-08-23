@@ -14,36 +14,38 @@ export default function Payment() {
       <form
         onSubmit={async () => {
           //update cart to be inactive and update shipping address
-
-          // const newCart = await createCart({
-          //   customer_id: cart.customer_id,
-          //   total_amount: 0,
-          //   is_active: true,
-          //   shipping_address: shippingAddress,
-          // });
+          const newCart = await createCart({
+            customer_id: cart.customer_id,
+            total_amount: 0,
+            is_active: true,
+            shipping_address: shippingAddress,
+          });
 
           const oldCart = cart;
           setCart(newCart);
 
-          // await updateCart(oldCart.id, {
-          //   customer_id: oldCart.customer_id,
-          //   total_amount: oldCart.total_amount,
-          //   is_active: false,
-          //   shipping_address: shippingAddress,
-          // });
+          await updateCart(oldCart.id, {
+            customer_id: oldCart.customer_id,
+            total_amount: oldCart.total_amount,
+            is_active: false,
+            shipping_address: shippingAddress,
+          });
 
           // update kittens to be unavailable
-          // cart.orders_kitten.forEach(async (order) => {
-          //   await updateKitten({
-          //     kittenId: order.kittens.id,
-          //     name: order.kittens.name,
-          //     breed: order.kittens.breed,
-          //     description: order.kittens.description,
-          //     price: order.kittens.price,
-          //     img_url: order.kittens.img_url,
-          //     available: false,
-          //   });
-          // });
+          await Promise.all(
+            cart.orders_kitten.map((order) => {
+              return updateKitten({
+                kittenId: order.kittens.id,
+                name: order.kittens.name,
+                breed: order.kittens.breed,
+                description: order.kittens.description,
+                price: order.kittens.price,
+                img_url: order.kittens.img_url,
+                available: false,
+              });
+            })
+          );
+
           // START HERE TOMORROW (Hitting everything except the two things below);
           alert("Thank you for your purchase!");
           //navigate to home page

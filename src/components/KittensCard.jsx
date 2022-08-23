@@ -33,8 +33,7 @@ export default function KittensCard({ kitten }) {
               <button
                 class="font-semibold text-brown"
                 onClick={() => {
-                  // const order = createOrder(kitten.id, cart.id);
-                  // addToCart function from useCart
+                  addKittenToCart({ kitten_id: kitten.id });
                 }}
               >
                 Add to Cart
