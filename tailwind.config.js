@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: "#ECF8F8",
+        azure: "#ECF8F8",
         pink: "#EEE4E1",
         tan: "#E7D8C9",
         red: "#E6BEAE",
@@ -12,6 +12,10 @@ module.exports = {
         cafe: "#A48565",
         umber: "#745D44",
         brass: "#BD8775",
+        darkbrown: "#181411",
+        black: "#0D0A08",
+        white: "#FFFFFF",
+        gray: "#969696",
       },
     },
   },
