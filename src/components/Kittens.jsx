@@ -39,19 +39,41 @@ export default function Kittens() {
   };
 
   return (
-    <div>
-      <label>Sort By Price:</label>
-      <select onChange={sortKittens}>
-        <option value="none">None</option>
-        <option value="ascending">Low to high</option>
-        <option value="descending">High to low</option>
-      </select>
+    <div class="flex flex-col">
       <div>
         <input
+          class="
+             form-control
+             block
+             w-2/3
+             px-3
+             py-1.5
+             text-base
+             font-normal
+             text-gray-700
+             bg-white bg-clip-padding
+             border border-solid border-gray-300
+             rounded
+             transition
+             ease-in-out
+             m-0
+             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+           "
           placeholder="Search"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
+      </div>
+
+      <div class="flex justify-evenly p-3">
+        <select
+          class="text-black bg-cafe hover:bg-red font-medium rounded-lg text-sm text-center mr-1"
+          onChange={sortKittens}
+        >
+          <option value="none">Sort By Price</option>
+          <option value="ascending">Low to high</option>
+          <option value="descending">High to low</option>
+        </select>
       </div>
 
       <div class=" px-10 py-20 bg-tan grid gap-10 lg:grid-cols-3 xl:grid-cols-4 sm:grid-cols-2">
