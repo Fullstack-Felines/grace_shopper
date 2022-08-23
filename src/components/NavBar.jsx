@@ -10,18 +10,39 @@ export default function NavBar() {
   // const guestCart = makeGuestCart();
 
   return (
-    <div>
-      <nav class="bg-red flex justify-evenly px-6 content-center">
-        <Link to="/">
+    <div class="bg-red border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 ">
+      <nav class="container flex flex-wrap justify-between items-center mx-auto">
+        <Link to="/" class="flex items-center">
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660334879/My_project_ddlcsz.png"
+            class="mr-w h-7 sm:h-9"
             width="150px"
           />
         </Link>
-        <Link to="/">Home</Link>
-        <Link to="/AboutUs">About</Link>
-        <Link to="/Kittens">Kittens</Link>
-        <Link to="/Cart">Cart</Link>
+        <Link
+          to="/"
+          class="text-black  text-xl font-bold dark:text-white hover:underline"
+        >
+          Home
+        </Link>
+        <Link
+          to="/AboutUs"
+          class="text-black text-xl font-bold dark:text-white hover:underline"
+        >
+          About
+        </Link>
+        <Link
+          to="/Kittens"
+          class="text-black text-xl font-bold dark:text-white hover:underline"
+        >
+          Kittens
+        </Link>
+        <Link
+          to="/Cart"
+          class="text-black text-xl font-bold dark:text-white hover:underline"
+        >
+          Cart
+        </Link>
 
         {user.username ? (
           <button
@@ -36,7 +57,12 @@ export default function NavBar() {
             Logout
           </button>
         ) : (
-          <Link to="/Login">Login</Link>
+          <Link
+            to="/Login"
+            class="text-black text-xl font-bold dark:text-white hover:underline"
+          >
+            Login
+          </Link>
         )}
       </nav>
     </div>
