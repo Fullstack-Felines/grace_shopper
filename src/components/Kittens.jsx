@@ -3,7 +3,8 @@ import useKittens from "../Hooks/useKittens";
 import KittensCard from "./KittensCard";
 
 export default function Kittens() {
-  const { kittens, setKittens } = useKittens();
+  const { allKittens, setAllKittens, availableKittens, setAvailableKittens } =
+    useKittens();
   const [searchText, setSearchText] = useState("");
 
   function searchMatches(kitten, text) {
@@ -17,36 +18,33 @@ export default function Kittens() {
     return false;
   }
 
-  const filteredKittens = kittens.filter((kitten) =>
-    searchMatches(kitten, searchText)
-  );
+  let filteredKittens;
+  if (availableKittens.length) {
+    filteredKittens = availableKittens.filter((kitten) =>
+      searchMatches(kitten, searchText)
+    );
+  }
 
-  const kittensToDisplay = searchText.length ? filteredKittens : kittens;
-
-  const priceAscending = [...kittens].sort((a, b) => a.price - b.price);
-  console.log("PRICE ASCENDING", priceAscending);
-
-  const priceDescending = [...kittens].sort((a, b) => b.price - a.price);
-  console.log("PRICE DESCENDING", priceDescending);
+  const kittensToDisplay = searchText.length
+    ? filteredKittens
+    : availableKittens;
 
   const sortKittens = (selectEvent) => {
     const options = {
-      none: [...kittens],
-      ascending: [...kittens].sort((a, b) => a.price - b.price),
-      descending: [...kittens].sort((a, b) => b.price - a.price),
+      none: [...availableKittens].sort((a, b) => (a.name > b.name ? 1 : -1)),
+      ascending: [...availableKittens].sort((a, b) => a.price - b.price),
+      descending: [...availableKittens].sort((a, b) => b.price - a.price),
     };
-    setKittens(options[selectEvent.target.value]);
+    setAvailableKittens(options[selectEvent.target.value]);
   };
 
   return (
     <div>
       <label>Sort By Price:</label>
       <select onChange={sortKittens}>
-        <option value="none" selected="selected">
-          None
-        </option>
-        <option value="ascending">Ascending</option>
-        <option value="descending">Descending</option>
+        <option value="none">None</option>
+        <option value="ascending">Low to high</option>
+        <option value="descending">High to low</option>
       </select>
       <div>
         <input
@@ -55,9 +53,18 @@ export default function Kittens() {
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
       </div>
-      {kittensToDisplay.map((kitten, index) => {
-        return <KittensCard key={`${kitten.id}`} kitten={kitten} />;
-      })}
+
+      <div class=" px-10 py-20 bg-tan grid gap-10 lg:grid-cols-3 xl:grid-cols-4 sm:grid-cols-2">
+        {kittensToDisplay.map((kitten) => {
+          return (
+            <div>
+              {kitten.available ? (
+                <KittensCard key={`${kitten.id}`} kitten={kitten} />
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

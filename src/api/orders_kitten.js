@@ -26,23 +26,23 @@ export const fetchOrderById = async (id) => {
   return result;
 };
 
-export const createOrder = async ({ kitten_id, cart_id }) => {
+// addingToCart
+export const createOrderItem = async ({ order_id, kitten_id }) => {
   const response = await fetch(`/api/orders_kitten/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      order_id,
       kitten_id,
-      cart_id,
     }),
   });
   const result = await response.json();
   return result;
 };
 
-// addingToCart
-export const updateOrders = async (orderId, { kitten_id, cart_id }) => {
+export const updateOrders = async (orderId, { kitten_id, order_id }) => {
   const response = await fetch(`/api/orders_kitten/${orderId}`, {
     method: "PATCH",
     headers: {
@@ -50,7 +50,7 @@ export const updateOrders = async (orderId, { kitten_id, cart_id }) => {
     },
     body: JSON.stringify({
       kitten_id,
-      cart_id,
+      order_id,
     }),
   });
   const result = await response.json();
