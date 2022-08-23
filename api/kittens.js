@@ -110,4 +110,19 @@ kittenRouter.patch("/:id", async (req, res, next) => {
     next(error);
   }
 });
+
+kittenRouter.delete("/:id", async (req, res, next) => {
+  try {
+    const kittenId = +req.params.id;
+    const deletedKitten = await prisma.kittens.delete({
+      where: {
+        id: kittenId,
+      },
+    });
+    res.send(deletedKitten);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = kittenRouter;

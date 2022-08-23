@@ -12,18 +12,11 @@ export default function Payment() {
   return (
     <div>
       <form
-        onSubmit={async () => {
+        onSubmit={async (event) => {
           //update cart to be inactive and update shipping address
-          const newCart = await createCart({
-            customer_id: cart.customer_id,
-            total_amount: 0,
-            is_active: true,
-            shipping_address: shippingAddress,
-          });
+          event.preventDefault();
 
           const oldCart = cart;
-          setCart(newCart);
-
           await updateCart(oldCart.id, {
             customer_id: oldCart.customer_id,
             total_amount: oldCart.total_amount,
@@ -45,6 +38,15 @@ export default function Payment() {
               });
             })
           );
+
+          const newCart = await createCart({
+            customer_id: cart.customer_id,
+            total_amount: 0,
+            is_active: true,
+            shipping_address: shippingAddress,
+          });
+
+          setCart(newCart);
 
           // START HERE TOMORROW (Hitting everything except the two things below);
           alert("Thank you for your purchase!");

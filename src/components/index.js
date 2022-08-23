@@ -12,3 +12,4 @@ export { default as Register } from "./Register";
 export { default as SingleKitten } from "./SingleKitten";
 export { default as KittensCard } from "./KittensCard";
 export { default as Payment } from "./Payment";
+export { default as Admin } from "./Admin";

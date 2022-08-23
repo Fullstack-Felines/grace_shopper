@@ -1,4 +1,5 @@
 const prisma = require("./prisma");
+const bcrypt = require("bcrypt");
 const { kittens, customers, orders, orders_kitten } = require("./seedData.js");
 
 const dropTables = async () => {
@@ -22,7 +23,8 @@ const createTables = async () => {
     phonenumber VARCHAR(255) NOT NULL,
     username VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    email VARCHAR (255) UNIQUE NOT NULL
+    email VARCHAR (255) UNIQUE NOT NULL,
+    is_admin BOOLEAN DEFAULT false
   );`;
 
   await prisma.$executeRaw`
@@ -57,6 +59,22 @@ const createTables = async () => {
 };
 
 const seedDb = async () => {
+  console.log("creating admin...");
+  let password = "admin";
+  password = await bcrypt.hash(password, 10);
+  const admin = await prisma.customers.create({
+    data: {
+      username: "admin",
+      password: password,
+      name: "admin",
+      address: "admin",
+      phonenumber: "admin",
+      email: "admin",
+      is_admin: true,
+    },
+  });
+  console.log(admin);
+
   console.log("creating customers...");
   for (const customer of customers) {
     const createdCustomer = await prisma.customers.create({ data: customer });

@@ -15,6 +15,7 @@ import {
   Register,
   SingleKitten,
   Payment,
+  Admin,
   SearchBar,
   KittensCard,
   KittensList,
@@ -28,6 +29,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Admin" element={<Admin />} />
         <Route path="/AdoptedKittens" element={<AdoptedKittens />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Faq" element={<Faq />} />
