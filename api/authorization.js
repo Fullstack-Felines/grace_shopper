@@ -23,6 +23,15 @@ authRouter.post("/register", async (req, res, next) => {
       data: { username, password, name, address, phonenumber, email },
     });
 
+    const cart = await prisma.orders.create({
+      data: {
+        customer_id: user.id,
+        total_amount: 0,
+        is_active: true,
+        shipping_address: user.address,
+      },
+    });
+
     delete user.password;
 
     const token = jwt.sign(user, JWT_SECRET);
