@@ -39,8 +39,8 @@ export default function Kittens() {
   };
 
   return (
-    <div class="flex flex-col">
-      <div>
+    <div class="flex flex-col ">
+      <div class="flex justify-center">
         <input
           class="
              form-control
@@ -70,7 +70,7 @@ export default function Kittens() {
           class="text-black bg-cafe hover:bg-red font-medium rounded-lg text-sm text-center mr-1"
           onChange={sortKittens}
         >
-          <option value="none">Sort By Price</option>
+          <option value="none">Sort by price:</option>
           <option value="ascending">Low to high</option>
           <option value="descending">High to low</option>
         </select>
