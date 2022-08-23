@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div class="bg-red border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 ">
-      <footer class="container flex flex-wrap justify-evenly items-center mx-auto">
+    <div class="fixed bottom-1  bg-red border-gray-200 px-1 sm:px-8 py-3 rounded ">
+      <footer class="container mx-auto">
         <Link
           to="/faq"
-          class="text-brown  text-xl font-bold dark:text-white hover:underline"
+          class="text-brown  text-xl font-bold transform  w-1/5 hover:text-white transition duration-500 hover:scale-125 "
         >
           FAQ
         </Link>
         <Link
           to="/Contact"
-          class="text-brown  text-xl font-bold dark:text-white hover:underline"
+          class="text-brown  text-xl font-bold transform  w-1/5 hover:text-white transition duration-500 hover:scale-125 "
         >
           Contact Us!
         </Link>
