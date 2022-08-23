@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Hooks";
-import { createOrder } from "../api/orders";
-import Kittens from "./Kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const { cart } = useCart();
-
+  const { addKittenToCart } = useCart();
   return (
     <div>
       <div class="bg-blue max-w-xs rounded-md shadow-lg hover:scale-105 transition duration-1000 cursor-pointer">

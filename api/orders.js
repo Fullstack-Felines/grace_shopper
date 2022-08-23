@@ -30,7 +30,7 @@ ordersRouter.get("/:id", async (req, res, next) => {
       },
     });
     if (singleCart) {
-      res.send(singleCart);
+      res.send({ id: singleCart.id, ...singleCart });
     } else {
       res.status(404);
       next({
@@ -47,22 +47,20 @@ ordersRouter.get("/:id", async (req, res, next) => {
 //get a cart by customer id
 ordersRouter.get("/userCart/:userid", async (req, res, next) => {
   try {
-    const singleCart = await prisma.orders.findUnique({
+    const singleCart = await prisma.orders.findFirst({
       where: {
         customer_id: +req.params.userid,
+        is_active: true,
+      },
+      include: {
+        orders_kitten: {
+          include: {
+            kittens: true,
+          },
+        },
       },
     });
-
-    if (singleCart) {
-      res.send(singleCart);
-    } else {
-      res.status(404);
-      next({
-        error: "not found",
-        message: "This cart does not exist",
-        name: "There is no cart for our kittens",
-      });
-    }
+    res.send(singleCart);
   } catch (error) {
     next(error);
   }
@@ -76,7 +74,7 @@ ordersRouter.post("/", async (req, res, next) => {
     const createdCart = await prisma.orders.create({
       data: { customer_id, total_amount, is_active, shipping_address },
     });
-    res.send(createdCart);
+    res.send({ id: createdCart.id, ...createdCart });
   } catch (error) {
     next(error);
   }
@@ -95,7 +93,7 @@ ordersRouter.patch("/:id", authRequired, async (req, res, next) => {
       },
       data: { customer_id, total_amount, is_active, shipping_address },
     });
-    res.send(updatedCart);
+    res.send({ id: updatedCart.id, updatedCart });
   } catch (error) {
     next(error);
   }

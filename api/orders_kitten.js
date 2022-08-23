@@ -6,7 +6,7 @@ orders_kittenRouter.get("/cartOrder/:id", async (req, res, next) => {
   try {
     const orders = await prisma.orders_kitten.findMany({
       where: {
-        id: +req.params.id,
+        order_id: +req.params.id,
       },
     });
     res.send(orders);

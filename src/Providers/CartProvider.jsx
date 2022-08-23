@@ -13,55 +13,45 @@ export default function CartProvider({ children }) {
   });
   const { user } = useAuth();
 
+  console.log("USER IN CART PROV", user);
+  console.log("Cart in cart provider", cart);
+
   useEffect(() => {
-    if (!user) {
-      //if is in local storage, set user's cart to local storage cart
-      if (localStorage.getItem("cart")) {
-        const guestcart = localStorage.getItem("cart");
-        setCart(guestcart);
-      } else {
-        //if it doesn't exist yet, we'll create a cart
-        localStorage.setItem(
-          "cart",
-          JSON.stringify({
-            customer_id: 0,
-            total_amount: 0,
-            is_active: true,
-            shipping_address: "No Address",
-          })
-        );
-
-        setCart({
-          customer_id: 0,
-          total_amount: 0,
-          is_active: true,
-          shipping_address: "No Address",
-        });
-      }
-      //check local storage
-    } else {
-      //first we check database to see if this user has a cart.
-      const checkCart = async (userID) => {
-        const usercart = await fetchCartByUserId(userID);
-        //check to see if we got an actual result
-
-        if (usercart.customer_id) {
-          setCart(usercart);
-        } else {
-          // if no cart, make a new cart, insert into local storage, make a cart in db for user
-
-          setCart({
-            customer_id: userID,
-            total_amount: 0,
-            is_active: true,
-            shipping_address: user.address,
-          });
-
-          const newCart = await createCart(cart);
-        }
-      };
-      checkCart(user.id);
+    async function getCart() {
+      const cartFromDb = await fetchCartByUserId(user.id);
+      console.log(cartFromDb);
+      setCart(cartFromDb);
     }
+
+    // if (!user) {
+    //   //if is in local storage, set user's cart to local storage cart
+    //   if (localStorage.getItem("cart")) {
+    //     const guestcart = localStorage.getItem("cart");
+    //     setCart(guestcart);
+    //   } else {
+    //     //if it doesn't exist yet, we'll create a cart
+    //     localStorage.setItem(
+    //       "cart",
+    //       JSON.stringify({
+    //         customer_id: 0,
+    //         total_amount: 0,
+    //         is_active: true,
+    //         shipping_address: "No Address",
+    //       })
+    //     );
+
+    //     setCart({
+    //       customer_id: 0,
+    //       total_amount: 0,
+    //       is_active: true,
+    //       shipping_address: "No Address",
+    //     });
+    //   }
+    //   //check local storage
+    // } else {
+    //first we check database to see if this user has a cart.
+    getCart();
+    // }
   }, [user]);
 
   return (
