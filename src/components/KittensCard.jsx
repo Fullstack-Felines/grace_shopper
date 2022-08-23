@@ -6,7 +6,7 @@ export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
   const { addKittenToCart } = useCart();
   return (
-    <div class="max-w-xs w-full rounded shadow-lg overflow-hidden h-full">
+    <div class="max-w-xs rounded shadow-lg overflow-hidden">
       <div>
         <div
           onClick={() => {
