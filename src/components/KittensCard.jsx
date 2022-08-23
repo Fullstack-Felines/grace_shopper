@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Hooks";
-import { createOrder } from "../api/orders";
-import Kittens from "./Kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
-  const { cart } = useCart();
-
+  const { addKittenToCart } = useCart();
   return (
-    <div class="max-w-xs w-full rounded shadow-lg overflow-hidden h-full">
+    <div class="max-w-xs rounded shadow-lg overflow-hidden">
       <div>
         <div
           onClick={() => {
@@ -22,7 +19,7 @@ export default function KittensCard({ kitten }) {
             alt="picture of kitten"
           />
         </div>
-        <div class="py-4 px-6 bg-pink">
+        <div class="py-4 px-6 bg-cardpaper">
           <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
             {kitten.name}
           </h3>
@@ -31,7 +28,7 @@ export default function KittensCard({ kitten }) {
             {kitten.description}
           </p>
           {kitten.available ? (
-            <p class="mt-4 text-lg font-thin text-brown flex justify-center m-2">
+            <p class="mt-4 text-lg text-brown flex justify-center m-2 opacity-80">
               ${kitten.price}.00
             </p>
           ) : null}
@@ -40,8 +37,7 @@ export default function KittensCard({ kitten }) {
               <button
                 class="font-semibold text-brown"
                 onClick={() => {
-                  // const order = createOrder(kitten.id, cart.id);
-                  // addToCart function from useCart
+                  addKittenToCart({ kitten_id: kitten.id });
                 }}
               >
                 Add to Cart

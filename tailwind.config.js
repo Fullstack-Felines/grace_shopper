@@ -16,6 +16,13 @@ module.exports = {
         black: "#0D0A08",
         white: "#FFFFFF",
         gray: "#969696",
+        coral: "#f27c82",
+        cardpaper: "#F6F1F0",
+        cultured: "#edf1f0",
+      },
+      backgroundImage: {
+        "home-pattern":
+          "url('https://res.cloudinary.com/dkmoq49jf/image/upload/v1661285874/169071-pic-domestic-kitten-free-download-png-hq_gw2ase.png')",
       },
     },
   },
