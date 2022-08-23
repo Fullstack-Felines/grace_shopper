@@ -19,22 +19,28 @@ export default function NavBar() {
             width="150px"
           />
         </Link>
-        <Link to="/" class="text-brown  text-xl font-bold  hover:underline">
+        <Link
+          to="/"
+          class="text-brown  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 "
+        >
           Home
         </Link>
         <Link
           to="/AboutUs"
-          class="text-brown text-xl font-bold  hover:underline"
+          class="text-brown  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 "
         >
           About
         </Link>
         <Link
           to="/Kittens"
-          class="text-brown text-xl font-bold  hover:underline"
+          class="text-brown  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 "
         >
           Kittens
         </Link>
-        <Link to="/Cart" class="text-brown text-xl font-bold  hover:underline">
+        <Link
+          to="/Cart"
+          class="text-brown  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 "
+        >
           Cart
         </Link>
 
@@ -53,7 +59,7 @@ export default function NavBar() {
         ) : (
           <Link
             to="/Login"
-            class="text-brown text-xl font-bold  hover:underline"
+            class="text-brown  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 "
           >
             Login
           </Link>
