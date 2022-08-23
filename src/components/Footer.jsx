@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div class="fixed bottom-1  bg-red border-gray-200 px-1 sm:px-8 py-3 rounded ">
+    <div class="fixed bottom-1  bg-red border-gray-200 px-1 sm:px-8 py-3 rounded opacity-60 ">
       <footer class="container mx-auto">
         <Link
           to="/faq"
