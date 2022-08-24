@@ -15,7 +15,6 @@ export default function Payment() {
         onSubmit={async (event) => {
           //update cart to be inactive and update shipping address
           event.preventDefault();
-
           const oldCart = cart;
           await updateCart(oldCart.id, {
             customer_id: oldCart.customer_id,
@@ -47,10 +46,7 @@ export default function Payment() {
           });
 
           setCart(newCart);
-
-          // START HERE TOMORROW (Hitting everything except the two things below);
           alert("Thank you for your purchase!");
-          //navigate to home page
           navigate("/");
         }}
       >
@@ -164,8 +160,6 @@ export default function Payment() {
         />
         <button type="Submit">Submit</button>
       </form>
-
-      {/* Any info in here will not be logged  */}
     </div>
   );
 }

@@ -4,20 +4,6 @@ import KittensCard from "./KittensCard";
 
 export default function AdoptedKittens() {
   const { unavailableKittens } = useKittens();
-  console.log("unavailable kits", unavailableKittens);
-  // function displayAdoptedKittens(kittens) {
-  //   if (!kittens.available) {
-  //     return true;
-  //   }
-  // }
-
-  // const filteredUnavailableKittens = unavailableKittens.filter((kittens) =>
-  //   displayAdoptedKittens(kittens)
-  // );
-
-  // const AdoptedKittensToDisplay = !kittens.available
-  //   ? filteredUnavailableKittens
-  //   : null;
 
   return (
     <div class="grid grid-cols-3 gap-5 mb-8">
@@ -31,5 +17,3 @@ export default function AdoptedKittens() {
     </div>
   );
 }
-
-// return <KittensCard key={`${kittens.id}`} kitten={kittens} />;

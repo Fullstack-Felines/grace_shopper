@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import useKittens from "../Hooks/useKittens";
 import KittensCard from "./KittensCard";
 import { fetchKittenById } from "../api/kittens";
 import { useParams } from "react-router-dom";
@@ -11,7 +10,7 @@ export default function SingleKitten() {
   useEffect(() => {
     const getKittenById = async (kittenId) => {
       const result = await fetchKittenById(kittenId);
-      console.log("singleKitten", result);
+
       setKitten(result);
     };
     getKittenById(params.id);

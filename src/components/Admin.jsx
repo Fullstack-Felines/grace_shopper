@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { createKitten } from "../api/kittens";
+import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
-  const [kitten, setKitten] = useState({});
   const [kittenName, setKittenName] = useState("");
   const [breed, setBreed] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [imgUrl, setImgUrl] = useState("");
+  const navigate = useNavigate();
   return (
     <div class="bg-gradient-to-b from-pink to-cultured flex flex-grow">
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          setKitten({
+
+          const newKitten = await createKitten({
             name: kittenName,
             breed,
             description,
@@ -21,11 +23,12 @@ export default function Admin() {
             img_url: imgUrl,
             available: true,
           });
-          const newKitten = await createKitten(kitten);
-          console.log("The kitten you created is:", newKitten);
+
+          navigate("/Kittens");
+          window.location.reload();
         }}
       >
-        create a new kitten!
+        <h3>Create a New Kitten:</h3>
         <input
           value={kittenName}
           placeholder="Name of kitten"
@@ -44,7 +47,7 @@ export default function Admin() {
         <input
           value={price}
           placeholder="price"
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPrice(Number(e.target.value))}
         />
         <input
           value={imgUrl}

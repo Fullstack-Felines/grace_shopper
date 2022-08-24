@@ -109,7 +109,7 @@ export const updateKitten = async ({
     }),
   });
   const result = await response.json();
-  console.log("Patched result from frontend API:", result);
+
   return result;
 };
 

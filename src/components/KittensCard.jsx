@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart, useAuth } from "../Hooks";
 import { updateKitten, deleteKitten } from "../api/kittens";
@@ -10,7 +10,6 @@ export default function KittensCard({ kitten }) {
   const { user } = useAuth();
 
   //use state for updating kittens
-  const [kittenToEdit, setKittenToEdit] = useState(kitten);
   const [kittenName, setKittenName] = useState(kitten.name);
   const [breed, setBreed] = useState(kitten.breed);
   const [description, setDescription] = useState(kitten.description);
@@ -142,6 +141,7 @@ export default function KittensCard({ kitten }) {
                   onChange={(e) => {
                     setPrice(e.target.value);
                   }}
+<<<<<<< HEAD
                 />
                 <input
                   value={imgUrl}
@@ -153,6 +153,78 @@ export default function KittensCard({ kitten }) {
             </div>
           ) : null
         ) : null}
+=======
+                >
+                  Edit Kitten
+                </button>
+
+                <button
+                  onClick={() => {
+                    deleteKitten(kitten.id);
+                    alert("Kitten Deleted");
+                    window.location.reload();
+                  }}
+                >
+                  Delete Kitten
+                </button>
+              </div>
+            ) : null}
+
+            {user.is_admin ? (
+              isEditing ? (
+                <div>
+                  <form
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      const updatedKitten = await updateKitten({
+                        kittenId: kitten.id,
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+
+                      setIsEditing(false);
+                      window.location.reload();
+                    }}
+                  >
+                    <input
+                      value={kittenName}
+                      placeholder="Name of kitten"
+                      onChange={(e) => setKittenName(e.target.value)}
+                    />
+                    <input
+                      value={breed}
+                      placeholder="Breed"
+                      onChange={(e) => setBreed(e.target.value)}
+                    />
+                    <input
+                      value={description}
+                      placeholder="Description"
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <input
+                      value={price}
+                      placeholder="price"
+                      onChange={(e) => {
+                        setPrice(Number(e.target.value));
+                      }}
+                    />
+                    <input
+                      value={imgUrl}
+                      placeholder="imgUrl"
+                      onChange={(e) => setImgUrl(e.target.value)}
+                    />
+                    <button type="Submit">Update kitten!</button>
+                  </form>
+                </div>
+              ) : null
+            ) : null}
+          </span>
+        </div>
+>>>>>>> chani_branch
       </div>
     </div>
   );

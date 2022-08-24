@@ -69,7 +69,6 @@ ordersRouter.get("/userCart/:userid", async (req, res, next) => {
 //create a new cart
 ordersRouter.post("/", async (req, res, next) => {
   try {
-    console.log("Backend creatingcart body:", req.body);
     const { customer_id, total_amount, is_active, shipping_address } = req.body;
     const createdCart = await prisma.orders.create({
       data: {
