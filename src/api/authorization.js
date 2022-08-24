@@ -54,3 +54,9 @@ export const fetchMe = async () => {
   const result = await response.json();
   return result;
 };
+
+export const fetchAllUsers = async () => {
+  const response = await fetch(`/api/authorization/all_users`);
+  const result = await response.json();
+  return result;
+};
