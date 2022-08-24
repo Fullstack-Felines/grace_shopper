@@ -98,13 +98,14 @@ kittenRouter.post("/", async (req, res, next) => {
 kittenRouter.patch("/:id", async (req, res, next) => {
   try {
     const kittenId = +req.params.id;
-    const body = req.body;
+    const { name, breed, description, price, img_url, available } = req.body;
     const updatedKitten = await prisma.kittens.update({
       where: {
         id: kittenId,
       },
-      data: { ...body },
+      data: { name, breed, description, price, img_url, available },
     });
+    console.log("updatedKitten from backend", updatedKitten);
     res.send(updatedKitten);
   } catch (error) {
     next(error);

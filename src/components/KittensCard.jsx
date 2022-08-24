@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart, useAuth } from "../Hooks";
-import { updateKitten } from "../api/kittens";
+import { updateKitten, deleteKitten } from "../api/kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export default function KittensCard({ kitten }) {
   const { user } = useAuth();
 
   //use state for updating kittens
-  const [kittenToEdit, setKittenToEdit] = useState({});
+  const [kittenToEdit, setKittenToEdit] = useState(kitten);
   const [kittenName, setKittenName] = useState(kitten.name);
   const [breed, setBreed] = useState(kitten.breed);
   const [description, setDescription] = useState(kitten.description);
@@ -57,13 +57,26 @@ export default function KittensCard({ kitten }) {
             ) : null}
 
             {user.is_admin ? (
-              <button
-                onClick={() => {
-                  setIsEditing(true);
-                }}
-              >
-                Edit Kitten
-              </button>
+              <div>
+                <button
+                  onClick={() => {
+                    setIsEditing(true);
+                  }}
+                >
+                  Edit Kitten
+                </button>
+
+                <button
+                  onClick={() => {
+                    console.log("Deleting Kitting");
+                    deleteKitten(kitten.id);
+                    alert("Kitten Deleted");
+                    window.location.reload();
+                  }}
+                >
+                  Delete Kitten
+                </button>
+              </div>
             ) : null}
 
             {user.is_admin ? (
@@ -71,7 +84,18 @@ export default function KittensCard({ kitten }) {
                 <form
                   onSubmit={async (e) => {
                     e.preventDefault();
-                    setKittenToEdit({
+                    // setKittenToEdit({
+                    //   kittenId: kitten.id,
+                    //   name: kittenName,
+                    //   breed,
+                    //   description,
+                    //   price,
+                    //   img_url: imgUrl,
+                    //   available: true,
+                    // });
+                    console.log("kitten.id:", kitten.id);
+                    console.log("About to try updating kitten:", {
+                      kittenId: kitten.id,
                       name: kittenName,
                       breed,
                       description,
@@ -79,11 +103,19 @@ export default function KittensCard({ kitten }) {
                       img_url: imgUrl,
                       available: true,
                     });
-                    const editedKitten = await updateKitten(kitten);
+                    const updatedKitten = await updateKitten({
+                      kittenId: kitten.id,
+                      name: kittenName,
+                      breed,
+                      description,
+                      price,
+                      img_url: imgUrl,
+                      available: true,
+                    });
+                    // kitten = updatedKitten;
                     setIsEditing(false);
                   }}
                 >
-                  create a new kitten!
                   <input
                     value={kittenName}
                     placeholder="Name of kitten"
@@ -102,7 +134,9 @@ export default function KittensCard({ kitten }) {
                   <input
                     value={price}
                     placeholder="price"
-                    onChange={(e) => setPrice(e.target.value)}
+                    onChange={(e) => {
+                      setPrice(e.target.value);
+                    }}
                   />
                   <input
                     value={imgUrl}
