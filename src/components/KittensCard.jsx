@@ -32,12 +32,14 @@ export default function KittensCard({ kitten }) {
           />
         </div>
         <div class="py-4 px-6 bg-cardpaper">
-          <h3 class="text-2xl font-bold text-brown flex justify-center m-2">
+          <h3 class="text-2xl font-bold text-darkbrown flex justify-center m-2 opacity-80">
             {kitten.name}
           </h3>
-          <p class="text-xl text-red flex justify-center m-2">{kitten.breed}</p>
+          <p class="text-xl text-coral flex justify-center m-2">
+            {kitten.breed}
+          </p>
           {kitten.available ? (
-            <p class=" text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
+            <p class=" text-lg text-cafe flex justify-center text-center m-2 leading-relaxed">
               {kitten.description}
             </p>
           ) : null}
@@ -46,10 +48,10 @@ export default function KittensCard({ kitten }) {
               ${kitten.price}.00
             </p>
           ) : null}
-          <span class="flex justify-center mt-4 bg-azure w-1/2 hover:bg-red py-1 rounded">
+          <span class="flex justify-center mt-4 bg-red w-1/2 hover:bg-red py-1 rounded">
             {kitten.available ? (
               <button
-                class="font-semibold text-brown"
+                class="font-semibold text-brown "
                 onClick={() => {
                   addKittenToCart({ kitten_id: kitten.id });
                 }}

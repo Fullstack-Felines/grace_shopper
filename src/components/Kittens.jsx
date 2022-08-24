@@ -51,7 +51,7 @@ export default function Kittens() {
 
       <div class="flex justify-evenly p-3">
         <select
-          class="text-black bg-cafe hover:bg-red font-medium rounded-lg text-sm text-center mr-1"
+          class="text-white p-2 bg-coral font-medium rounded-lg text-sm text-center opacity-90"
           onChange={sortKittens}
         >
           <option value="none">Sort by price:</option>
