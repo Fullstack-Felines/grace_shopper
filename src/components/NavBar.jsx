@@ -10,12 +10,12 @@ export default function NavBar() {
   // const guestCart = makeGuestCart();
 
   return (
-    <div class="bg-pink  px-2 sm:px-4 py-2.5 rounded min-h-80">
-      <nav class="container flex flex-wrap justify-evenly items-center mx-auto">
+    <div class="bg-pink px-2 sm:px-4 py-2.5 rounded min-h-80">
+      <nav class="flex flex-wrap justify-evenly items-center mx-auto">
         <Link to="/" class="flex items-center">
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661282043/Fullstack_Felines_1_o93p2j.png"
-            class="object-contain h-14  hover transition duration-300 hover:scale-125"
+            class="object-contain h-14 transition duration-300 hover:scale-125"
           />
         </Link>
         <Link
