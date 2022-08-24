@@ -22,7 +22,6 @@ export default function Admin() {
             available: true,
           });
           const newKitten = await createKitten(kitten);
-          console.log("The kitten you created is:", newKitten);
         }}
       >
         create a new kitten!

@@ -94,17 +94,7 @@ export default function KittensCard({ kitten }) {
                         img_url: imgUrl,
                         available: true,
                       });
-                      console.log("kitten.id:", kitten.id);
 
-                      console.log("About to try updating kitten:", {
-                        kittenId: kitten.id,
-                        name: kittenName,
-                        breed,
-                        description,
-                        price,
-                        img_url: imgUrl,
-                        available: true,
-                      });
                       const updatedKitten = await updateKitten({
                         kittenId: kitten.id,
                         name: kittenName,
@@ -114,8 +104,6 @@ export default function KittensCard({ kitten }) {
                         img_url: imgUrl,
                         available: true,
                       });
-                      console.log("updatedKitten kitten card", updatedKitten);
-                      // kitten = updatedKitten;
 
                       setIsEditing(false);
                       window.location.reload();

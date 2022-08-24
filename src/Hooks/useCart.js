@@ -5,18 +5,8 @@ import { fetchCartByUserId } from "../api/orders";
 import useAuth from "./useAuth";
 
 const useCart = () => {
-  // bring in authContext
   const { cart, setCart } = useContext(CartContext);
   const { user } = useAuth();
-
-  // const makeGuestCart = async () => {
-  //   const guestCart = await createCart(10000000, 0, true, "");
-  //   return guestCart;
-  // }; // return this after reimplemented
-
-  // addItemToCart -> if the user is logged in, vs not logged in
-
-  // { 1: true, 2: true }
 
   const addKittenToCart = async ({ kitten_id }) => {
     const orderItem = await createOrderItem({ order_id: cart.id, kitten_id });
