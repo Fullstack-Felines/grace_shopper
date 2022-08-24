@@ -106,6 +106,7 @@ export default function KittensCard({ kitten }) {
                         available: true,
                       });
                       const updatedKitten = await updateKitten({
+                        kittenId: kitten.id,
                         name: kittenName,
                         breed,
                         description,
@@ -117,6 +118,7 @@ export default function KittensCard({ kitten }) {
                       // kitten = updatedKitten;
 
                       setIsEditing(false);
+                      window.location.reload();
                     }}
                   >
                     <input
@@ -138,7 +140,7 @@ export default function KittensCard({ kitten }) {
                       value={price}
                       placeholder="price"
                       onChange={(e) => {
-                        setPrice(e.target.value);
+                        setPrice(Number(e.target.value));
                       }}
                     />
                     <input
