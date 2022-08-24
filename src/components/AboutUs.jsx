@@ -3,8 +3,8 @@ import AdoptedKittens from "./AdoptedKittens";
 
 export default function AboutUs() {
   return (
-    <div class=" flex justify-center content-center bg-gradient-to-b from-pink to-cultured">
-      <div class="flex flex-wrap content-center justify-center w-5/6 md:w-4/5 lg:w-2/3">
+    <div class="flex justify-center bg-gradient-to-b from-pink to-cultured">
+      <div class="flex flex-wrap justify-center w-5/6 md:w-4/5 lg:w-2/3 flex-col">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div class="bg-cardpaper col-span-1 sm:col-span-3 flex flex-col text-center rounded-lg shadow-lg mt-10">
             <h3 class="flex rounded-t-lg place-content-center font-medium text-3xl text-white bg-coral opacity-80 p-2">
@@ -70,128 +70,140 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-        <h3 class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4">
-          Recent Adoptions
-        </h3>
-        <div>
+        <div class="">
+          <span class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4 flex">
+            Recent Adoptions
+          </span>
+        </div>
+        <div class="flex flex-row">
           <AdoptedKittens />
         </div>
-        <div class="">
-          <h3 class="font-bold text-3xl sm:text-4xl font-heading text-darkbrown mb-4">
-            Our Team
-          </h3>
-        </div>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-4">
-          <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
-            <img
-              class="block h-24 w-24 rounded-full block-center"
-              src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661203037/IMG_2622_iglwiy.jpg"
-              alt="Chani's profile photo"
-            />
-            <div class="text-center">
-              <div class="">
-                <p class="text-md text-black font-semibold">Chani Ngan</p>
-                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
-              </div>
-
-              <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                />
-              </button>
-              <button class=" rounded border hover:bg-indeed border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                />
-              </button>
-            </div>
+        <div class="flex flex-col justify-center">
+          <div class="flex justify-center">
+            <h3 class="font-bold text-3xl sm:text-4xl font-heading text-darkbrown mb-4">
+              Our Team
+            </h3>
           </div>
-          <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
-            <img
-              class="block h-24 w-24 rounded-full block-center"
-              src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660882850/linkedinprofilepic_yfubxx.jpg"
-              alt="Nico's profile photo"
-            />
-            <div class="text-center">
-              <div class="">
-                <p class="text-md text-black font-semibold">Nico Francis</p>
-                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
-              </div>
+          <div class="grid grid-cols-2 gap-5 sm:grid-cols-4">
+            <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
+              <img
+                class="block h-24 w-24 rounded-full block-center"
+                src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661203037/IMG_2622_iglwiy.jpg"
+                alt="Chani's profile photo"
+              />
+              <div class="text-center">
+                <div class="">
+                  <p class="text-md text-black font-semibold">Chani Ngan</p>
+                  <p class="text-cafe font-medium px-2 text-sm">
+                    Web developer
+                  </p>
+                </div>
 
-              <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                />
-              </button>
-              <button class=" rounded border hover:bg-indeed border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                />
-              </button>
+                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                  />
+                </button>
+                <button class=" rounded border hover:bg-indeed border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
-            <img
-              class="block h-24 w-24 rounded-full block-center"
-              src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661308830/96214715_mbdq0d.jpg"
-              alt="Jayden's profile photo"
-            />
-            <div class="text-center">
-              <div class="">
-                <p class="text-md text-black font-semibold">Jayden Lundahl</p>
-                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
-              </div>
+            <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
+              <img
+                class="block h-24 w-24 rounded-full block-center"
+                src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660882850/linkedinprofilepic_yfubxx.jpg"
+                alt="Nico's profile photo"
+              />
+              <div class="text-center">
+                <div class="">
+                  <p class="text-md text-black font-semibold">Nico Francis</p>
+                  <p class="text-cafe font-medium px-2 text-sm">
+                    Web developer
+                  </p>
+                </div>
 
-              <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                />
-              </button>
-              <button class=" rounded border hover:bg-indeed border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                />
-              </button>
+                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                  />
+                </button>
+                <button class=" rounded border hover:bg-indeed border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
-            <img
-              class="block h-24 w-24 rounded-full block-center"
-              src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660855641/42664665_iel3nq.jpg"
-              alt="Stephan's profile photo"
-            />
-            <div class="text-center">
-              <div class="">
-                <p class="text-md text-black font-semibold">Stephan Manley</p>
-                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
-              </div>
+            <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
+              <img
+                class="block h-24 w-24 rounded-full block-center"
+                src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661308830/96214715_mbdq0d.jpg"
+                alt="Jayden's profile photo"
+              />
+              <div class="text-center">
+                <div class="">
+                  <p class="text-md text-black font-semibold">Jayden Lundahl</p>
+                  <p class="text-cafe font-medium px-2 text-sm">
+                    Web developer
+                  </p>
+                </div>
 
-              <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                />
-              </button>
-              <button class=" rounded border hover:bg-indeed border-transparent">
-                <img
-                  href="https://www.google.com"
-                  class="w-5 border-none"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                />
-              </button>
+                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                  />
+                </button>
+                <button class=" rounded border hover:bg-indeed border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
+              <img
+                class="block h-24 w-24 rounded-full block-center"
+                src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660855641/42664665_iel3nq.jpg"
+                alt="Stephan's profile photo"
+              />
+              <div class="text-center">
+                <div class="">
+                  <p class="text-md text-black font-semibold">Stephan Manley</p>
+                  <p class="text-cafe font-medium px-2 text-sm">
+                    Web developer
+                  </p>
+                </div>
+
+                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                  />
+                </button>
+                <button class=" rounded border hover:bg-indeed border-transparent">
+                  <img
+                    href="https://www.google.com"
+                    class="w-5 border-none"
+                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
