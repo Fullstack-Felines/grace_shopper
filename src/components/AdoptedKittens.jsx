@@ -20,8 +20,7 @@ export default function AdoptedKittens() {
   //   : null;
 
   return (
-    <div>
-      <h2 class="">Recent Adoptions</h2>
+    <div class="grid grid-cols-3 gap-5 mb-8">
       {unavailableKittens.map((kitten) => {
         return (
           <div>
@@ -32,5 +31,3 @@ export default function AdoptedKittens() {
     </div>
   );
 }
-
-// return <KittensCard key={`${kittens.id}`} kitten={kittens} />;

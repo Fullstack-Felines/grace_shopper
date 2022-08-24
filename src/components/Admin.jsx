@@ -9,7 +9,7 @@ export default function Admin() {
   const [price, setPrice] = useState(0);
   const [imgUrl, setImgUrl] = useState("");
   return (
-    <div>
+    <div class="bg-gradient-to-b from-pink to-cultured flex flex-grow">
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -22,7 +22,6 @@ export default function Admin() {
             available: true,
           });
           const newKitten = await createKitten(kitten);
-          console.log("The kitten you created is:", newKitten);
         }}
       >
         create a new kitten!

@@ -11,6 +11,7 @@ export default function SingleKitten() {
   useEffect(() => {
     const getKittenById = async (kittenId) => {
       const result = await fetchKittenById(kittenId);
+
       setKitten(result);
     };
     getKittenById(params.id);

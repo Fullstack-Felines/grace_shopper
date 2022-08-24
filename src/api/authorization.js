@@ -21,8 +21,7 @@ export const registerUser = async (
     }),
   });
   const result = await response.json();
-  console.log("response from src", response);
-  console.log("result from src", result);
+
   return result;
 };
 

@@ -48,9 +48,6 @@ export default function NavBar() {
             onClick={async () => {
               const result = await logoutUser();
               setUser({ loggedIn: false });
-
-              // setCart(guestCart);
-              console.log("User state after logout:", user);
             }}
           >
             Logout

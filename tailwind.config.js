@@ -19,6 +19,8 @@ module.exports = {
         coral: "#f27c82",
         cardpaper: "#F6F1F0",
         cultured: "#edf1f0",
+        indeed: "#2164f4",
+        github: "#6cc644",
       },
       backgroundImage: {
         "home-pattern":

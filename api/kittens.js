@@ -12,21 +12,22 @@ kittenRouter.get("/", async (req, res, next) => {
 });
 
 //get a kitten by id
-// kittenRouter.get("/:id", async (req, res, next) => {
-//   try {
-//     const singleKitten = await prisma.kittens.findFirst({
-//       where: {
-//         id: +req.params.id,
-//       },
-//     });
-//     res.send(singleKitten);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+kittenRouter.get("/:id", async (req, res, next) => {
+  try {
+    const kittenId = +req.params.id;
+    const singleKitten = await prisma.kittens.findUnique({
+      where: {
+        id: kittenId,
+      },
+    });
+    res.send(singleKitten);
+  } catch (error) {
+    next(error);
+  }
+});
 
 //get available kittens
-kittenRouter.get("/available", async (req, res, next) => {
+kittenRouter.get("/kitten/available", async (req, res, next) => {
   try {
     const availableKittens = await prisma.kittens.findMany({
       where: {
@@ -40,7 +41,7 @@ kittenRouter.get("/available", async (req, res, next) => {
 });
 
 //get unavailable kittens
-kittenRouter.get("/unavailable", async (req, res, next) => {
+kittenRouter.get("/kitten/unavailable", async (req, res, next) => {
   try {
     const unavailableKittens = await prisma.kittens.findMany({
       where: {
@@ -98,13 +99,14 @@ kittenRouter.post("/", async (req, res, next) => {
 kittenRouter.patch("/:id", async (req, res, next) => {
   try {
     const kittenId = +req.params.id;
-    const body = req.body;
+    const { name, breed, description, price, img_url, available } = req.body;
     const updatedKitten = await prisma.kittens.update({
       where: {
         id: kittenId,
       },
-      data: { ...body },
+      data: { name, breed, description, price, img_url, available },
     });
+
     res.send(updatedKitten);
   } catch (error) {
     next(error);
