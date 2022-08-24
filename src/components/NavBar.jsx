@@ -13,7 +13,7 @@ export default function NavBar() {
         <Link to="/" class="flex items-center">
           <img
             src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661282043/Fullstack_Felines_1_o93p2j.png"
-            class="object-contain h-25 sm:h-14 transition duration-300 hover:scale-125"
+            class="object-contain h-25 sm:h-16 lg:h-24 transition duration-300 hover:scale-125"
           />
         </Link>
         <div class="flex text-center">

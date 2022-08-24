@@ -71,7 +71,7 @@ export default function AboutUs() {
           </div>
         </div>
         <div class="">
-          <span class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4 flex">
+          <span class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4 flex justify-center">
             Recent Adoptions
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function AboutUs() {
         </div>
         <div class="flex flex-col justify-center">
           <div class="flex justify-center">
-            <h3 class="font-bold text-3xl sm:text-4xl font-heading text-darkbrown mb-4">
+            <h3 class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4">
               Our Team
             </h3>
           </div>
