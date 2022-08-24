@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div class=" flex flex-row  justify-center items-center">
+    <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured">
       <form class="w-full max-w-lg p-3">
         <div class="flex flex-wrap -mx-3 mb-6 ">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">

@@ -42,7 +42,7 @@ export default function Kittens() {
     <div class="flex flex-col bg-gradient-to-b from-pink to-cultured">
       <div class="flex justify-center">
         <input
-          class=" w-2/3 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm mt-2"
+          class=" w-2/3 placeholder:italic placeholder:text-gray block bg-white border border-slate-300 rounded-md py-2 pl-4 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm mt-2"
           placeholder="Search kittens"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
@@ -60,7 +60,7 @@ export default function Kittens() {
         </select>
       </div>
 
-      <div class="p-10 grid grid-cols-1 sm:grid-cols-3 sm:mx-10 xl:mx-40 gap-5">
+      <div class="p-10 grid grid-cols-1 sm:grid-cols-3 sm:mx-10 xl:mx-40 gap-5 ">
         {kittensToDisplay.map((kitten) => {
           return (
             <div>
