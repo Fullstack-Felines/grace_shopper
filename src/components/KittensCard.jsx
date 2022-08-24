@@ -81,70 +81,74 @@ export default function KittensCard({ kitten }) {
 
             {user.is_admin ? (
               isEditing ? (
-                <form
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    // setKittenToEdit({
-                    //   kittenId: kitten.id,
-                    //   name: kittenName,
-                    //   breed,
-                    //   description,
-                    //   price,
-                    //   img_url: imgUrl,
-                    //   available: true,
-                    // });
-                    console.log("kitten.id:", kitten.id);
-                    console.log("About to try updating kitten:", {
-                      kittenId: kitten.id,
-                      name: kittenName,
-                      breed,
-                      description,
-                      price,
-                      img_url: imgUrl,
-                      available: true,
-                    });
-                    const updatedKitten = await updateKitten({
-                      kittenId: kitten.id,
-                      name: kittenName,
-                      breed,
-                      description,
-                      price,
-                      img_url: imgUrl,
-                      available: true,
-                    });
-                    // kitten = updatedKitten;
-                    setIsEditing(false);
-                  }}
-                >
-                  <input
-                    value={kittenName}
-                    placeholder="Name of kitten"
-                    onChange={(e) => setKittenName(e.target.value)}
-                  />
-                  <input
-                    value={breed}
-                    placeholder="Breed"
-                    onChange={(e) => setBreed(e.target.value)}
-                  />
-                  <input
-                    value={description}
-                    placeholder="Description"
-                    onChange={(e) => setDescription(e.target.value)}
-                  />
-                  <input
-                    value={price}
-                    placeholder="price"
-                    onChange={(e) => {
-                      setPrice(e.target.value);
+                <div>
+                  <form
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      setKittenToEdit({
+                        kittenId: kitten.id,
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+                      console.log("kitten.id:", kitten.id);
+
+                      console.log("About to try updating kitten:", {
+                        kittenId: kitten.id,
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+                      const updatedKitten = await updateKitten({
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+                      console.log("updatedKitten kitten card", updatedKitten);
+                      // kitten = updatedKitten;
+
+                      setIsEditing(false);
                     }}
-                  />
-                  <input
-                    value={imgUrl}
-                    placeholder="imgUrl"
-                    onChange={(e) => setImgUrl(e.target.value)}
-                  />
-                  <button type="submit">Update kitten!</button>
-                </form>
+                  >
+                    <input
+                      value={kittenName}
+                      placeholder="Name of kitten"
+                      onChange={(e) => setKittenName(e.target.value)}
+                    />
+                    <input
+                      value={breed}
+                      placeholder="Breed"
+                      onChange={(e) => setBreed(e.target.value)}
+                    />
+                    <input
+                      value={description}
+                      placeholder="Description"
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <input
+                      value={price}
+                      placeholder="price"
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                    />
+                    <input
+                      value={imgUrl}
+                      placeholder="imgUrl"
+                      onChange={(e) => setImgUrl(e.target.value)}
+                    />
+                    <button type="Submit">Update kitten!</button>
+                  </form>
+                </div>
               ) : null
             ) : null}
           </span>
