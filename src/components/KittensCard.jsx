@@ -18,7 +18,7 @@ export default function KittensCard({ kitten }) {
   const [imgUrl, setImgUrl] = useState(kitten.img_url);
 
   return (
-    <div class="max-w-xs rounded shadow-lg overflow-hidden">
+    <div class="rounded-lg shadow-lg overflow-none ">
       <div>
         <div
           onClick={() => {

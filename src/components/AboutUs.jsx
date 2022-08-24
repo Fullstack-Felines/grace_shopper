@@ -74,11 +74,11 @@ export default function AboutUs() {
           <AdoptedKittens />
         </div>
         <div class="">
-          <h3 class="font-bold text-3xl sm:text-4xl font-heading text-gray-900 mb-4">
+          <h3 class="font-bold text-3xl sm:text-4xl font-heading text-gray mb-4">
             Our Team
           </h3>
         </div>
-        <div class="grid grid-cols-1 gap-5 sm:grid-cols-4">
+        <div class="grid grid-cols-2 gap-5 sm:grid-cols-4">
           <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
             <img
               class="block h-24 w-24 rounded-full block-center"
