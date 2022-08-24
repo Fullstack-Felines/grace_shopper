@@ -57,7 +57,7 @@ export default function Cart() {
                         </label>
                         <input
                           type="text"
-                          class="focus:outline-none w-full h-6 bg-gray-800 text-black placeholder-gray text-sm border-b border-gray-600 py-4"
+                          class="focus:outline-none w-full h-6 bg-gray-800 text-black placeholder-gray text-sm border-b border-gray py-4"
                           placeholder="Name"
                         ></input>
                       </div>
@@ -68,7 +68,7 @@ export default function Cart() {
                         </label>
                         <input
                           type="text"
-                          class="focus:outline-none w-full h-6 bg-white text-black placeholder-grey text-sm border-b border-gray-600 py-4"
+                          class="focus:outline-none w-full h-6 bg-white text-black placeholder-grey text-sm border-b border-gray py-4"
                           placeholder="****     ****      ****      ****"
                         ></input>
                       </div>
@@ -96,7 +96,7 @@ export default function Cart() {
                           <label class="text-xs text-gray-400">CVV</label>
                           <input
                             type="text"
-                            class="focus:outline-none w-full h-6 bg-gray-800 text-white placeholder-gray-300 text-sm border-b border-gray-600 py-4"
+                            class="focus:outline-none w-full h-6 bg-gray-800 text-black placeholder-gray text-sm border-b border-gray py-4"
                             placeholder="XXX"
                           ></input>
                         </div>
