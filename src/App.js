@@ -1,4 +1,3 @@
-import useKittens from "./Hooks/useKittens";
 import { Route, Routes } from "react-router-dom";
 
 import {
@@ -16,9 +15,6 @@ import {
   SingleKitten,
   Payment,
   Admin,
-  SearchBar,
-  KittensCard,
-  KittensList,
 } from "./components";
 
 import "./style/index.css";

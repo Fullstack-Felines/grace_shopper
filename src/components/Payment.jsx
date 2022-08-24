@@ -15,7 +15,6 @@ export default function Payment() {
         onSubmit={async (event) => {
           //update cart to be inactive and update shipping address
           event.preventDefault();
-
           const oldCart = cart;
           await updateCart(oldCart.id, {
             customer_id: oldCart.customer_id,

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import useKittens from "../Hooks/useKittens";
 import KittensCard from "./KittensCard";
 import { fetchKittenById } from "../api/kittens";
 import { useParams } from "react-router-dom";

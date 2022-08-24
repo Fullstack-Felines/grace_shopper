@@ -1,10 +1,9 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useState } from "react";
 import useKittens from "../Hooks/useKittens";
 import KittensCard from "./KittensCard";
 
 export default function Kittens() {
-  const { allKittens, setAllKittens, availableKittens, setAvailableKittens } =
-    useKittens();
+  const { availableKittens, setAvailableKittens } = useKittens();
   const [searchText, setSearchText] = useState("");
 
   function searchMatches(kitten, text) {

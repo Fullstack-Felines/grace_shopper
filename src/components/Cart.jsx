@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useCart } from "../Hooks";
-import { fetchOrdersByCart, fetchOrderById } from "../api/orders_kitten";
-import { fetchKittenById } from "../api/kittens";
 import OrderCard from "./OrderCard";
-import { updateCart } from "../api/orders";
 import { useNavigate } from "react-router-dom";
 
 export default function Cart() {

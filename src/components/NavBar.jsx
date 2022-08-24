@@ -6,8 +6,6 @@ import { useCart } from "../Hooks";
 
 export default function NavBar() {
   const { user, setUser } = useAuth();
-  const { setCart, makeGuestCart } = useCart();
-  // const guestCart = makeGuestCart();
 
   return (
     <div class="bg-pink  px-2 sm:px-4 py-2.5 rounded min-h-80">

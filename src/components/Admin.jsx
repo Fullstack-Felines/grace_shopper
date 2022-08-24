@@ -23,21 +23,12 @@ export default function Admin() {
             img_url: imgUrl,
             available: true,
           });
-          console.log("new kitten admin", newKitten);
-          console.log("attempted kitten", {
-            name: kittenName,
-            breed,
-            description,
-            price,
-            img_url: imgUrl,
-            available: true,
-          });
 
           navigate("/Kittens");
           window.location.reload();
         }}
       >
-        create a new kitten!
+        <h3>Create a New Kitten:</h3>
         <input
           value={kittenName}
           placeholder="Name of kitten"

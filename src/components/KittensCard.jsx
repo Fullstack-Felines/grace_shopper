@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart, useAuth } from "../Hooks";
 import { updateKitten, deleteKitten } from "../api/kittens";
@@ -10,7 +10,6 @@ export default function KittensCard({ kitten }) {
   const { user } = useAuth();
 
   //use state for updating kittens
-  const [kittenToEdit, setKittenToEdit] = useState(kitten);
   const [kittenName, setKittenName] = useState(kitten.name);
   const [breed, setBreed] = useState(kitten.breed);
   const [description, setDescription] = useState(kitten.description);
@@ -68,7 +67,6 @@ export default function KittensCard({ kitten }) {
 
                 <button
                   onClick={() => {
-                    console.log("Deleting Kitting");
                     deleteKitten(kitten.id);
                     alert("Kitten Deleted");
                     window.location.reload();
@@ -85,16 +83,6 @@ export default function KittensCard({ kitten }) {
                   <form
                     onSubmit={async (e) => {
                       e.preventDefault();
-                      setKittenToEdit({
-                        kittenId: kitten.id,
-                        name: kittenName,
-                        breed,
-                        description,
-                        price,
-                        img_url: imgUrl,
-                        available: true,
-                      });
-
                       const updatedKitten = await updateKitten({
                         kittenId: kitten.id,
                         name: kittenName,
