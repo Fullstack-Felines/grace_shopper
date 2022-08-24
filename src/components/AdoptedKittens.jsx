@@ -4,7 +4,7 @@ import KittensCard from "./KittensCard";
 
 export default function AdoptedKittens() {
   const { unavailableKittens } = useKittens();
-
+  console.log("unavailable kits", unavailableKittens);
   // function displayAdoptedKittens(kittens) {
   //   if (!kittens.available) {
   //     return true;
