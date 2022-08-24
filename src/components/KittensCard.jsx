@@ -48,76 +48,76 @@ export default function KittensCard({ kitten }) {
               ${kitten.price}.00
             </p>
           ) : null}
-          <span class="flex justify-center mt-4 bg-red w-1/2 hover:bg-red py-1 rounded">
-            {kitten.available ? (
+          {kitten.available ? (
+            <div class="flex justify-center mt-4 bg-coral opacity-90 w-full hover:bg-coral hover:opacity-100  py-1 rounded">
               <button
-                class="font-semibold text-brown "
+                class="font-semibold text-white "
                 onClick={() => {
                   addKittenToCart({ kitten_id: kitten.id });
                 }}
               >
                 Add to Cart
               </button>
-            ) : null}
+            </div>
+          ) : null}
 
-            {user.is_admin ? (
-              <button
-                onClick={() => {
-                  setIsEditing(true);
+          {user.is_admin ? (
+            <button
+              onClick={() => {
+                setIsEditing(true);
+              }}
+            >
+              Edit Kitten
+            </button>
+          ) : null}
+
+          {user.is_admin ? (
+            isEditing ? (
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setKittenToEdit({
+                    name: kittenName,
+                    breed,
+                    description,
+                    price,
+                    img_url: imgUrl,
+                    available: true,
+                  });
+                  const editedKitten = await updateKitten(kitten);
+                  setIsEditing(false);
                 }}
               >
-                Edit Kitten
-              </button>
-            ) : null}
-
-            {user.is_admin ? (
-              isEditing ? (
-                <form
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    setKittenToEdit({
-                      name: kittenName,
-                      breed,
-                      description,
-                      price,
-                      img_url: imgUrl,
-                      available: true,
-                    });
-                    const editedKitten = await updateKitten(kitten);
-                    setIsEditing(false);
-                  }}
-                >
-                  create a new kitten!
-                  <input
-                    value={kittenName}
-                    placeholder="Name of kitten"
-                    onChange={(e) => setKittenName(e.target.value)}
-                  />
-                  <input
-                    value={breed}
-                    placeholder="Breed"
-                    onChange={(e) => setBreed(e.target.value)}
-                  />
-                  <input
-                    value={description}
-                    placeholder="Description"
-                    onChange={(e) => setDescription(e.target.value)}
-                  />
-                  <input
-                    value={price}
-                    placeholder="price"
-                    onChange={(e) => setPrice(e.target.value)}
-                  />
-                  <input
-                    value={imgUrl}
-                    placeholder="imgUrl"
-                    onChange={(e) => setImgUrl(e.target.value)}
-                  />
-                  <button type="submit">Update kitten!</button>
-                </form>
-              ) : null
-            ) : null}
-          </span>
+                create a new kitten!
+                <input
+                  value={kittenName}
+                  placeholder="Name of kitten"
+                  onChange={(e) => setKittenName(e.target.value)}
+                />
+                <input
+                  value={breed}
+                  placeholder="Breed"
+                  onChange={(e) => setBreed(e.target.value)}
+                />
+                <input
+                  value={description}
+                  placeholder="Description"
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                <input
+                  value={price}
+                  placeholder="price"
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+                <input
+                  value={imgUrl}
+                  placeholder="imgUrl"
+                  onChange={(e) => setImgUrl(e.target.value)}
+                />
+                <button type="submit">Update kitten!</button>
+              </form>
+            ) : null
+          ) : null}
         </div>
       </div>
     </div>

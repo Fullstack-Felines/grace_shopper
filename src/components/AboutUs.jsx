@@ -70,6 +70,9 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+        <h3 class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4">
+          Recent Adoptions
+        </h3>
         <div>
           <AdoptedKittens />
         </div>

@@ -20,7 +20,7 @@ export default function AdoptedKittens() {
   //   : null;
 
   return (
-    <div class="grid grid-cols-4 gap-5 mb-8">
+    <div class="grid grid-cols-3 gap-5 mb-8">
       {unavailableKittens.map((kitten) => {
         return (
           <div>

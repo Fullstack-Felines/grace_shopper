@@ -60,7 +60,7 @@ export default function Kittens() {
         </select>
       </div>
 
-      <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div class="p-10 grid grid-cols-1 sm:grid-cols-3 sm:mx-10 xl:mx-40 gap-5">
         {kittensToDisplay.map((kitten) => {
           return (
             <div>
