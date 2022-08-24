@@ -14,7 +14,7 @@ export default function Register() {
   const navigate = useNavigate();
   const { user, setUser } = useAuth();
   return (
-    <div>
+    <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured">
       <h3>REGISTER HERE:</h3>
       <form
         onSubmit={async (e) => {
