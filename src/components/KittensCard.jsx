@@ -67,97 +67,6 @@ export default function KittensCard({ kitten }) {
               Edit Kitten
             </button>
 
-            <button
-              onClick={() => {
-                console.log("Deleting Kitting");
-                deleteKitten(kitten.id);
-                alert("Kitten Deleted");
-                window.location.reload();
-              }}
-            >
-              Delete Kitten
-            </button>
-          </div>
-        ) : null}
-
-        {user.is_admin ? (
-          isEditing ? (
-            <div>
-              <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  setKittenToEdit({
-                    kittenId: kitten.id,
-                    name: kittenName,
-                    breed,
-                    description,
-                    price,
-                    img_url: imgUrl,
-                    available: true,
-                  });
-                  console.log("kitten.id:", kitten.id);
-
-                  console.log("About to try updating kitten:", {
-                    kittenId: kitten.id,
-                    name: kittenName,
-                    breed,
-                    description,
-                    price,
-                    img_url: imgUrl,
-                    available: true,
-                  });
-                  const updatedKitten = await updateKitten({
-                    name: kittenName,
-                    breed,
-                    description,
-                    price,
-                    img_url: imgUrl,
-                    available: true,
-                  });
-                  console.log("updatedKitten kitten card", updatedKitten);
-                  // kitten = updatedKitten;
-
-                  setIsEditing(false);
-                }}
-              >
-                <input
-                  value={kittenName}
-                  placeholder="Name of kitten"
-                  onChange={(e) => setKittenName(e.target.value)}
-                />
-                <input
-                  value={breed}
-                  placeholder="Breed"
-                  onChange={(e) => setBreed(e.target.value)}
-                />
-                <input
-                  value={description}
-                  placeholder="Description"
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-                <input
-                  value={price}
-                  placeholder="price"
-                  onChange={(e) => {
-                    setPrice(e.target.value);
-                  }}
-<<<<<<< HEAD
-                />
-                <input
-                  value={imgUrl}
-                  placeholder="imgUrl"
-                  onChange={(e) => setImgUrl(e.target.value)}
-                />
-                <button type="Submit">Update kitten!</button>
-              </form>
-            </div>
-          ) : null
-        ) : null}
-=======
-                >
-                  Edit Kitten
-                </button>
-
                 <button
                   onClick={() => {
                     deleteKitten(kitten.id);
@@ -224,7 +133,6 @@ export default function KittensCard({ kitten }) {
             ) : null}
           </span>
         </div>
->>>>>>> chani_branch
       </div>
     </div>
   );
