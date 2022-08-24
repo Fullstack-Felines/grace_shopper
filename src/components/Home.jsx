@@ -7,9 +7,9 @@ export default function Home() {
 
   return (
     <div class="bg-home-pattern flex-grow bg-cover bg-no-repeat">
-      {/* <div class="fixed bottom-1 flex justify-center w-full text-2xl opacity-70">
+      <div class="fixed bottom-1 flex justify-center w-full text-6xl opacity-70">
         <h1>FILLER TEXTTTTTTTTTTTTT</h1>
-      </div> */}
+      </div>
       {/* <Link to="/Kittens">
         <img
           class="w-full"
