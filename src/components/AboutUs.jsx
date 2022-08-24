@@ -74,7 +74,7 @@ export default function AboutUs() {
           <AdoptedKittens />
         </div>
         <div class="">
-          <h3 class="font-bold text-3xl sm:text-4xl font-heading text-gray mb-4">
+          <h3 class="font-bold text-3xl sm:text-4xl font-heading text-darkbrown mb-4">
             Our Team
           </h3>
         </div>
