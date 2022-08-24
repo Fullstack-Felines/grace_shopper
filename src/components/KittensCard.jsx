@@ -36,9 +36,11 @@ export default function KittensCard({ kitten }) {
             {kitten.name}
           </h3>
           <p class="text-xl text-red flex justify-center m-2">{kitten.breed}</p>
-          <p class=" text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
-            {kitten.description}
-          </p>
+          {kitten.available ? (
+            <p class=" text-lg text-brown flex justify-center text-center m-2 leading-relaxed">
+              {kitten.description}
+            </p>
+          ) : null}
           {kitten.available ? (
             <p class="mt-4 text-lg text-brown flex justify-center m-2 opacity-80">
               ${kitten.price}.00
