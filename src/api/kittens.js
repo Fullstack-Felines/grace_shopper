@@ -94,15 +94,6 @@ export const updateKitten = async ({
   img_url,
   available,
 }) => {
-  console.log("kitten passed into UPDATE KITTEN", {
-    kittenId,
-    name,
-    breed,
-    description,
-    price,
-    img_url,
-    available,
-  });
   const response = await fetch(`api/kittens/${kittenId}`, {
     method: "PATCH",
     headers: {
@@ -118,7 +109,7 @@ export const updateKitten = async ({
     }),
   });
   const result = await response.json();
-  console.log("Patched result from frontend API:", result);
+
   return result;
 };
 

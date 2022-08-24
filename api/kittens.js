@@ -106,7 +106,7 @@ kittenRouter.patch("/:id", async (req, res, next) => {
       },
       data: { name, breed, description, price, img_url, available },
     });
-    console.log("updatedKitten from backend", updatedKitten);
+
     res.send(updatedKitten);
   } catch (error) {
     next(error);

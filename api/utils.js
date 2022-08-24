@@ -3,7 +3,7 @@ const { JWT_SECRET } = process.env;
 
 const authRequired = (req, res, next) => {
   const token = req.signedCookies.token;
-  console.log("Cookie Token:", token);
+
   try {
     const user = jwt.verify(token, JWT_SECRET);
     req.user = user;
@@ -17,7 +17,5 @@ const authRequired = (req, res, next) => {
 
   next();
 };
-
-// isAdmin
 
 module.exports = { authRequired };
