@@ -100,15 +100,16 @@ export const updateKitten = async ({
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: name,
-      breed: breed,
-      description: description,
-      price: price,
-      img_url: img_url,
-      available: available,
+      name,
+      breed,
+      description,
+      price,
+      img_url,
+      available,
     }),
   });
   const result = await response.json();
+  console.log("Patched result from frontend API:", result);
   return result;
 };
 

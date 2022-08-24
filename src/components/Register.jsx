@@ -33,7 +33,6 @@ export default function Register() {
             alert("You are registered!");
             setUser({ loggedIn: true, ...result.user });
             navigate("/");
-            window.location.reload();
           } else {
             setErrorMessage("Username already taken");
             alert(errorMessage);

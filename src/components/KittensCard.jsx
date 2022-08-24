@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart, useAuth } from "../Hooks";
-import { updateKitten } from "../api/kittens";
+import { updateKitten, deleteKitten } from "../api/kittens";
 
 export default function KittensCard({ kitten }) {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export default function KittensCard({ kitten }) {
   const { user } = useAuth();
 
   //use state for updating kittens
-  const [kittenToEdit, setKittenToEdit] = useState({});
+  const [kittenToEdit, setKittenToEdit] = useState(kitten);
   const [kittenName, setKittenName] = useState(kitten.name);
   const [breed, setBreed] = useState(kitten.breed);
   const [description, setDescription] = useState(kitten.description);
@@ -61,63 +61,102 @@ export default function KittensCard({ kitten }) {
             </div>
           ) : null}
 
-          {user.is_admin ? (
-            <button
-              onClick={() => {
-                setIsEditing(true);
-              }}
-            >
-              Edit Kitten
-            </button>
-          ) : null}
+            {user.is_admin ? (
+              <div>
+                <button
+                  onClick={() => {
+                    setIsEditing(true);
+                  }}
+                >
+                  Edit Kitten
+                </button>
 
-          {user.is_admin ? (
-            isEditing ? (
-              <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  setKittenToEdit({
-                    name: kittenName,
-                    breed,
-                    description,
-                    price,
-                    img_url: imgUrl,
-                    available: true,
-                  });
-                  const editedKitten = await updateKitten(kitten);
-                  setIsEditing(false);
-                }}
-              >
-                create a new kitten!
-                <input
-                  value={kittenName}
-                  placeholder="Name of kitten"
-                  onChange={(e) => setKittenName(e.target.value)}
-                />
-                <input
-                  value={breed}
-                  placeholder="Breed"
-                  onChange={(e) => setBreed(e.target.value)}
-                />
-                <input
-                  value={description}
-                  placeholder="Description"
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-                <input
-                  value={price}
-                  placeholder="price"
-                  onChange={(e) => setPrice(e.target.value)}
-                />
-                <input
-                  value={imgUrl}
-                  placeholder="imgUrl"
-                  onChange={(e) => setImgUrl(e.target.value)}
-                />
-                <button type="submit">Update kitten!</button>
-              </form>
-            ) : null
-          ) : null}
+                <button
+                  onClick={() => {
+                    console.log("Deleting Kitting");
+                    deleteKitten(kitten.id);
+                    alert("Kitten Deleted");
+                    window.location.reload();
+                  }}
+                >
+                  Delete Kitten
+                </button>
+              </div>
+            ) : null}
+
+            {user.is_admin ? (
+              isEditing ? (
+                <div>
+                  <form
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      setKittenToEdit({
+                        kittenId: kitten.id,
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+                      console.log("kitten.id:", kitten.id);
+
+                      console.log("About to try updating kitten:", {
+                        kittenId: kitten.id,
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+                      const updatedKitten = await updateKitten({
+                        name: kittenName,
+                        breed,
+                        description,
+                        price,
+                        img_url: imgUrl,
+                        available: true,
+                      });
+                      console.log("updatedKitten kitten card", updatedKitten);
+                      // kitten = updatedKitten;
+
+                      setIsEditing(false);
+                    }}
+                  >
+                    <input
+                      value={kittenName}
+                      placeholder="Name of kitten"
+                      onChange={(e) => setKittenName(e.target.value)}
+                    />
+                    <input
+                      value={breed}
+                      placeholder="Breed"
+                      onChange={(e) => setBreed(e.target.value)}
+                    />
+                    <input
+                      value={description}
+                      placeholder="Description"
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <input
+                      value={price}
+                      placeholder="price"
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                    />
+                    <input
+                      value={imgUrl}
+                      placeholder="imgUrl"
+                      onChange={(e) => setImgUrl(e.target.value)}
+                    />
+                    <button type="Submit">Update kitten!</button>
+                  </form>
+                </div>
+              ) : null
+            ) : null}
+          </span>
         </div>
       </div>
     </div>
