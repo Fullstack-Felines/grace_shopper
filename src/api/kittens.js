@@ -67,6 +67,14 @@ export const createKitten = async ({
   img_url,
   available,
 }) => {
+  console.log("kittens in front", {
+    name,
+    breed,
+    description,
+    price,
+    img_url,
+    available,
+  });
   const response = await fetch(`api/kittens/`, {
     method: "POST",
     headers: {

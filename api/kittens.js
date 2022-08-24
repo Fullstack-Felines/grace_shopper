@@ -86,6 +86,7 @@ kittenRouter.get("/:name", async (req, res, next) => {
 kittenRouter.post("/", async (req, res, next) => {
   try {
     const { name, breed, description, price, img_url, available } = req.body;
+    console.log("body for kittens", req.body);
     const createdKitten = await prisma.kittens.create({
       data: { name, breed, description, price, img_url, available },
     });
