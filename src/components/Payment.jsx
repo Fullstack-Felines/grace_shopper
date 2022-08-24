@@ -48,6 +48,7 @@ export default function Payment() {
           setCart(newCart);
           alert("Thank you for your purchase!");
           navigate("/");
+          window.location.reload();
         }}
       >
         <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 pb-10 pt-16 md:w-10/12 lg:w-2/3 xl:w-2/5">
