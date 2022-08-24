@@ -9,7 +9,7 @@ export default function Admin() {
   const [price, setPrice] = useState(0);
   const [imgUrl, setImgUrl] = useState("");
   return (
-    <div>
+    <div class="bg-gradient-to-b from-pink to-cultured flex flex-grow">
       <form
         onSubmit={async (e) => {
           e.preventDefault();
