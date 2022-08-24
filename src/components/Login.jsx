@@ -11,14 +11,14 @@ export default function Login() {
   const { user, setUser } = useAuth();
 
   return (
-    <div class="flex justify-center bg-gradient-to-b from-pink to-cultured">
-      <div class="flex flex-col sm:flex-row max-w-xl rounded-lg bg-cardpaper shadow-lg">
+    <div class="flex justify-center flex-grow bg-gradient-to-b from-pink to-cultured ">
+      <div class="flex flex-col sm:flex-row sm:h-2/3 rounded-lg bg-cardpaper shadow-lg">
         <img
-          class="sm:w-80 object-cover bg-center bg-no-repeat bg-cover rounded-r-md opacity-90 "
+          class="object-cover  h-96 bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
           src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660944160/IMG_20180202_165400_965_u9nrgy.jpg"
         />
         {/* <div class="pt-16 pr-8 pb-16 pl-8 flex flex-wrap content-center justify-center rounded-l-md"> */}
-        <div class="w-72">
+        <div class="p-4">
           <h2 class="text-xl font-bold text-coral">Login </h2>
           <small class="text-black ">
             Welcome back! Please enter your details
