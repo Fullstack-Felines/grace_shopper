@@ -108,4 +108,13 @@ authRouter.get("/me", authRequired, async (req, res, next) => {
   }
 });
 
+authRouter.get("/all_users", authRequired, async (req, res, next) => {
+  try {
+    const users = await prisma.customers.findMany();
+    res.send(users);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = authRouter;
