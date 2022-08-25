@@ -23,8 +23,11 @@ export default function Admin() {
   }, []);
 
   return (
-    <div class="bg-gradient-to-b from-pink to-cultured flex flex-grow p-2">
-      <div>
+    <div class="bg-gradient-to-b from-pink to-cultured flex flex-col flex-grow p-2 justify-center text-center">
+      <h1 class=" text-admin rounded-lg text-2xl font-extrabold p-2">
+        Welcome, Administrator
+      </h1>
+      <div class="flex flex-col w-1/2 justify-center bg-cardpaper p-2 rounded-lg">
         <div>
           <form
             onSubmit={async (e) => {
@@ -43,47 +46,49 @@ export default function Admin() {
               window.location.reload();
             }}
           >
-            <h3 class="bg-red p-2 text-center mb-2 font-bold">
+            <h3 class=" p-2 text-center mb-2 font-bold">
               Create a New Kitten:
             </h3>
             <input
-              class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-white text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={kittenName}
               placeholder="Name of kitten"
               onChange={(e) => setKittenName(e.target.value)}
             />
             <input
-              class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-white text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={breed}
               placeholder="Breed"
               onChange={(e) => setBreed(e.target.value)}
             />
             <input
-              class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-white text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={description}
               placeholder="Description"
               onChange={(e) => setDescription(e.target.value)}
             />
             <input
-              class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-white text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={price}
               placeholder="price"
               onChange={(e) => setPrice(Number(e.target.value))}
             />
             <input
-              class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              class="appearance-none block w-full bg-white text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={imgUrl}
               placeholder="imgUrl"
               onChange={(e) => setImgUrl(e.target.value)}
             />
             <button
               type="submit"
-              class="bg-red rounded-sm font-bold p-2 hover:bg-coral"
+              class="bg-white rounded-sm font-bold p-2 hover:bg-coral"
             >
               Create kitten!
             </button>
           </form>
         </div>
+      </div>
+      <div>
         <br />
         <div class="flex flex-col justify-center">
           <h3>Created Users:</h3>
