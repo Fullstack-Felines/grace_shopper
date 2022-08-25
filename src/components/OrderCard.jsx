@@ -18,18 +18,19 @@ const OrderCard = (order) => {
   return (
     <div class="flex justify-between items-center mt-6 pt-6">
       <div class="flex items-center">
-        <img src={order.order.kittens.img_url} />
+        <img class="w-28" src={order.order.kittens.img_url} />
 
-        <div class="flex flex-col ml-3">
-          <p>{order.order.kittens.name}</p>
+        <div class="flex flex-col">
+          <p class="p-2 font-medium text-lg">{order.order.kittens.name}</p>
         </div>
       </div>
 
       <div class="flex justify-center items-center">
-        <span class="text-sm font-medium">${order.order.kittens.price}.00</span>
+        <span class="font-light p-2">${order.order.kittens.price}.00</span>
       </div>
 
       <button
+        class="p-2 text-coral opacity-80 cursor-pointer hover:opacity-100"
         onClick={() => {
           removeKittenFromCart(order.order.id);
         }}
