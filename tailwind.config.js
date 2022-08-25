@@ -21,6 +21,7 @@ module.exports = {
         cultured: "#edf1f0",
         indeed: "#2164f4",
         github: "#6cc644",
+        admin: "#D2042D",
       },
       backgroundImage: {
         "home-pattern":
