@@ -12,7 +12,7 @@ export default function Login() {
 
   return (
     <div class="flex justify-center flex-grow bg-gradient-to-b from-pink to-cultured ">
-      <div class="flex flex-col sm:flex-row sm:h-2/3 rounded-lg bg-cardpaper shadow-lg">
+      <div class="flex flex-col sm:flex-row sm:h-2/3 rounded-lg bg-cardpaper shadow-lg mt-20">
         <img
           class="object-cover  h-96 bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
           src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660944160/IMG_20180202_165400_965_u9nrgy.jpg"
@@ -45,7 +45,7 @@ export default function Login() {
               <input
                 value={username}
                 placeholder="Username"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
@@ -56,7 +56,7 @@ export default function Login() {
                 value={password}
                 placeholder="Password"
                 type="password"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -67,7 +67,7 @@ export default function Login() {
             >
               Login
             </button>
-            <div class="mb-3 flex flex-wrap content-center">
+            <div class="mb-3 flex flex-wrap content-center justify-center pt-2 opacity-70 hover:opacity-100">
               <Link id="registerClick" to="/register">
                 Don't have an account?
               </Link>

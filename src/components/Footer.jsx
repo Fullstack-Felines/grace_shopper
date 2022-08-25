@@ -5,7 +5,7 @@ import { useAuth } from "../Hooks";
 export default function Footer() {
   const { user } = useAuth();
   return (
-    <div class="fixed bottom-1  bg-coral  px-1 sm:px-8 py-3 rounded opacity-60 ">
+    <div class="fixed bottom-1  bg-coral  px-1 sm:px-1 py-1 rounded opacity-50 ">
       <footer class="container mx-auto">
         <Link
           to="/faq"

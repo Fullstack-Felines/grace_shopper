@@ -15,12 +15,12 @@ export default function Register() {
   const { user, setUser } = useAuth();
   return (
     <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured ">
-      <div class="flex flex-col sm:flex-row sm:h-6/8 rounded-lg bg-cardpaper shadow-lg ">
+      <div class="flex flex-col sm:flex-row sm:h-6/8 rounded-lg bg-cardpaper shadow-lg mt-10 mb-20">
         <img
           class="h-100 w-80 object-cover bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
           src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661434289/the-lucky-neko-55ClwmQyNiU-unsplash_t3302c.jpg"
         />
-        <div class="p-4 w-2/3">
+        <div class="p-4">
           <h2 class="text-xl font-bold text-coral">Register </h2>
           <small class="text-black ">Welcome! Enter your details below.</small>
           <form
