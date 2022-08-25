@@ -17,7 +17,7 @@ export default function Register() {
     <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured ">
       <div class="flex flex-col sm:flex-row sm:h-6/8 rounded-lg bg-cardpaper shadow-lg">
         <img
-          class="object-cover h-full bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
+          class="h-100 w-80 object-cover bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
           src="https://res.cloudinary.com/dg5jk9pui/image/upload/c_scale,h_785,w_628/v1661394405/Siamese_Kittens_vimdl2.jpg"
         />
         <div class="p-4">
@@ -104,12 +104,6 @@ export default function Register() {
               <Link id="loginClick" to="/Login">
                 Already have an account?
               </Link>
-            </div>
-            <div>
-              <img
-                src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661350049/Untitled_design_vofbe5.png"
-                class="flex justify-center hover transition duration-300 hover:scale-125"
-              />
             </div>
           </form>
         </div>
