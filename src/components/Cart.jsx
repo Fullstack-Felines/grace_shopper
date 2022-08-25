@@ -20,12 +20,12 @@ export default function Cart() {
     <div class="bg-gradient-to-b from-pink to-cultured flex flex-grow flex-col">
       <div class="max-w-md mx-auto bg-cardpaper shadow-lg rounded-lg  md:max-w-5xl">
         <div class="md:flex ">
-          <div class="w-full p-4 px-5 py-5">
-            <div class="md:grid md:grid-cols-3 gap-2 ">
-              <div class="col-span-2">
-                <h1 class="font-bold text-3xl">Cart</h1>
-                {cart.orders_kitten ? (
+          {cart.orders_kitten ? (
+            <div class="w-full p-4 px-5 py-5">
+              <div class="md:grid md:grid-cols-3 gap-2 ">
+                <div class="col-span-2">
                   <div>
+                    <h1 class="font-bold text-3xl">Cart</h1>
                     <div className="orderSummary">
                       {cart.orders_kitten.map((order) => {
                         return (
@@ -58,10 +58,10 @@ export default function Cart() {
                       </button>
                     </div>
                   </div>
-                ) : null}
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
     </div>

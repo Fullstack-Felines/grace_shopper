@@ -35,12 +35,14 @@ export default function NavBar() {
         >
           Kittens
         </Link>
-        <Link
-          to="/Cart"
-          class="text-coral  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 mx-2"
-        >
-          Cart
-        </Link>
+        {user.username ? (
+          <Link
+            to="/Cart"
+            class="text-coral  text-xl font-bold transform  hover:text-white transition duration-300 hover:scale-125 mx-2"
+          >
+            Cart
+          </Link>
+        ) : null}
 
         {user.username ? (
           <button
