@@ -23,7 +23,7 @@ export default function Footer() {
         {user.is_admin ? (
           <Link
             to="/Admin"
-            class="text-brown  text-xl font-bold transform   hover:text-white transition duration-500 hover:scale-125 "
+            class="text-white  text-xl font-bold transform   hover:text-white transition duration-500 hover:scale-125 p-2 "
           >
             Admin
           </Link>
