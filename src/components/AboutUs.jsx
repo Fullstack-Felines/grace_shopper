@@ -30,12 +30,12 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div class="bg-cardpaper flex flex-col text-center rounded-lg shadow-lg mb-10">
+          <div class="bg-cardpaper flex flex-col text-center rounded-lg shadow-lg">
             <h3 class="flex rounded-t-lg place-content-center font-medium text-3xl text-white bg-coral opacity-80 p-2">
               Mission
             </h3>
 
-            <div class="p-5 m:p-8 lg:p-10  text-black opacity-80">
+            <div class="p-5 lg:p-10  text-black opacity-80">
               <p class=" mb-3">
                 We are raising funds and promoting initiatives to support the
                 community cats that still live on the streets and need our help
@@ -71,7 +71,7 @@ export default function AboutUs() {
           </div>
         </div>
         <div class="">
-          <span class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4 flex justify-center">
+          <span class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4 flex justify-center mb-8">
             Recent Adoptions
           </span>
         </div>
@@ -80,11 +80,11 @@ export default function AboutUs() {
         </div>
         <div class="flex flex-col justify-center">
           <div class="flex justify-center">
-            <h3 class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-4">
+            <h3 class="font-bold text-3xl sm:text-4xl font-heading text-coral mb-8">
               Our Team
             </h3>
           </div>
-          <div class="grid grid-cols-2 gap-10 sm:gap-2 sm:grid-cols-4 sm:flex sm:content-center sm:items-center">
+          <div class="grid grid-cols-2 gap-10 sm:gap-2 sm:grid-cols-4 sm:flex sm:content-center sm:items-center mb-6">
             <div class=" w-40 flex justify-center flex-col items-center content-center">
               <img
                 class="block h-24 w-24 rounded-full block-center transition duration-300 hover:scale-105"
@@ -121,131 +121,100 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-            <div class="grid grid-cols-2 gap-10 sm:gap-2 sm:grid-cols-4 sm:flex sm:content-center sm:items-center">
-              <div class=" w-40 flex justify-center flex-col items-center content-center">
-                <img
-                  class="block h-24 w-24 rounded-full block-center transition duration-300 hover:scale-105"
-                  src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660882850/linkedinprofilepic_yfubxx.jpg"
-                  alt="Nico's profile photo"
-                />
-                <div class="text-center">
-                  <p class="text-md text-black font-semibold">Nico Francis</p>
-                  <p class="text-cafe font-medium px-2 text-sm">
-                    Web developer
-                  </p>
-                  <div class="flex justify-center">
-                    <a
-                      class="mx-2 rounded-full border hover:bg-github border-transparent transition duration-300 hover:scale-125"
-                      href="https://github.com/nicofrancis"
-                      type="submit"
-                    >
-                      <img
-                        class="w-5 border-none "
-                        src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                      />
-                    </a>
-                    <a
-                      class="rounded border hover:bg-indeed border-transparent transition duration-300 hover:scale-125"
-                      href="https://www.linkedin.com/in/nicolo-francis-b683a1173"
-                    >
-                      <img
-                        class="w-5 border-none"
-                        src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            //OLDDDDDDDDDDD SGTUFFFFFFF
-            <div class=" w-40 flex justify-center flex-col items-center">
+            <div class=" w-40 flex justify-center flex-col items-center content-center">
               <img
-                class="block h-24 w-24 rounded-full block-center"
+                class="block h-24 w-24 rounded-full block-center transition duration-300 hover:scale-105"
                 src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660882850/linkedinprofilepic_yfubxx.jpg"
                 alt="Nico's profile photo"
               />
               <div class="text-center">
-                <div class="">
-                  <p class="text-md text-black font-semibold">Nico Francis</p>
-                  <p class="text-cafe font-medium px-2 text-sm">
-                    Web developer
-                  </p>
+                <p class="text-md text-black font-semibold">Nico Francis</p>
+                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
+                <div class="flex justify-center">
+                  <a
+                    class="mx-2 rounded-full border hover:bg-github border-transparent transition duration-300 hover:scale-125"
+                    href="https://github.com/nicofrancis"
+                    type="submit"
+                  >
+                    <img
+                      class="w-5 border-none "
+                      src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                    />
+                  </a>
+                  <a
+                    class="rounded border hover:bg-indeed border-transparent transition duration-300 hover:scale-125"
+                    href="https://www.linkedin.com/in/nicolo-francis-b683a1173"
+                  >
+                    <img
+                      class="w-5 border-none"
+                      src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                    />
+                  </a>
                 </div>
-
-                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                  <img
-                    href="https://www.google.com"
-                    class="w-5 border-none"
-                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                  />
-                </button>
-                <button class=" rounded border hover:bg-indeed border-transparent">
-                  <img
-                    href="https://www.google.com"
-                    class="w-5 border-none"
-                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                  />
-                </button>
               </div>
             </div>
-            <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
+            <div class=" w-40 flex justify-center flex-col items-center content-center">
               <img
-                class="block h-24 w-24 rounded-full block-center"
+                class="block h-24 w-24 rounded-full block-center transition duration-300 hover:scale-105"
                 src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661308830/96214715_mbdq0d.jpg"
                 alt="Jayden's profile photo"
               />
               <div class="text-center">
-                <div class="">
-                  <p class="text-md text-black font-semibold">Jayden Lundahl</p>
-                  <p class="text-cafe font-medium px-2 text-sm">
-                    Web developer
-                  </p>
+                <p class="text-md text-black font-semibold">Jayden Lundahl</p>
+                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
+                <div class="flex justify-center">
+                  <a
+                    class="mx-2 rounded-full border hover:bg-github border-transparent transition duration-300 hover:scale-125"
+                    href="https://github.com/jaydenlundahl"
+                    type="submit"
+                  >
+                    <img
+                      class="w-5 border-none "
+                      src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                    />
+                  </a>
+                  <a
+                    class="rounded border hover:bg-indeed border-transparent transition duration-300 hover:scale-125"
+                    href="https://www.linkedin.com/in/jayden-lundahl-40b66a23a/"
+                  >
+                    <img
+                      class="w-5 border-none"
+                      src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                    />
+                  </a>
                 </div>
-
-                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                  <img
-                    href="https://www.google.com"
-                    class="w-5 border-none"
-                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                  />
-                </button>
-                <button class=" rounded border hover:bg-indeed border-transparent">
-                  <img
-                    href="https://www.google.com"
-                    class="w-5 border-none"
-                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                  />
-                </button>
               </div>
             </div>
-            <div class="mb-4 py-4 px-4 w-40 flex justify-center flex-col items-center">
+            <div class=" w-40 flex justify-center flex-col items-center content-center">
               <img
-                class="block h-24 w-24 rounded-full block-center"
+                class="block h-24 w-24 rounded-full block-center transition duration-300 hover:scale-105"
                 src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660855641/42664665_iel3nq.jpg"
                 alt="Stephan's profile photo"
               />
               <div class="text-center">
-                <div class="">
-                  <p class="text-md text-black font-semibold">Stephan Manley</p>
-                  <p class="text-cafe font-medium px-2 text-sm">
-                    Web developer
-                  </p>
+                <p class="text-md text-black font-semibold">Stephan Manley</p>
+                <p class="text-cafe font-medium px-2 text-sm">Web developer</p>
+                <div class="flex justify-center">
+                  <a
+                    class="mx-2 rounded-full border hover:bg-github border-transparent transition duration-300 hover:scale-125"
+                    href="https://github.com/SMan91"
+                    type="submit"
+                  >
+                    <img
+                      class="w-5 border-none "
+                      src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
+                    />
+                  </a>
+                  <a
+                    class="rounded border hover:bg-indeed border-transparent transition duration-300 hover:scale-125"
+                    href="https://www.linkedin.com/"
+                  >
+                    <img
+                      class="w-5 border-none"
+                      src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
+                    />
+                  </a>
                 </div>
-
-                <button class=" mx-2 rounded-full border hover:bg-github border-transparent">
-                  <img
-                    href="https://www.google.com"
-                    class="w-5 border-none"
-                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307010/GitHub-Mark-32px_in6mob.png"
-                  />
-                </button>
-                <button class=" rounded border hover:bg-indeed border-transparent">
-                  <img
-                    href="https://www.google.com"
-                    class="w-5 border-none"
-                    src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661307536/558722_kgpq09.png"
-                  />
-                </button>
               </div>
             </div>
           </div>
