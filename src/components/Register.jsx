@@ -100,11 +100,6 @@ export default function Register() {
                 Sign Up
               </button>
             </div>
-            <div class="mb-3 flex flex-wrap content-center">
-              <Link id="loginClick" to="/Login">
-                Already have an account?
-              </Link>
-            </div>
           </form>
         </div>
       </div>
