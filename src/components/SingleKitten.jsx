@@ -17,7 +17,7 @@ export default function SingleKitten() {
   }, []);
 
   return (
-    <div class="flex justify-center p-5 m-8 container mx-auto">
+    <div class="flex justify-center p-14 container mx-auto bg-gradient-to-b from-pink to-cultured">
       <div>
         <KittensCard key={`${params.id}`} kitten={kitten} />
       </div>

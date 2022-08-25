@@ -15,12 +15,12 @@ export default function Register() {
   const { user, setUser } = useAuth();
   return (
     <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured ">
-      <div class="flex flex-col sm:flex-row sm:h-6/8 rounded-lg bg-cardpaper shadow-lg">
+      <div class="flex flex-col sm:flex-row sm:h-6/8 rounded-lg bg-cardpaper shadow-lg ">
         <img
           class="h-100 w-80 object-cover bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
-          src="https://res.cloudinary.com/dg5jk9pui/image/upload/c_scale,h_785,w_628/v1661394405/Siamese_Kittens_vimdl2.jpg"
+          src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661434289/the-lucky-neko-55ClwmQyNiU-unsplash_t3302c.jpg"
         />
-        <div class="p-4">
+        <div class="p-4 w-2/3">
           <h2 class="text-xl font-bold text-coral">Register </h2>
           <small class="text-black ">Welcome! Enter your details below.</small>
           <form
@@ -50,14 +50,14 @@ export default function Register() {
               <input
                 value={name}
                 placeholder="Name"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black mb-2"
                 onChange={(e) => setName(e.target.value)}
               />
               <label class="mb-2 block text-xs font-semibold">Username</label>
               <input
                 value={username}
                 placeholder="Username"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black mb-2"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <label class="mb-2 block text-xs font-semibold">Password</label>
@@ -65,7 +65,7 @@ export default function Register() {
               <input
                 value={password}
                 placeholder="Password"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black mb-2"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <label class="mb-2 block text-xs font-semibold">Email</label>
@@ -73,7 +73,7 @@ export default function Register() {
               <input
                 value={email}
                 placeholder="Email"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black mb-2"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label class="mb-2 block text-xs font-semibold">
@@ -83,14 +83,14 @@ export default function Register() {
               <input
                 value={phonenumber}
                 placeholder="Phone Number"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black mb-2"
                 onChange={(e) => setPhonenumber(e.target.value)}
               />
               <label class="mb-2 block text-xs font-semibold">Address</label>
               <input
                 value={address}
                 placeholder="Address"
-                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-black mb-2"
                 onChange={(e) => setAddress(e.target.value)}
               />
               <button
