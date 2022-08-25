@@ -85,7 +85,7 @@ export default function Admin() {
           </form>
         </div>
         <br />
-        <div class="flex flex-col justify-center grid grid-col-4">
+        <div class="flex flex-col justify-center">
           <h3>Created Users:</h3>
           {usersList.map((user) => {
             return (
