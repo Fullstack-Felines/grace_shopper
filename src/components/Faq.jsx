@@ -13,7 +13,7 @@ export default function Faq() {
               <summary class="font-semibold bg-coral rounded-md py-2 px-4 text-white">
                 WHAT DO YOUR ADOPTION FEES INCLUDE?
               </summary>
-              <p class="pt-4 px-4 text-coral">
+              <p class="pt-4 px-4 text-cafe opacity-80">
                 The adoption fee covers the animals spay/neuter, current
                 vaccinations, heartworm testing/treatment, feline leukemia and
                 FIV testing, and microchip.{" "}
@@ -28,17 +28,17 @@ export default function Faq() {
               </p>
             </details>
             <details class="mb-4">
-              <summary class="font-semibold bg-pink rounded-md py-2 px-4 text-cafe">
+              <summary class="font-semibold bg-coral rounded-md py-2 px-4 text-white">
                 IS IT DIFFICULT TO ADOPT?
               </summary>
-              <p class="pt-4 px-4 text-white">
+              <p class="pt-4 px-4 text-cafe opacity-80">
                 We have policies for approving adoptions. They are designed to
                 ensure that each animal is placed with a responsible person
                 prepared to make a lifelong commitment, and to avoid the kinds
                 of problems that may have caused the animal to be brought to the
                 shelter in the first place.
               </p>
-              <p class="p-4 text-white">
+              <p class="p-4 text-cafe opacity-80">
                 An important part of the process is to match the lifestyle and
                 needs of the adopter with the individual dog or cat. If the
                 screening process occasionally seems overly strict, try to
@@ -47,16 +47,16 @@ export default function Faq() {
               </p>
             </details>
             <details class="mb-4">
-              <summary class="font-semibold bg-pink rounded-md py-2 px-4 text-cafe">
+              <summary class="font-semibold bg-coral rounded-md py-2 px-4 text-white">
                 ARE THERE REQUIREMENTS FOLLOWING THE ADOPTION?
               </summary>
-              <p class="pt-4 px-4 text-white">
+              <p class="pt-4 px-4 text-cafe opacity-80">
                 Having a companion animal brings rewards and responsibilities.
                 Following your pet’s adoption, you will be responsible for
                 making sure your pet is safe and for providing regular
                 veterinary care.
               </p>
-              <p class="p-4 text-white">
+              <p class="p-4 text-cafe opacity-80">
                 Be sure your dog has appropriate identification. Provide
                 nutritious food and fresh water for your pet. Make time for
                 exercise, training, and play. Finally, enjoy your new life with
@@ -64,16 +64,16 @@ export default function Faq() {
               </p>
             </details>
             <details class="mb-4">
-              <summary class="font-semibold bg-pink rounded-md py-2 px-4 text-cafe">
+              <summary class="font-semibold bg-coral rounded-md py-2 px-4 text-white">
                 WHAT IF I HAVE QUESTIONS AFTER I GET MY NEW PET HOME?
               </summary>
-              <p class="pt-4 px-4 text-white">
+              <p class="pt-4 px-4 text-cafe opacity-80">
                 We understand that after you get our pet home, the adjustment
                 period can be difficult. We encourage you to call us with any
                 questions or problems, hopefully, before small problems become
                 big ones!
               </p>
-              <p class="p-4 text-white">
+              <p class="p-4 text-cafe opacity-80">
                 We are very experienced with pet transitions and welcome the
                 opportunity to help make it as smooth for you and your pet as
                 possible. And even when all is going well, we love getting calls

@@ -74,7 +74,6 @@ export default function Login() {
             </div>
           </form>
         </div>
-        {/* </div> */}
       </div>
     </div>
   );

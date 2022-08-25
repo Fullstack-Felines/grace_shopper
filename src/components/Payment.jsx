@@ -63,7 +63,7 @@ export default function Payment() {
             </div>
             <div class="mb-10">
               <h1 class="text-center font-bold text-xl uppercase">
-                Secure payment info
+                Secure payment form
               </h1>
             </div>
             <div class="mb-3 flex -mx-2">
@@ -92,6 +92,17 @@ export default function Payment() {
                 />
               </div>
             </div>
+
+            <label class="font-bold text-sm mb-2 ml-1">Shipping address</label>
+            <div>
+              <input
+                class="form-select w-full px-3 py-2 mb-4 border-2 border-gray rounded-md focus:outline-none focus:border-coral transition-colors"
+                value={shippingAddress}
+                placeholder="Address"
+                onChange={(e) => setShippingAddress(e.target.value)}
+              />
+            </div>
+
             <div class="mb-3">
               <label class="font-bold text-sm mb-2 ml-1">Card number</label>
               <div>
@@ -138,24 +149,16 @@ export default function Payment() {
               </div>
             </div>
             <div class="">
-              <label class="font-bold text-sm mb-2 ml-1">Security code</label>
+              <label class="font-bold text-sm mb-4 ml-1">Security code</label>
               <div>
                 <input
-                  class="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-coral transition-colors"
+                  class="w-32 px-3 py-2 mb-10 border-2 border-gray-200 rounded-md focus:outline-none focus:border-coral transition-colors"
                   placeholder="000"
                   type="text"
                 />
               </div>
             </div>
-            <label class="font-bold text-sm mb-2 ml-1">Shipping Address</label>
-            <div>
-              <input
-                class="form-select w-2/3 px-3 py-2 mb-4 border-2 border-gray rounded-md focus:outline-none focus:border-coral transition-colors cursor-pointer"
-                value={shippingAddress}
-                placeholder="Address"
-                onChange={(e) => setShippingAddress(e.target.value)}
-              />
-            </div>
+
             <div>
               <button class="block w-full max-w-xs mx-auto bg-coral hover:bg-coral focus:bg-coral text-white rounded-lg px-3 py-3 font-semibold">
                 <i class="mdi mdi-lock-outline mr-1"></i> PAY NOW

@@ -84,7 +84,7 @@ export default function AboutUs() {
               Our Team
             </h3>
           </div>
-          <div class="grid grid-cols-2 gap-10 sm:gap-2 sm:grid-cols-4 sm:flex sm:content-center sm:items-center mb-6">
+          <div class="grid grid-cols-2 gap-10 sm:gap-2 sm:grid-cols-4 sm:flex sm:content-center sm:items-center mb-24">
             <div class=" w-40 flex justify-center flex-col items-center content-center">
               <img
                 class="block h-24 w-24 rounded-full block-center transition duration-300 hover:scale-105"
