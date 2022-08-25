@@ -16,7 +16,7 @@ const OrderCard = (order) => {
   }, []);
 
   return (
-    <div class="flex justify-between items-center mt-6 pt-6">
+    <div class="flex justify-between items-center py-6">
       <div class="flex items-center">
         <img class="w-28" src={order.order.kittens.img_url} />
 

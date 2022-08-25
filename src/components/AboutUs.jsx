@@ -207,7 +207,7 @@ export default function AboutUs() {
                   </a>
                   <a
                     class="rounded border hover:bg-indeed border-transparent transition duration-300 hover:scale-125"
-                    href="https://www.linkedin.com/"
+                    href="https://www.linkedin.com/in/stephan-manley-667001248/"
                   >
                     <img
                       class="w-5 border-none"

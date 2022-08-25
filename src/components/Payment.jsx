@@ -10,8 +10,9 @@ export default function Payment() {
   const navigate = useNavigate();
 
   return (
-    <div class="bg-gradient-to-b from-pink to-cultured">
+    <div class="bg-gradient-to-b from-pink to-cultured flex justify-center">
       <form
+        class="w-5/6 sm:w-2/3 md:w-2/3 lg:w-2/3 xl:w-1/3 mt-10 mb-20"
         onSubmit={async (event) => {
           //update cart to be inactive and update shipping address
           event.preventDefault();
@@ -51,7 +52,7 @@ export default function Payment() {
           window.location.reload();
         }}
       >
-        <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 pb-10 pt-16 md:w-10/12 lg:w-2/3 xl:w-2/5">
+        <div class=" flex items-center justify-center px-5 pb-10 pt-16 ">
           <div class="w-full mx-auto rounded-lg bg-cardpaper shadow-lg p-5 text-gray">
             <div class="w-full pt-1 pb-5">
               <div class="bg-coral text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
