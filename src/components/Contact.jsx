@@ -67,7 +67,7 @@ export default function Contact() {
           <div class="md:w-1/3">
             <button
               onClick={() => alert("Message Sent!")}
-              class="shadow bg-red hover:bg-coral  focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              class="shadow bg-red hover:bg-coral  focus:shadow-outline focus:outline-red text-white font-bold py-2 px-4 rounded  "
               type="submit"
             >
               Send

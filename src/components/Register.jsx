@@ -14,69 +14,106 @@ export default function Register() {
   const navigate = useNavigate();
   const { user, setUser } = useAuth();
   return (
-    <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured">
-      <h3>REGISTER HERE:</h3>
-      <form
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const result = await registerUser(
-            username,
-            password,
-            name,
-            email,
-            address,
-            phonenumber
-          );
-          if (result.user) {
-            alert("You are registered!");
-            setUser({ loggedIn: true, ...result.user });
-            navigate("/");
-          } else {
-            setErrorMessage("Username already taken");
-            alert(errorMessage);
-          }
-        }}
-      >
-        <input
-          value={name}
-          placeholder="name"
-          onChange={(e) => setName(e.target.value)}
+    <div class=" flex flex-grow flex-row  justify-center items-center bg-gradient-to-b from-pink to-cultured ">
+      <div class="flex flex-col sm:flex-row sm:h-6/8 rounded-lg bg-cardpaper shadow-lg">
+        <img
+          class="object-cover h-full bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
+          src="https://res.cloudinary.com/dg5jk9pui/image/upload/c_scale,h_785,w_628/v1661394405/Siamese_Kittens_vimdl2.jpg"
         />
+        <div class="p-4">
+          <h2 class="text-xl font-bold text-coral">Register </h2>
+          <small class="text-black ">Welcome! Enter your details below.</small>
+          <form
+            class="mt-4"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const result = await registerUser(
+                username,
+                password,
+                name,
+                email,
+                address,
+                phonenumber
+              );
+              if (result.user) {
+                alert("You are registered!");
+                setUser({ loggedIn: true, ...result.user });
+                navigate("/");
+              } else {
+                setErrorMessage("Username already taken");
+                alert(errorMessage);
+              }
+            }}
+          >
+            <div>
+              <label class="mb-2 block text-xs font-semibold">Name</label>
+              <input
+                value={name}
+                placeholder="Name"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <label class="mb-2 block text-xs font-semibold">Username</label>
+              <input
+                value={username}
+                placeholder="Username"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <label class="mb-2 block text-xs font-semibold">Password</label>
 
-        <input
-          value={username}
-          placeholder="username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          value={password}
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+              <input
+                value={password}
+                placeholder="Password"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label class="mb-2 block text-xs font-semibold">Email</label>
 
-        <input
-          value={email}
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
+              <input
+                value={email}
+                placeholder="Email"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label class="mb-2 block text-xs font-semibold">
+                Phone Number
+              </label>
 
-        <input
-          value={phonenumber}
-          placeholder="phonenumber"
-          onChange={(e) => setPhonenumber(e.target.value)}
-        />
-
-        <input
-          value={address}
-          placeholder="address"
-          onChange={(e) => setAddress(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
-
-        <Link id="loginClick" to="/Login">
-          Already have an account?
-        </Link>
-      </form>
+              <input
+                value={phonenumber}
+                placeholder="Phone Number"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                onChange={(e) => setPhonenumber(e.target.value)}
+              />
+              <label class="mb-2 block text-xs font-semibold">Address</label>
+              <input
+                value={address}
+                placeholder="Address"
+                class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral mb-2"
+                onChange={(e) => setAddress(e.target.value)}
+              />
+              <button
+                class="mb-1.5 block w-full text-center text-white bg-coral opacity-80 hover:bg-coral hover:opacity-100 px-2 py-1.5 rounded-md"
+                type="submit"
+              >
+                Sign Up
+              </button>
+            </div>
+            <div class="mb-3 flex flex-wrap content-center">
+              <Link id="loginClick" to="/Login">
+                Already have an account?
+              </Link>
+            </div>
+            <div>
+              <img
+                src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1661350049/Untitled_design_vofbe5.png"
+                class="flex justify-center hover transition duration-300 hover:scale-125"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
