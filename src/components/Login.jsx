@@ -17,7 +17,6 @@ export default function Login() {
           class="object-cover  h-96 bg-center bg-no-repeat bg-cover rounded-t-lg sm:rounded-l-lg opacity-90 "
           src="https://res.cloudinary.com/dkmoq49jf/image/upload/v1660944160/IMG_20180202_165400_965_u9nrgy.jpg"
         />
-        {/* <div class="pt-16 pr-8 pb-16 pl-8 flex flex-wrap content-center justify-center rounded-l-md"> */}
         <div class="p-4">
           <h2 class="text-xl font-bold text-coral">Login </h2>
           <small class="text-black ">
@@ -44,7 +43,6 @@ export default function Login() {
             <div class="mb-3">
               <label class="mb-2 block text-xs font-semibold">Username</label>
               <input
-                className="userinput"
                 value={username}
                 placeholder="Username"
                 class="block w-full rounded-md border border-coral focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral py-1 px-1.5 text-coral"
@@ -64,7 +62,6 @@ export default function Login() {
             </div>
 
             <button
-              id="loginButton"
               type="submit"
               class="mb-1.5 block w-full text-center text-white bg-coral opacity-80 hover:bg-coral hover:opacity-100 px-2 py-1.5 rounded-md"
             >
@@ -77,7 +74,6 @@ export default function Login() {
             </div>
           </form>
         </div>
-        {/* </div> */}
       </div>
     </div>
   );
