@@ -59,29 +59,34 @@ export default function KittensCard({ kitten }) {
 
         {user.is_admin ? (
           <div>
-            <button
-              onClick={() => {
-                setIsEditing(true);
-              }}
-            >
-              Edit Kitten
-            </button>
-
-            <button
-              onClick={() => {
-                deleteKitten(kitten.id);
-                alert("Kitten Deleted");
-                window.location.reload();
-              }}
-            >
-              Delete Kitten
-            </button>
+            <div class="flex justify-center mt-4 bg-coral opacity-90 w-full hover:bg-coral hover:opacity-100  py-1 rounded object-bottom">
+              <button
+                class="font-semibold text-white "
+                onClick={() => {
+                  setIsEditing(true);
+                }}
+              >
+                Edit Kitten
+              </button>
+            </div>
+            <div class="flex justify-center mt-4 bg-coral opacity-90 w-full hover:bg-coral hover:opacity-100  py-1 rounded object-bottom">
+              <button
+                class="font-semibold text-white "
+                onClick={() => {
+                  deleteKitten(kitten.id);
+                  alert("Kitten Deleted");
+                  window.location.reload();
+                }}
+              >
+                Delete Kitten
+              </button>
+            </div>
           </div>
         ) : null}
 
         {user.is_admin ? (
           isEditing ? (
-            <div>
+            <div class="flex justify-center mt-4 bg-coral opacity-90 w-full hover:bg-coral hover:opacity-100  py-1 rounded object-bottom">
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
@@ -100,21 +105,25 @@ export default function KittensCard({ kitten }) {
                 }}
               >
                 <input
+                  class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   value={kittenName}
                   placeholder="Name of kitten"
                   onChange={(e) => setKittenName(e.target.value)}
                 />
                 <input
+                  class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   value={breed}
                   placeholder="Breed"
                   onChange={(e) => setBreed(e.target.value)}
                 />
                 <input
+                  class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   value={description}
                   placeholder="Description"
                   onChange={(e) => setDescription(e.target.value)}
                 />
                 <input
+                  class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   value={price}
                   placeholder="price"
                   onChange={(e) => {
@@ -122,11 +131,17 @@ export default function KittensCard({ kitten }) {
                   }}
                 />
                 <input
+                  class="appearance-none block w-full bg-red text-coral border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   value={imgUrl}
                   placeholder="imgUrl"
                   onChange={(e) => setImgUrl(e.target.value)}
                 />
-                <button type="Submit">Update kitten!</button>
+                <button
+                  type="Submit"
+                  class="mb-1.5 block w-full text-center text-white bg-brass opacity-80 hover:bg-coral hover:opacity-100 px-2 py-1.5 rounded-md"
+                >
+                  Update kitten!
+                </button>
               </form>
             </div>
           ) : null
